@@ -126,7 +126,7 @@ const menuList = [
         link: '#overview',
       },
       {
-        name: 'RPC, gRPC, API',
+        name: 'Public Endpoints',
         link: '#rpc',
       },
     ],

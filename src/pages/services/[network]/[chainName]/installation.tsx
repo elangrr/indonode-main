@@ -6,6 +6,7 @@ import { selectChain } from '@/store/chainSlice'
 import { useRouter } from 'next/router'
 import { useSnapshotInfo } from '@/hooks/use-query'
 
+
 export default function ServiceInstallation() {
   const chain = useSelector(selectChain)
   const router = useRouter()
@@ -13,15 +14,16 @@ export default function ServiceInstallation() {
 
   const { data: snapshotInfo } = useSnapshotInfo(chain?.links.snapshot ?? '')
 
+
   return (
     <ServiceLayout>
       <Stack spacing={6}>
-        <Stack spacing={4}>
-          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="setup">
-            Setup Server
-          </Heading>
-          <CodeSnippet
-            code={`# Update Packages and Install Prerequisites
+      <Stack spacing={4}>
+    <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="setup">
+      Setup Server
+    </Heading>
+    <CodeSnippet
+      code={`# Update Packages and Install Prerequisites
 sudo apt update && apt upgrade -y
 sudo apt install curl git jq lz4 build-essential unzip fail2ban ufw -y
 
@@ -33,9 +35,17 @@ sudo ufw allow 9100
 
 # Enable Firewall
 sudo ufw enable
+`}
+    ></CodeSnippet>
+  </Stack>
 
-# Install Go
-ver="1.20.8"
+  {/* Go Installation */}
+  <Stack spacing={4}>
+    <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="go">
+      Install GO
+    </Heading>
+    <CodeSnippet
+      code={`ver="1.20.8"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
@@ -43,16 +53,12 @@ rm "go$ver.linux-amd64.tar.gz"
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 go version
-              `}
-          ></CodeSnippet>
-        </Stack>
+`}
+    ></CodeSnippet>
+  </Stack>
         <Stack spacing={4}>
-          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="node">
-            Node Installation
-          </Heading>
           <CodeSnippet
-            code={`# Download and install binary
-cd $HOME
+            code={`cd $HOME
 rm -rf ${chain?.name}
 git clone ${chain?.links.repository} ${chain?.name}
 cd ${chain?.name}

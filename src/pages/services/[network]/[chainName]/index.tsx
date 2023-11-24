@@ -58,7 +58,7 @@ export default function Service() {
         </Stack>
         <Stack>
           <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="rpc">
-            RPC, gRPC, API
+            Public Endpoints
           </Heading>
           {chain?.links.peer && (
             <Stack>

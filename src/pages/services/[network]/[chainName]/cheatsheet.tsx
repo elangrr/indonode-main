@@ -30,9 +30,9 @@ export default function ServiceCheatSheet() {
 
   const [validatorMoniker, setValidatorMoniker] = useState('<MONIKER>')
   const [validatorIdentity, setValidatorIdentity] = useState('')
-  const [validatorDetails, setValidatorDetails] = useState('Best validator ❤️')
+  const [validatorDetails, setValidatorDetails] = useState('Indonode Guide')
   const [validatorAmount, setValidatorAmount] = useState(1000000)
-  const [validatorComissionRate, setValidatorComissionRate] = useState(0.1)
+  const [validatorComissionRate, setValidatorComissionRate] = useState(0.01)
   const [validatorComissionMaxRate, setValidatorComissionMaxRate] =
     useState(0.2)
   const [validatorComissionMaxChangeRate, setValidatorComissionMaxChangeRate] =
@@ -43,6 +43,8 @@ export default function ServiceCheatSheet() {
   const [govAmount, setGovAmount] = useState(1000000)
   const [govProposalId, setGovProposalId] = useState(1)
   const [govProposalOption, setGovProposalOption] = useState('yes')
+  const [indexer, setIndexer] = useState('NULL');
+
 
   return (
     <ServiceLayout>
@@ -433,14 +435,20 @@ export default function ServiceCheatSheet() {
           <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="utility">
             Utility
           </Heading>
-          <Stack>
-            <Text>
-              Set Indexer <strong>NULL / KV</strong>
-            </Text>
-            <CodeSnippet
-              code={`sed -i 's|^indexer *=.*|indexer = "null"|' $HOME/.${chain?.name}/config/config.toml`}
-            ></CodeSnippet>
-          </Stack>
+          <Stack direction={'row'} spacing={4} wrap={'wrap'}>
+  <FormControl maxW={'sm'}>
+    <FormLabel>Set Indexer</FormLabel>
+    <RadioGroup onChange={(value) => setIndexer(value)} value={indexer}>
+      <Stack direction="row">
+        <Radio value="NULL">NULL</Radio>
+        <Radio value="KV">KV</Radio>
+      </Stack>
+    </RadioGroup>
+  </FormControl>
+</Stack>
+<CodeSnippet
+  code={`sed -i 's|^indexer *=.*|indexer = "${indexer.toLowerCase()}"|' $HOME/.${chain?.name}/config/config.toml`}
+></CodeSnippet>
           <Stack>
             <Text>Set Custom Port</Text>
             <CodeSnippet
@@ -482,7 +490,7 @@ sed -i.bak -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:\${
           <Stack>
             <Text>Delete Node</Text>
             <CodeSnippet
-              code={`sudo systemctl stop ${chain?.binary} && sudo systemctl disable ${chain?.binary} && sudo rm /etc/systemd/system/${chain?.binary}.service && sudo systemctl daemon-reload && rm -rf $HOME/.${chain?.name} && sudo rm -rf $(which ${chain?.binary}) `}
+              code={`cd $HOME && sudo systemctl stop ${chain?.binary} && sudo systemctl disable ${chain?.binary} && sudo rm /etc/systemd/system/${chain?.binary}.service && sudo systemctl daemon-reload && sudo rm -rf $(which ${chain?.name}) && sudo rm -rf $HOME/.${chain?.name} && sudo rm -rf $(which ${chain?.binary}) `}
             ></CodeSnippet>
           </Stack>
         </Stack>
@@ -494,31 +502,68 @@ sed -i.bak -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:\${
           >
             Services Management
           </Heading>
-          <CodeSnippet
-            code={`# Reload Service
-sudo systemctl daemon-reload
+          <Stack>
+    <Text>Reload Service</Text>
+    <CodeSnippet
+      code={`sudo systemctl daemon-reload`}
+    ></CodeSnippet>
+  </Stack>
 
-# Enable Service
-sudo systemctl enable ${chain?.binary}
+  {/* Enable Service */}
+  <Stack>
+    <Text>Enable Service</Text>
+    <CodeSnippet
+      code={`sudo systemctl enable ${chain?.binary}`}
+    ></CodeSnippet>
+  </Stack>
 
-# Disable Service
-sudo systemctl disable ${chain?.binary}
+  {/* Disable Service */}
+  <Stack>
+    <Text>Disable Service</Text>
+    <CodeSnippet
+      code={`sudo systemctl disable ${chain?.binary}`}
+    ></CodeSnippet>
+  </Stack>
 
-# Start Service
-sudo systemctl start ${chain?.binary}
+  {/* Start Service */}
+  <Stack>
+    <Text>Start Service</Text>
+    <CodeSnippet
+      code={`sudo systemctl start ${chain?.binary}`}
+    ></CodeSnippet>
+  </Stack>
 
-# Stop Service
-sudo systemctl stop ${chain?.binary}
+  {/* Stop Service */}
+  <Stack>
+    <Text>Stop Service</Text>
+    <CodeSnippet
+      code={`sudo systemctl stop ${chain?.binary}`}
+    ></CodeSnippet>
+  </Stack>
 
-# Restart Service
-sudo systemctl restart ${chain?.binary}
+  {/* Restart Service */}
+  <Stack>
+    <Text>Restart Service</Text>
+    <CodeSnippet
+      code={`sudo systemctl restart ${chain?.binary}`}
+    ></CodeSnippet>
+  </Stack>
 
-# Check Service Status
-sudo systemctl status ${chain?.binary}
+  {/* Check Service Status */}
+  <Stack>
+    <Text>Check Service Status</Text>
+    <CodeSnippet
+      code={`sudo systemctl status ${chain?.binary}`}
+    ></CodeSnippet>
+  </Stack>
 
-# Check Service Logs
-sudo journalctl -u ${chain?.binary} -f --no-hostname -o cat`}
-          ></CodeSnippet>
+  {/* Check Service Logs */}
+  <Stack>
+    <Text>Check Service Logs</Text>
+    <CodeSnippet
+      code={`sudo journalctl -u ${chain?.binary} -f --no-hostname -o cat`}
+    ></CodeSnippet>
+  </Stack>
         </Stack>
       </Stack>
     </ServiceLayout>

@@ -40,15 +40,8 @@ export default function ServiceSnapshot() {
             </Stack>
           )}
           <CodeSnippet
-            code={`# Install Necessary package
-sudo apt update
+            code={`sudo apt update
 sudo apt-get install snapd lz4 -y`}
-          ></CodeSnippet>
-          <CodeSnippet
-            code={`# Turn off state-sync
-sudo systemctl stop ${chain?.binary}
-cp $HOME/.${chain?.name}/data/priv_validator_state.json $HOME/.${chain?.name}/priv_validator_state.json.backup
-rm -rf $HOME/.${chain?.name}/data`}
           ></CodeSnippet>
           <CodeSnippet
             code={`# Stop the service and reset the data
