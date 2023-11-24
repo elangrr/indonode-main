@@ -21,12 +21,11 @@ export default function ServiceInstallation() {
             Setup Server
           </Heading>
           <CodeSnippet
-            code={`# Update Packages
+            code={`# Update Packages and Install Prerequisites
 sudo apt update && apt upgrade -y
 sudo apt install curl git jq lz4 build-essential unzip fail2ban ufw -y
 
 # Set Firewall
-sudo apt install -y ufw
 sudo ufw default allow outgoing
 sudo ufw default deny incoming
 sudo ufw allow ssh
@@ -44,9 +43,6 @@ rm "go$ver.linux-amd64.tar.gz"
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 go version
-
-# Install Cosmovisor (OPTIONAL If you are using Cosmovisor)
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
               `}
           ></CodeSnippet>
         </Stack>
