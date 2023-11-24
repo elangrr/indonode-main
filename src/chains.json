@@ -1,0 +1,236 @@
+{
+  "mainnet": [
+    {
+      "title": "Planq",
+      "name": "planq",
+      "coinGeckoId": "planq",
+      "imageURL": "/networks/planq.png",
+      "version": "1.0.8",
+      "chainId": "planq_7070-2",
+      "description": [
+        "Planq is the very first cryptocurrency project to keep mobile platform usability at heart, taking a step away from dependency on desktop services. The Planq blockchain is powered by the $PLQ token and The ecosystem is expanding every day.",
+        "The first application that Planq launched is Castrum, A mobile wallet that can receive and send crypto to other users, has a fully encrypted chat, and all features the Planq blockchain offers."
+      ],
+      "binary": "planqd",
+      "denom": "aplanq",
+      "gasPrice": "30000000000aplanq",
+      "links": {
+        "repository": "https://github.com/planq-network/planq.git",
+        "website": "https://planq.network",
+        "twitter": "https://twitter.com/PlanqFoundation",
+        "discord": "https://discord.gg/planq-network",
+        "peer": "1002fde469a06d24dc7b1543e61c4afcaa993af3@rpc.planq.indonode.net:20656",
+        "rpc": "https://rpc.planq.indonode.net",
+        "api": "https://api.planq.indonode.net",
+        "grpc": "grpc.planq.indonode.net:20090",
+        "addrbook": "https://snapshots.indonode.net/planq/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/planq/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/entrypoint/log.json",
+        "explorer": "https://explorer.indonode.net/planq",
+        "staking": "https://explorer.indonode.net/planq/staking/plqvaloper123a9zth3jyeurj5zdthxk9zkhufsc5jw2lwjn2"
+      }
+    },
+    {
+      "title": "Chain4Energy",
+      "name": "c4e",
+      "coinGeckoId": "",
+      "imageURL": "/networks/c4e.png",
+      "version": "1.2.1",
+      "chainId": "perun-1",
+      "description": [
+        "Chain4Energy (C4E) is a sovereign global decentralized blockchain built on Cosmos SDK. The Decentralized Energy Marketplace which enables institutions and individuals to seamlessly participate in the renewable energy market accessing and offering a wide range of renewable energy solutions and services. Chain4Energy brings the energy industry to Web 3 by responding to the requirements and needs of all participants and enabling the effective creation and distribution of value. Blockchain removes delays, gets the right information to the right place, and eliminates the possibility of fraud and manipulation. It also enables P2P energy trading (without intermediaries), and thus effectively, between energy market participants."
+      ],
+      "binary": "c4ed",
+      "denom": "uc4e",
+      "gasPrice": "0.0025uc4e",
+      "links": {
+        "repository": "https://github.com/chain4energy/c4e-chain.git",
+        "website": "https://c4e.io",
+        "twitter": "https://twitter.com/Chain4Energy",
+        "discord": "https://discord.com/invite/chain4energy",
+        "peer": "1002fde469a06d24dc7b1543e61c4afcaa993af3@rpc.c4e.indonode.net:20656",
+        "rpc": "https://rpc.c4e.indonode.net",
+        "api": "https://api.c4e.indonode.net",
+        "grpc": "grpc.c4e.indonode.net:20090",
+        "addrbook": "https://snapshots.indonode.net/c4e/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/c4e/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/entrypoint/log.json",
+        "explorer": "https://explorer.indonode.net/chain4energy",
+        "staking": "https://explorer.indonode.net/chain4energy/staking/c4evaloper1wwr4ctky20qqjfc8t6a698alljf8tc7v02nnhp"
+      }
+    },
+    {
+      "title": "Bitcanna",
+      "name": "bitcanna",
+      "coinGeckoId": "bitcanna",
+      "imageURL": "/networks/bitcanna.png",
+      "version": "2.0.3",
+      "chainId": "bitcanna-1",
+      "description": [
+        "BitCanna aims to solve a problem that has plagued the cannabis industry from its inception. Companies like Visa and MasterCard deny cannabis companies access to their services due to the legal status of marijuana. Since the legality of the herb is regulated differently in European countries, the industry leaders operate in gray areas. BitCanna wants to solve this problem by providing a decentralized blockchain network that is specifically designed for the cannabis industry and provides much-needed services to both consumers and businesses."
+      ],
+      "binary": "bcnad",
+      "denom": "ubcna",
+      "gasPrice": "0ubcna",
+      "links": {
+        "repository": "https://github.com/BitCannaGlobal/bcna.git",
+        "website": "https://www.bitcanna.io",
+        "twitter": "https://twitter.com/BitCannaGlobal",
+        "discord": "https://discord.gg/XDUSpFn6rN",
+        "peer": "d068226de69f0e14ff34e393a199137a44b0398d@rpc.bitcanna.indonode.net:11656",
+        "rpc": "https://rpc.bitcanna.indonode.net",
+        "api": "https://api.bitcanna.indonode.net",
+        "grpc": "grpc.bitcanna.indonode.net:11090",
+        "addrbook": "https://snapshots.indonode.net/bitcanna/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/bitcanna/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/entrypoint/log.json",
+        "explorer": "https://explorer.indonode.net/bitcanna",
+        "staking": "https://explorer.indonode.net/bitcanna/staking/bcnavaloper1603vvkelz5e54lqleya8kzcf7lydx98v5tcusp"
+      }
+    },
+    {
+      "title": "Band",
+      "name": "band",
+      "coinGeckoId": "band-protocol",
+      "imageURL": "/networks/band.jpg",
+      "version": "2.5.3",
+      "chainId": "laozi-mainnet",
+      "description": [
+        "Band Protocol is a cross-chain data oracle platform that aggregates and connects real-world data and APIs to smart contracts."
+      ],
+      "binary": "bandd",
+      "denom": "uband",
+      "gasPrice": "500uband",
+      "links": {
+        "repository": "https://github.com/bandprotocol/chain.git",
+        "website": "https://www.bandprotocol.com",
+        "twitter": "https://twitter.com/BandProtocol",
+        "discord": "https://discord.com/invite/PKxbB7kmEV",
+        "peer": "1002fde469a06d24dc7b1543e61c4afcaa993af3@rpc.band.indonode.net:20656",
+        "rpc": "https://rpc.band.indonode.net",
+        "api": "https://api.band.indonode.net",
+        "grpc": "grpc.band.indonode.net:20090",
+        "addrbook": "https://snapshots.indonode.net/band/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/band/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/entrypoint/log.json",
+        "explorer": "https://explorer.indonode.net/bandchain",
+        "staking": "https://explorer.indonode.net/bandchain/staking/bandvaloper145a0pq4v3dqhfgpvwtkt425arxydhz3ql7cn95"
+      }
+    }
+  ],
+  "testnet": [
+    {
+      "title": "Chain4Energy",
+      "name": "c4e",
+      "coinGeckoId": "planq",
+      "imageURL": "/networks/c4e.png",
+      "version": "1.3.0",
+      "chainId": "babajaga-1",
+      "description": [
+        "Chain4Energy (C4E) is a sovereign global decentralized blockchain built on Cosmos SDK. The Decentralized Energy Marketplace which enables institutions and individuals to seamlessly participate in the renewable energy market accessing and offering a wide range of renewable energy solutions and services. Chain4Energy brings the energy industry to Web 3 by responding to the requirements and needs of all participants and enabling the effective creation and distribution of value. Blockchain removes delays, gets the right information to the right place, and eliminates the possibility of fraud and manipulation. It also enables P2P energy trading (without intermediaries), and thus effectively, between energy market participants."
+      ],
+      "binary": "c4ed",
+      "denom": "uc4e",
+      "gasPrice": "0.0025uc4e",
+      "links": {
+        "repository": "https://github.com/chain4energy/c4e-chain.git",
+        "website": "https://c4e.io",
+        "twitter": "https://twitter.com/Chain4Energy",
+        "discord": "https://discord.com/invite/chain4energy",
+        "peer": "",
+        "rpc": "",
+        "api": "",
+        "grpc": "",
+        "addrbook": "https://snapshots.indonode.net/c4e/testnet/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/c4e/testnet/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/entrypoint/log.json",
+        "explorer": "https://explorer.indonode.net/c4e-testnet"
+      }
+    },
+    {
+      "title": "Selfchain",
+      "name": "selfchain",
+      "coinGeckoId": "",
+      "imageURL": "/networks/selfchain.jpg",
+      "version": "0.2.2",
+      "chainId": "self-dev-1",
+      "description": [
+        "Self Chain Is User-Centric Decentralized Blockchain Network And Infrastructure That Serves As The Storage Medium For Countless Applications. Opening The Gateway To The Crypto World For A Wide Range Of Users."
+      ],
+      "binary": "selfchaind",
+      "denom": "uself",
+      "gasPrice": "0.005uself",
+      "links": {
+        "repository": "https://github.com/chain4energy/c4e-chain.git",
+        "website": "https://selfchain.xyz",
+        "twitter": "https://twitter.com/selfchainxyz",
+        "discord": "https://discord.gg/selfchainxyz",
+        "peer": "",
+        "rpc": "https://rpc.selfchain-t.indonode.net",
+        "api": "https://api.selfchain-t.indonode.net",
+        "grpc": "",
+        "addrbook": "https://snapshots.indonode.net/selfchain/addrbook.json",
+        "genesis": "https://raw.githubusercontent.com/hotcrosscom/selfchain-genesis/main/networks/devnet/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/entrypoint/log.json",
+        "explorer": "https://explorer.indonode.net/selfchain-testnet"
+      }
+    },
+    {
+      "title": "Entangle",
+      "name": "entangle",
+      "coinGeckoId": "",
+      "imageURL": "/networks/entangle.jpg",
+      "version": "1.0.1",
+      "chainId": "entangle_33133-1",
+      "description": [
+        "Entangle Blockchain is built using the Cosmos SDK (includes IBC transferablity and EVM compatibility) featuring the Tendermint Core Consensus Algorithm for agreement between Validators.",
+        "The Entangle Blockchain is a highly specialized Oracle-centric Blockchain with the sole purpose of storing information for Entangle Distributed Oracle Solution and validating Oracle messages."
+      ],
+      "binary": "entangled",
+      "denom": "angl",
+      "gasPrice": "10angl",
+      "links": {
+        "repository": "https://github.com/Entangle-Protocol/entangle-blockchain.git",
+        "website": "https://www.entangle.fi",
+        "twitter": "https://twitter.com/Entanglefi",
+        "discord": "https://discord.gg/entanglefi",
+        "peer": "",
+        "rpc": "https://rpc.entangle-t.indonode.net",
+        "api": "https://api.entangle-t.indonode.net",
+        "grpc": "",
+        "addrbook": "https://snapshots.indonode.net/entangle/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/entangle/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/entrypoint/log.json",
+        "explorer": "https://explorer.indonode.net/entangle-testnet"
+      }
+    },
+    {
+      "title": "Mantra",
+      "name": "mantra",
+      "coinGeckoId": "",
+      "imageURL": "/networks/mantra.jpg",
+      "version": "",
+      "chainId": "mantrachain-testnet-1",
+      "description": [
+        "MANTRA Chain provides permissionless ability to build Web3 applications on a high-performance, scalable blockchain architecture combined with the toolkit to build regulated, compliant and permissioned applications."
+      ],
+      "binary": "mantrachaind",
+      "denom": "uaum",
+      "gasPrice": "50uaum",
+      "links": {
+        "repository": "https://github.com/chain4energy/c4e-chain.git",
+        "website": "https://mantrachain.io",
+        "twitter": "https://twitter.com/MANTRA_Chain",
+        "discord": "https://discord.gg/2RPywgGx",
+        "peer": "",
+        "rpc": "https://rpc.mantra-t.indonode.net",
+        "api": "https://api.mantra-t.indonode.net",
+        "grpc": "",
+        "addrbook": "https://snapshots.indonode.net/mantra/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/mantra/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/entrypoint/log.json",
+        "explorer": "https://explorer.indonode.net/mantra-testnet"
+      }
+    }
+  ]
+}
