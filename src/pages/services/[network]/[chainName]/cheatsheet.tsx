@@ -43,8 +43,7 @@ export default function ServiceCheatSheet() {
   const [govAmount, setGovAmount] = useState(1000000)
   const [govProposalId, setGovProposalId] = useState(1)
   const [govProposalOption, setGovProposalOption] = useState('yes')
-  const [indexer, setIndexer] = useState('NULL');
-
+  const [indexer, setIndexer] = useState('NULL')
 
   return (
     <ServiceLayout>
@@ -436,19 +435,22 @@ export default function ServiceCheatSheet() {
             Utility
           </Heading>
           <Stack direction={'row'} spacing={4} wrap={'wrap'}>
-  <FormControl maxW={'sm'}>
-    <FormLabel>Set Indexer</FormLabel>
-    <RadioGroup onChange={(value) => setIndexer(value)} value={indexer}>
-      <Stack direction="row">
-        <Radio value="NULL">NULL</Radio>
-        <Radio value="KV">KV</Radio>
-      </Stack>
-    </RadioGroup>
-  </FormControl>
-</Stack>
-<CodeSnippet
-  code={`sed -i 's|^indexer *=.*|indexer = "${indexer.toLowerCase()}"|' $HOME/.${chain?.name}/config/config.toml`}
-></CodeSnippet>
+            <FormControl maxW={'sm'}>
+              <FormLabel>Set Indexer</FormLabel>
+              <RadioGroup
+                onChange={(value) => setIndexer(value)}
+                value={indexer}
+              >
+                <Stack direction="row">
+                  <Radio value="NULL">NULL</Radio>
+                  <Radio value="KV">KV</Radio>
+                </Stack>
+              </RadioGroup>
+            </FormControl>
+          </Stack>
+          <CodeSnippet
+            code={`sed -i 's|^indexer *=.*|indexer = "${indexer.toLowerCase()}"|' $HOME/.${chain?.name}/config/config.toml`}
+          ></CodeSnippet>
           <Stack>
             <Text>Set Custom Port</Text>
             <CodeSnippet
@@ -503,67 +505,65 @@ sed -i.bak -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:\${
             Services Management
           </Heading>
           <Stack>
-    <Text>Reload Service</Text>
-    <CodeSnippet
-      code={`sudo systemctl daemon-reload`}
-    ></CodeSnippet>
-  </Stack>
+            <Text>Reload Service</Text>
+            <CodeSnippet code={`sudo systemctl daemon-reload`}></CodeSnippet>
+          </Stack>
 
-  {/* Enable Service */}
-  <Stack>
-    <Text>Enable Service</Text>
-    <CodeSnippet
-      code={`sudo systemctl enable ${chain?.binary}`}
-    ></CodeSnippet>
-  </Stack>
+          {/* Enable Service */}
+          <Stack>
+            <Text>Enable Service</Text>
+            <CodeSnippet
+              code={`sudo systemctl enable ${chain?.binary}`}
+            ></CodeSnippet>
+          </Stack>
 
-  {/* Disable Service */}
-  <Stack>
-    <Text>Disable Service</Text>
-    <CodeSnippet
-      code={`sudo systemctl disable ${chain?.binary}`}
-    ></CodeSnippet>
-  </Stack>
+          {/* Disable Service */}
+          <Stack>
+            <Text>Disable Service</Text>
+            <CodeSnippet
+              code={`sudo systemctl disable ${chain?.binary}`}
+            ></CodeSnippet>
+          </Stack>
 
-  {/* Start Service */}
-  <Stack>
-    <Text>Start Service</Text>
-    <CodeSnippet
-      code={`sudo systemctl start ${chain?.binary}`}
-    ></CodeSnippet>
-  </Stack>
+          {/* Start Service */}
+          <Stack>
+            <Text>Start Service</Text>
+            <CodeSnippet
+              code={`sudo systemctl start ${chain?.binary}`}
+            ></CodeSnippet>
+          </Stack>
 
-  {/* Stop Service */}
-  <Stack>
-    <Text>Stop Service</Text>
-    <CodeSnippet
-      code={`sudo systemctl stop ${chain?.binary}`}
-    ></CodeSnippet>
-  </Stack>
+          {/* Stop Service */}
+          <Stack>
+            <Text>Stop Service</Text>
+            <CodeSnippet
+              code={`sudo systemctl stop ${chain?.binary}`}
+            ></CodeSnippet>
+          </Stack>
 
-  {/* Restart Service */}
-  <Stack>
-    <Text>Restart Service</Text>
-    <CodeSnippet
-      code={`sudo systemctl restart ${chain?.binary}`}
-    ></CodeSnippet>
-  </Stack>
+          {/* Restart Service */}
+          <Stack>
+            <Text>Restart Service</Text>
+            <CodeSnippet
+              code={`sudo systemctl restart ${chain?.binary}`}
+            ></CodeSnippet>
+          </Stack>
 
-  {/* Check Service Status */}
-  <Stack>
-    <Text>Check Service Status</Text>
-    <CodeSnippet
-      code={`sudo systemctl status ${chain?.binary}`}
-    ></CodeSnippet>
-  </Stack>
+          {/* Check Service Status */}
+          <Stack>
+            <Text>Check Service Status</Text>
+            <CodeSnippet
+              code={`sudo systemctl status ${chain?.binary}`}
+            ></CodeSnippet>
+          </Stack>
 
-  {/* Check Service Logs */}
-  <Stack>
-    <Text>Check Service Logs</Text>
-    <CodeSnippet
-      code={`sudo journalctl -u ${chain?.binary} -f --no-hostname -o cat`}
-    ></CodeSnippet>
-  </Stack>
+          {/* Check Service Logs */}
+          <Stack>
+            <Text>Check Service Logs</Text>
+            <CodeSnippet
+              code={`sudo journalctl -u ${chain?.binary} -f --no-hostname -o cat`}
+            ></CodeSnippet>
+          </Stack>
         </Stack>
       </Stack>
     </ServiceLayout>

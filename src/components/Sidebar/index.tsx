@@ -147,13 +147,17 @@ const menuList = [
     ],
   },
   {
-    name: 'Snapshot',
-    link: '/snapshot',
+    name: 'Sync',
+    link: '/sync',
     icon: FaCamera,
     submenus: [
       {
-        name: 'Guide',
-        link: '/snapshot#guide',
+        name: 'Snapshot',
+        link: '/sync#snapshot',
+      },
+      {
+        name: 'Statesync',
+        link: '/sync#statesync',
       },
     ],
   },

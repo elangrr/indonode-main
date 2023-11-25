@@ -14,8 +14,11 @@ export default function ServiceSnapshot() {
     <ServiceLayout>
       <Stack spacing={6}>
         <Stack>
-          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="guide">
-            Snapshot Guide
+          <Heading
+            fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }}
+            id="snapshot"
+          >
+            Snapshot
           </Heading>
           {snapshotInfo && (
             <Stack direction={'row'} wrap={'wrap'}>
@@ -57,6 +60,41 @@ mv $HOME/.${chain?.name}/priv_validator_state.json.backup $HOME/.${chain?.name}/
           <CodeSnippet
             code={`# Restart Service
 sudo systemctl restart ${chain?.binary} && sudo journalctl -fu ${chain?.binary} -o cat`}
+          ></CodeSnippet>
+        </Stack>
+        <Stack>
+          <Heading
+            fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }}
+            id="statesync"
+          >
+            Statesync
+          </Heading>
+          <CodeSnippet
+            code={`sudo systemctl stop ${chain?.binary}
+cp $HOME/.${chain?.name}/data/priv_validator_state.json $HOME/.${chain?.name}/priv_validator_state.json.backup
+${chain?.binary} tendermint unsafe-reset-all --keep-addr-book --home $HOME/.${chain?.name}`}
+          ></CodeSnippet>
+          <CodeSnippet
+            code={`STATE_SYNC_RPC=${chain?.links.rpc}
+STATE_SYNC_PEER=${chain?.links.peer}
+LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
+SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 1000))
+SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)`}
+          ></CodeSnippet>
+          <CodeSnippet
+            code={`sed -i \\
+-e "s|^enable *=.*|enable = true|" \\
+-e "s|^rpc_servers *=.*|rpc_servers = \"$STATE_SYNC_RPC,$STATE_SYNC_RPC\"|" \\
+-e "s|^trust_height *=.*|trust_height = $SYNC_BLOCK_HEIGHT|" \\
+-e "s|^trust_hash *=.*|trust_hash = \"$SYNC_BLOCK_HASH\"|" \\
+-e "s|^persistent_peers *=.*|persistent_peers = \"$STATE_SYNC_PEER\"|" \\
+$HOME/.${chain?.name}/config/config.toml`}
+          ></CodeSnippet>
+          <CodeSnippet
+            code={`mv $HOME/.${chain?.name}/priv_validator_state.json.backup $HOME/.${chain?.name}/data/priv_validator_state.json`}
+          ></CodeSnippet>
+          <CodeSnippet
+            code={`sudo systemctl start ${chain?.binary} && sudo journalctl -u ${chain?.binary} -f`}
           ></CodeSnippet>
         </Stack>
       </Stack>
