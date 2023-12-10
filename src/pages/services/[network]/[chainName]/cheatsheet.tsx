@@ -449,14 +449,14 @@ export default function ServiceCheatSheet() {
             </FormControl>
           </Stack>
           <CodeSnippet
-            code={`sed -i 's|^indexer *=.*|indexer = "${indexer.toLowerCase()}"|' $HOME/.${chain?.name}/config/config.toml`}
+            code={`sed -i 's|^indexer *=.*|indexer = "${indexer.toLowerCase()}"|' $HOME/.${chain?.dir}/config/config.toml`}
           ></CodeSnippet>
           <Stack>
             <Text>Set Custom Port</Text>
             <CodeSnippet
               code={`CUSTOM_PORT=13
-sed -i.bak -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:\${CUSTOM_PORT}658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:\${CUSTOM_PORT}657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:\${CUSTOM_PORT}060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:\${CUSTOM_PORT}656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":\${CUSTOM_PORT}660\"%" $HOME/.${chain?.name}/config/config.toml
-sed -i.bak -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:\${CUSTOM_PORT}317\"%; s%^address = \":8080\"%address = \":\${CUSTOM_PORT}080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:\${CUSTOM_PORT}090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:\${CUSTOM_PORT}091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:\${CUSTOM_PORT}545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:\${CUSTOM_PORT}546\"%" $HOME/.${chain?.name}/config/app.toml`}
+sed -i.bak -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:\${CUSTOM_PORT}658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:\${CUSTOM_PORT}657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:\${CUSTOM_PORT}060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:\${CUSTOM_PORT}656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":\${CUSTOM_PORT}660\"%" $HOME/.${chain?.dir}/config/config.toml
+sed -i.bak -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:\${CUSTOM_PORT}317\"%; s%^address = \":8080\"%address = \":\${CUSTOM_PORT}080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:\${CUSTOM_PORT}090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:\${CUSTOM_PORT}091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:\${CUSTOM_PORT}545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:\${CUSTOM_PORT}546\"%" $HOME/.${chain?.dir}/config/app.toml`}
             ></CodeSnippet>
           </Stack>
           <Stack>
@@ -486,13 +486,13 @@ sed -i.bak -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:\${
           <Stack>
             <Text>Reset Node</Text>
             <CodeSnippet
-              code={`${chain?.binary} tendermint unsafe-reset-all --home $HOME/.${chain?.name} --keep-addr-book`}
+              code={`${chain?.binary} tendermint unsafe-reset-all --home $HOME/.${chain?.dir} --keep-addr-book`}
             ></CodeSnippet>
           </Stack>
           <Stack>
             <Text>Delete Node</Text>
             <CodeSnippet
-              code={`cd $HOME && sudo systemctl stop ${chain?.binary} && sudo systemctl disable ${chain?.binary} && sudo rm /etc/systemd/system/${chain?.binary}.service && sudo systemctl daemon-reload && sudo rm -rf $(which ${chain?.name}) && sudo rm -rf $HOME/.${chain?.name} && sudo rm -rf $(which ${chain?.binary}) `}
+              code={`cd $HOME && sudo systemctl stop ${chain?.binary} && sudo systemctl disable ${chain?.binary} && sudo rm /etc/systemd/system/${chain?.binary}.service && sudo systemctl daemon-reload && sudo rm -rf $(which ${chain?.binary}) && sudo rm -rf $HOME/.${chain?.dir} && sudo rm -rf $(which ${chain?.binary}) `}
             ></CodeSnippet>
           </Stack>
         </Stack>
