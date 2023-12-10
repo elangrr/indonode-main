@@ -120,6 +120,36 @@
         "explorer": "https://explorer.indonode.net/source",
         "staking": "https://explorer.indonode.net/source/staking/sourcevaloper12q8uzsmtc0vs4wryvjmk5hnyv559dqcwc48yj3"
       }
+    },
+    {
+      "title": "SGE",
+      "name": "sge",
+      "dir": "sge",
+      "coinGeckoId": "six-sigma",
+      "imageURL": "/networks/sge.jpg",
+      "version": "1.1.1",
+      "chainId": "sgenet-1",
+      "description": [
+        "A Cosmos SDK-based layer-1 blockchain utilizing its own native utility token (SGE token). The SGE Network leverages the modular components, blockchain interoperability and minimal gas fees of the Cosmos-based design to support applications at the intersection of blockchain, sports, gaming and entertainment that are pioneering novel ways of engaging users with a UX, value proposition and utility never before seen in the space."
+      ],
+      "binary": "sged",
+      "denom": "usge",
+      "gasPrice": "0.025usge",
+      "links": {
+        "repository": "https://github.com/sge-network/sge",
+        "website": "https://sgenetwork.io/",
+        "twitter": "https://twitter.com/sge_network",
+        "discord": "https://discord.gg/P6cccvJRpW",
+        "peer": "a3f6ecb94b7d888e7d4f6fc2d31b60456f39208d@rpc.sge.indonode.net:13656",
+        "rpc": "https://rpc.sge.indonode.net",
+        "api": "https://api.sge.indonode.net",
+        "grpc": "grpc.sge.indonode.net:13090",
+        "addrbook": "https://snapshots.indonode.net/sge/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/sge/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/sge/log.json",
+        "explorer": "https://explorer.indonode.net/sge",
+        "staking": "https://explorer.indonode.net/sge/staking/sgevaloper1rs78akqst8hn9pwdz9rw2m3a466tyqjt668sc7"
+      }
     }
   ],
   "testnet": [
