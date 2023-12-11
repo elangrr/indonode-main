@@ -14,17 +14,20 @@ export default function ServiceUpgrade() {
           <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="guide">
             Upgrade Guide
           </Heading>
+          <Heading fontSize={{ base: 'md', md: 'lg', lg: 'lg' }} color="red">
+            Upgrade Height : {chain?.upgrade} , Only upgrade after specified block height reached!
+          </Heading>
           <CodeSnippet
             code={`# Stop binary
 sudo systemctl stop ${chain?.binary}
 
-# Download and install binary
+# Download and new install binary
 cd $HOME
-rm -rf ${chain?.name}/
+sudo rm -rf ${chain?.name}/
 git clone ${chain?.links.repository}
 cd ${chain?.name}/
 git fetch --all
-git checkout ${chain?.version}
+git checkout ${chain?.upgradever}
 make install
 
 # Restart your node

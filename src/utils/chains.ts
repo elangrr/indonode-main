@@ -27,6 +27,9 @@ export type Chain = {
   binary: string
   denom: string
   dir?: string
+  go?: string
+  upgradever?: string
+  upgrade?: string
   gasPrice: string
   links: Links
 }

@@ -49,13 +49,13 @@ sudo apt-get install snapd lz4 -y`}
           <CodeSnippet
             code={`# Stop the service and reset the data
 sudo systemctl stop ${chain?.binary}
-cp $HOME/.${chain?.name}/data/priv_validator_state.json $HOME/.${chain?.name}/priv_validator_state.json.backup
-rm -rf $HOME/.${chain?.name}/data`}
+cp $HOME/.${chain?.dir}/data/priv_validator_state.json $HOME/.${chain?.dir}/priv_validator_state.json.backup
+rm -rf $HOME/.${chain?.dir}/data`}
           ></CodeSnippet>
           <CodeSnippet
             code={`# Download Latest Snapshot
-curl -L ${snapshotInfo?.url} | lz4 -dc - | tar -xf - -C $HOME/.${chain?.name}
-mv $HOME/.${chain?.name}/priv_validator_state.json.backup $HOME/.${chain?.name}/data/priv_validator_state.json`}
+curl -L ${snapshotInfo?.url} | lz4 -dc - | tar -xf - -C $HOME/.${chain?.dir}
+mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json`}
           ></CodeSnippet>
           <CodeSnippet
             code={`# Restart Service
@@ -71,14 +71,14 @@ sudo systemctl restart ${chain?.binary} && sudo journalctl -fu ${chain?.binary} 
           </Heading>
           <CodeSnippet
             code={`sudo systemctl stop ${chain?.binary}
-cp $HOME/.${chain?.name}/data/priv_validator_state.json $HOME/.${chain?.name}/priv_validator_state.json.backup
-${chain?.binary} tendermint unsafe-reset-all --keep-addr-book --home $HOME/.${chain?.name}`}
+cp $HOME/.${chain?.dir}/data/priv_validator_state.json $HOME/.${chain?.dir}/priv_validator_state.json.backup
+${chain?.binary} tendermint unsafe-reset-all --keep-addr-book --home $HOME/.${chain?.dir}`}
           ></CodeSnippet>
           <CodeSnippet
             code={`STATE_SYNC_RPC=${chain?.links.rpc}
 STATE_SYNC_PEER=${chain?.links.peer}
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
-SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 1000))
+SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 2000))
 SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)`}
           ></CodeSnippet>
           <CodeSnippet
@@ -88,10 +88,10 @@ SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq
 -e "s|^trust_height *=.*|trust_height = $SYNC_BLOCK_HEIGHT|" \\
 -e "s|^trust_hash *=.*|trust_hash = \"$SYNC_BLOCK_HASH\"|" \\
 -e "s|^persistent_peers *=.*|persistent_peers = \"$STATE_SYNC_PEER\"|" \\
-$HOME/.${chain?.name}/config/config.toml`}
+$HOME/.${chain?.dir}/config/config.toml`}
           ></CodeSnippet>
           <CodeSnippet
-            code={`mv $HOME/.${chain?.name}/priv_validator_state.json.backup $HOME/.${chain?.name}/data/priv_validator_state.json`}
+            code={`mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json`}
           ></CodeSnippet>
           <CodeSnippet
             code={`sudo systemctl start ${chain?.binary} && sudo journalctl -u ${chain?.binary} -f`}
