@@ -49,7 +49,7 @@ export default function Service() {
               </Thead>
               <Tbody>
                 <Tr>
-                  <Td>v{chain?.version}</Td>
+                  <Td>{chain?.version}</Td>
                   <Td>{chain?.chainId}</Td>
                 </Tr>
               </Tbody>

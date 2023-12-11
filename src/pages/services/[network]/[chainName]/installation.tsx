@@ -60,7 +60,7 @@ go version
 rm -rf ${chain?.name}
 git clone ${chain?.links.repository} ${chain?.name}
 cd ${chain?.name}
-git checkout v${chain?.version}
+git checkout ${chain?.version}
 make install
 
 

@@ -24,7 +24,7 @@ rm -rf ${chain?.name}/
 git clone ${chain?.links.repository}
 cd ${chain?.name}/
 git fetch --all
-git checkout v${chain?.version}
+git checkout ${chain?.version}
 make install
 
 # Restart your node

@@ -6,7 +6,7 @@
       "dir": "planqd",
       "coinGeckoId": "planq",
       "imageURL": "/networks/planq.png",
-      "version": "1.0.8",
+      "version": "v1.0.8",
       "chainId": "planq_7070-2",
       "description": [
         "Planq is the very first cryptocurrency project to keep mobile platform usability at heart, taking a step away from dependency on desktop services. The Planq blockchain is powered by the $PLQ token and The ecosystem is expanding every day.",
@@ -37,7 +37,7 @@
       "dir": "c4e-chain",
       "coinGeckoId": "",
       "imageURL": "/networks/c4e.png",
-      "version": "1.2.1",
+      "version": "v1.2.1",
       "chainId": "perun-1",
       "description": [
         "Chain4Energy (C4E) is a sovereign global decentralized blockchain built on Cosmos SDK. The Decentralized Energy Marketplace which enables institutions and individuals to seamlessly participate in the renewable energy market accessing and offering a wide range of renewable energy solutions and services. Chain4Energy brings the energy industry to Web 3 by responding to the requirements and needs of all participants and enabling the effective creation and distribution of value. Blockchain removes delays, gets the right information to the right place, and eliminates the possibility of fraud and manipulation. It also enables P2P energy trading (without intermediaries), and thus effectively, between energy market participants."
@@ -67,7 +67,7 @@
       "dir": "bcna",
       "coinGeckoId": "bitcanna",
       "imageURL": "/networks/bitcanna.png",
-      "version": "2.0.3",
+      "version": "v2.0.3",
       "chainId": "bitcanna-1",
       "description": [
         "BitCanna aims to solve a problem that has plagued the cannabis industry from its inception. Companies like Visa and MasterCard deny cannabis companies access to their services due to the legal status of marijuana. Since the legality of the herb is regulated differently in European countries, the industry leaders operate in gray areas. BitCanna wants to solve this problem by providing a decentralized blockchain network that is specifically designed for the cannabis industry and provides much-needed services to both consumers and businesses."
@@ -97,7 +97,7 @@
       "dir": "source",
       "coinGeckoId": "",
       "imageURL": "/networks/source.png",
-      "version": "3.0.0",
+      "version": "v3.0.0",
       "chainId": "source-1",
       "description": [
         "A Public permission-less blockchain network for global payments and all things decentralized. Enterprises, developers and individuals can utilize $SOURCE's infrastructure to create user-friendly apps, smart contracts and tools for Web 3.0, Tokenization, NFTs, and more."
@@ -127,7 +127,7 @@
       "dir": "sge",
       "coinGeckoId": "six-sigma",
       "imageURL": "/networks/sge.jpg",
-      "version": "1.1.1",
+      "version": "v1.1.1",
       "chainId": "sgenet-1",
       "description": [
         "A Cosmos SDK-based layer-1 blockchain utilizing its own native utility token (SGE token). The SGE Network leverages the modular components, blockchain interoperability and minimal gas fees of the Cosmos-based design to support applications at the intersection of blockchain, sports, gaming and entertainment that are pioneering novel ways of engaging users with a UX, value proposition and utility never before seen in the space."
@@ -149,6 +149,36 @@
         "snapshot": "https://snapshots.indonode.net/sge/log.json",
         "explorer": "https://explorer.indonode.net/sge",
         "staking": "https://explorer.indonode.net/sge/staking/sgevaloper1rs78akqst8hn9pwdz9rw2m3a466tyqjt668sc7"
+      }
+    },
+    {
+      "title": "Point Network",
+      "name": "point",
+      "dir": "pointd",
+      "coinGeckoId": "",
+      "imageURL": "/networks/point.png",
+      "version": "0.0.5",
+      "chainId": "point_10687-1",
+      "description": [
+        "Point Network is a collection of software tools allowing you to get access to Web 3.0: a new generation of the internet, which is free of censorship, mass-surveillance, permissionless, open for everyone and privacy-focused."
+      ],
+      "binary": "pointd",
+      "denom": "apoint",
+      "gasPrice": "0.025apoint",
+      "links": {
+        "repository": "https://github.com/pointnetwork/point-chain",
+        "website": "https://pointnetwork.io",
+        "twitter": "https://twitter.com/PointNetwork",
+        "discord": "https://discord.gg/f4zr29AnbW",
+        "peer": "1da71333b2169edfaf89d2ad35390892a77c867c@rpc.point.indonode.net:15656",
+        "rpc": "https://rpc.point.indonode.net",
+        "api": "https://api.point.indonode.net",
+        "grpc": "grpc.point.indonode.net:15090",
+        "addrbook": "https://snapshots.indonode.net/point/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/point/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/point/log.json",
+        "explorer": "https://explorer.indonode.net/point",
+        "staking": "https://restake.app/point/pointvaloper1u2rh6077u5urz3gfwm340hyu6r4wu7aj09l8fc"
       }
     }
   ],
