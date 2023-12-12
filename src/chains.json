@@ -173,7 +173,7 @@
       "go": "1.19.7",
       "coinGeckoId": "",
       "imageURL": "/networks/point.png",
-      "version": "0.0.5",
+      "version": "v0.0.5",
       "upgradever": "",
       "upgrade": "",
       "chainId": "point_10687-1",
@@ -197,6 +197,39 @@
         "snapshot": "https://snapshots.indonode.net/point/log.json",
         "explorer": "https://explorer.indonode.net/point",
         "staking": "https://restake.app/point/pointvaloper1u2rh6077u5urz3gfwm340hyu6r4wu7aj09l8fc"
+      }
+    },
+    {
+      "title": "Quicksilver",
+      "name": "quicksilver",
+      "dir": "quicksilverd",
+      "go": "1.20.7",
+      "coinGeckoId": "quicksilver",
+      "imageURL": "/networks/quicksilver.png",
+      "version": "v1.2.17",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "quicksilver-2",
+      "description": [
+        "Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Interchain ecosystem."
+      ],
+      "binary": "quicksilverd",
+      "denom": "uqck",
+      "gasPrice": "0.025uqck",
+      "links": {
+        "repository": "https://github.com/ingenuity-build/quicksilver.git",
+        "website": "https://quicksilver.zone",
+        "twitter": "https://twitter.com/quicksilverzone",
+        "discord": "https://discord.com/invite/xrSmYMDVrQ",
+        "peer": "36dea2963b28cdd67b8cd58f198e54e045a0520e@rpc.quicksilver.indonode.net:19656",
+        "rpc": "https://rpc.quicksilver.indonode.net",
+        "api": "https://api.quicksilver.indonode.net",
+        "grpc": "grpc.quicksilver.indonode.net:19090",
+        "addrbook": "https://snapshots.indonode.net/quicksilver/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/quicksilver/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/quicksilver/log.json",
+        "explorer": "https://explorer.indonode.net/quicksilver",
+        "staking": ""
       }
     }
   ],
