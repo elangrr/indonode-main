@@ -41,9 +41,9 @@
       "go": "1.19.7",
       "coinGeckoId": "",
       "imageURL": "/networks/c4e.png",
-      "version": "v1.2.1",
-      "upgradever": "v1.3.0",
-      "upgrade": "6283905",
+      "version": "v1.3.0",
+      "upgradever": "",
+      "upgrade": "",
       "chainId": "perun-1",
       "description": [
         "Chain4Energy (C4E) is a sovereign global decentralized blockchain built on Cosmos SDK. The Decentralized Energy Marketplace which enables institutions and individuals to seamlessly participate in the renewable energy market accessing and offering a wide range of renewable energy solutions and services. Chain4Energy brings the energy industry to Web 3 by responding to the requirements and needs of all participants and enabling the effective creation and distribution of value. Blockchain removes delays, gets the right information to the right place, and eliminates the possibility of fraud and manipulation. It also enables P2P energy trading (without intermediaries), and thus effectively, between energy market participants."
