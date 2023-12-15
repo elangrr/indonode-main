@@ -105,7 +105,7 @@
       "name": "source",
       "dir": "source",
       "go": "1.20.7",
-      "coinGeckoId": "",
+      "coinGeckoId": "source",
       "imageURL": "/networks/source.png",
       "version": "v3.0.0",
       "upgradever": "",
