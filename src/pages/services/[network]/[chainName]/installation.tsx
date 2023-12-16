@@ -75,12 +75,12 @@ ${chain?.binary} init MyNode --chain-in ${chain?.chainId}
 
 
 # Add Genesis File and Addrbook
-curl -Ls ${chain?.links.genesis} > $HOME/.${chain?.name}/config/genesis.json
-curl -Ls ${chain?.links.addrbook} > $HOME/.${chain?.name}/config/addrbook.json
+curl -Ls ${chain?.links.genesis} > $HOME/.${chain?.dir}/config/genesis.json
+curl -Ls ${chain?.links.addrbook} > $HOME/.${chain?.dir}/config/addrbook.json
 
 #Configure Seeds and Peers
 PEERS="$(curl -sS ${chain?.links.rpc}/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | sed -z 's|\n|,|g;s|.$||')"
-sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$PEERS\"|" $HOME/.${chain?.name}/config/config.toml
+sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$PEERS\"|" $HOME/.${chain?.dir}/config/config.toml
 
 
 # Set Pruning, Enable Prometheus, Gas Prices, and Indexer
@@ -88,12 +88,12 @@ PRUNING="custom"
 PRUNING_KEEP_RECENT="100"
 PRUNING_INTERVAL="19"
 
-sed -i -e "s/^pruning *=.*/pruning = \"$PRUNING\"/" $HOME/.${chain?.name}/config/app.toml
+sed -i -e "s/^pruning *=.*/pruning = \"$PRUNING\"/" $HOME/.${chain?.dir}/config/app.toml
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \
-\"$PRUNING_KEEP_RECENT\"/" $HOME/.${chain?.name}/config/app.toml
+\"$PRUNING_KEEP_RECENT\"/" $HOME/.${chain?.dir}/config/app.toml
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
-\"$PRUNING_INTERVAL\"/" $HOME/.${chain?.name}/config/app.toml
-sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.${chain?.name}/config/config.toml
+\"$PRUNING_INTERVAL\"/" $HOME/.${chain?.dir}/config/app.toml
+sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.${chain?.dir}/config/config.toml
 
 
 # Set Service file
@@ -114,8 +114,8 @@ sudo systemctl daemon-reload
 sudo systemctl enable ${chain?.binary}
 
 # Download Latest Snapshot
-curl -L ${snapshotInfo?.url} | tar -Ilz4 -xf - -C $HOME/.${chain?.name}
-[[ -f $HOME/.${chain?.name}/data/upgrade-info.json ]] && cp $HOME/.${chain?.name}/data/upgrade-info.json $HOME/.${chain?.name}/cosmovisor/genesis/upgrade-info.json
+curl -L ${snapshotInfo?.url} | tar -Ilz4 -xf - -C $HOME/.${chain?.dir}
+[[ -f $HOME/.${chain?.dir}/data/upgrade-info.json ]] && cp $HOME/.${chain?.dir}/data/upgrade-info.json $HOME/.${chain?.dir}/cosmovisor/genesis/upgrade-info.json
 
 # Start the Node
 sudo systemctl restart ${chain?.binary}
