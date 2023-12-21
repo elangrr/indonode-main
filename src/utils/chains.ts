@@ -14,6 +14,9 @@ export type Links = {
   snapshot: string
   explorer: string
   staking?: string
+  wasm?: string
+  backup?: string
+
 }
 
 export type Chain = {
