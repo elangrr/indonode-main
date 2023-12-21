@@ -15,7 +15,8 @@ export default function ServiceUpgrade() {
             Upgrade Guide
           </Heading>
           <Heading fontSize={{ base: 'md', md: 'lg', lg: 'lg' }} color="red">
-            Upgrade Height : {chain?.upgrade} , Only upgrade after specified block height reached!
+            Upgrade Height : {chain?.upgrade} , Only upgrade after specified
+            block height reached!
           </Heading>
           <CodeSnippet
             code={`# Stop binary
