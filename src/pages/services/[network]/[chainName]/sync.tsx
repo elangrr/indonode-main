@@ -1,5 +1,15 @@
 import ServiceLayout from '@/components/ServiceLayout'
-import { Heading, Stack, Text, Tooltip } from '@chakra-ui/react'
+import {
+  Heading,
+  Stack,
+  Text,
+  Tooltip,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+} from '@chakra-ui/react'
 import CodeSnippet from '@/components/CodeSnippet'
 import { useSelector } from 'react-redux'
 import { selectChain } from '@/store/chainSlice'
@@ -90,9 +100,26 @@ SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq
 -e "s|^persistent_peers *=.*|persistent_peers = \"$STATE_SYNC_PEER\"|" \\
 $HOME/.${chain?.dir}/config/config.toml`}
           ></CodeSnippet>
-          <CodeSnippet
-            code={`mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json`}
-          ></CodeSnippet>
+          <Tabs size="md" variant="enclosed">
+            <TabList>
+              <Tab isDisabled={!chain?.links.backup}>Backup State</Tab>
+              <Tab isDisabled={!chain?.links.wasm}>Download Wasm</Tab>
+            </TabList>
+            <TabPanels borderWidth={1} borderColor={'gray.200'}>
+              <TabPanel>
+                <CodeSnippet
+                  code={`mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json
+`}
+                ></CodeSnippet>
+              </TabPanel>
+              <TabPanel>
+                <CodeSnippet
+                  code={`mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json
+curl -L ${chain?.links.wasm} | lz4 -dc - | tar -xf - -C $HOME/.${chain?.dir}`}
+                ></CodeSnippet>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
           <CodeSnippet
             code={`sudo systemctl start ${chain?.binary} && sudo journalctl -u ${chain?.binary} -f`}
           ></CodeSnippet>

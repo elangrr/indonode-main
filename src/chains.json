@@ -21,6 +21,7 @@
       "links": {
         "repository": "https://github.com/planq-network/planq.git",
         "binary": "https://github.com/planq-network/planq/releases/download/v1.0.8/planq_1.0.8_Linux_x86_64.tar.gz",
+        "wasm": "",
         "website": "https://planq.network",
         "twitter": "https://twitter.com/PlanqFoundation",
         "discord": "https://discord.gg/planq-network",
@@ -55,6 +56,7 @@
       "links": {
         "repository": "https://github.com/chain4energy/c4e-chain.git",
         "binary": "",
+        "wasm": "",
         "website": "https://c4e.io",
         "twitter": "https://twitter.com/Chain4Energy",
         "discord": "https://discord.com/invite/chain4energy",
@@ -89,6 +91,7 @@
       "links": {
         "repository": "https://github.com/BitCannaGlobal/bcna.git",
         "binary": "",
+        "wasm": "",
         "website": "https://www.bitcanna.io",
         "twitter": "https://twitter.com/BitCannaGlobal",
         "discord": "https://discord.gg/XDUSpFn6rN",
@@ -123,6 +126,7 @@
       "links": {
         "repository": "https://github.com/Source-Protocol-Cosmos/source.git",
         "binary": "",
+        "wasm": "",
         "website": "https://www.sourceprotocol.io/",
         "twitter": "https://twitter.com/SourceProtocol_",
         "discord": "https://discord.gg/zj8xxUCeZQ",
@@ -157,6 +161,7 @@
       "links": {
         "repository": "https://github.com/sge-network/sge",
         "binary": "",
+        "wasm": "",
         "website": "https://sgenetwork.io/",
         "twitter": "https://twitter.com/sge_network",
         "discord": "https://discord.gg/P6cccvJRpW",
@@ -191,6 +196,7 @@
       "links": {
         "repository": "https://github.com/pointnetwork/point-chain",
         "binary": "",
+        "wasm": "",
         "website": "https://pointnetwork.io",
         "twitter": "https://twitter.com/PointNetwork",
         "discord": "https://discord.gg/f4zr29AnbW",
@@ -225,6 +231,7 @@
       "links": {
         "repository": "https://github.com/ingenuity-build/quicksilver.git",
         "binary": "",
+        "wasm": "",
         "website": "https://quicksilver.zone",
         "twitter": "https://twitter.com/quicksilverzone",
         "discord": "https://discord.com/invite/xrSmYMDVrQ",
@@ -242,6 +249,70 @@
   ],
   "testnet": [
     {
+      "title": "Pryzm",
+      "name": "pryzm",
+      "dir": "pryzm",
+      "go": "1.20.7",
+      "coinGeckoId": "",
+      "imageURL": "/networks/pryzm.png",
+      "version": "0.9.0",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "indigo-1",
+      "description": [
+        "Pryzm is the first layer-1 blockchain dedicated to the harvesting, trading and utilisation of yield."
+      ],
+      "binary": "pryzmd",
+      "denom": "upryzm",
+      "gasPrice": "0.015upryzm, 0.01factory/pryzm15k9s9p0ar0cx27nayrgk6vmhyec3lj7vkry7rx/uusdsim",
+      "links": {
+        "repository": "",
+        "binary": "https://storage.googleapis.com/pryzm-resources/pryzmd-0.9.0-linux-amd64.tar.gz",
+        "wasm": "https://snapshots.indonode.net/pryzm/wasm.tar.lz4",
+        "website": "https://pryzm.zone",
+        "twitter": "https://twitter.com/Pryzm_Zone",
+        "discord": "https://discord.gg/Gzmy7ySQq6",
+        "peer": "cff340339e3c6811c9a6f034b2eb8cfd30e25753@rpc.pryzm-t.indonode.net:10756",
+        "rpc": "https://rpc.pryzm-t.indonode.net:443",
+        "api": "https://api.pryzm-t.indonode.net",
+        "grpc": "https://grpc.pryzm-t.indonode.net:10790",
+        "addrbook": "https://snapshots.indonode.net/pryzmt-t/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/pryzm-t/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/pryzm-t/log.json",
+        "explorer": "https://explorer.indonode.net/pryzm-testnet"
+      }
+    },
+    {
+      "title": "Selfchain",
+      "name": "selfchain",
+      "coinGeckoId": "",
+      "imageURL": "/networks/selfchain.jpg",
+      "version": "0.2.2",
+      "chainId": "self-dev-1",
+      "description": [
+        "Self Chain Is User-Centric Decentralized Blockchain Network And Infrastructure That Serves As The Storage Medium For Countless Applications. Opening The Gateway To The Crypto World For A Wide Range Of Users."
+      ],
+      "binary": "selfchaind",
+      "denom": "uself",
+      "gasPrice": "0.005uself",
+      "links": {
+        "repository": "https://github.com/chain4energy/c4e-chain.git",
+        "binary": "",
+        "wasm": "",
+        "website": "https://selfchain.xyz",
+        "twitter": "https://twitter.com/selfchainxyz",
+        "discord": "https://discord.gg/selfchainxyz",
+        "peer": "",
+        "rpc": "https://rpc.selfchain-t.indonode.net",
+        "api": "https://api.selfchain-t.indonode.net",
+        "grpc": "",
+        "addrbook": "https://snapshots.indonode.net/selfchain/addrbook.json",
+        "genesis": "https://raw.githubusercontent.com/hotcrosscom/selfchain-genesis/main/networks/devnet/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/entrypoint/log.json",
+        "explorer": "https://explorer.indonode.net/selfchain-testnet"
+      }
+    },
+    {
       "title": "Chain4Energy",
       "name": "c4e",
       "dir": "c4e-chain",
@@ -258,6 +329,7 @@
       "links": {
         "repository": "https://github.com/chain4energy/c4e-chain.git",
         "binary": "",
+        "wasm": "",
         "website": "https://c4e.io",
         "twitter": "https://twitter.com/Chain4Energy",
         "discord": "https://discord.com/invite/chain4energy",
@@ -287,6 +359,7 @@
       "links": {
         "repository": "https://github.com/chain4energy/c4e-chain.git",
         "binary": "",
+        "wasm": "",
         "website": "https://selfchain.xyz",
         "twitter": "https://twitter.com/selfchainxyz",
         "discord": "https://discord.gg/selfchainxyz",
@@ -317,6 +390,7 @@
       "links": {
         "repository": "https://github.com/Entangle-Protocol/entangle-blockchain.git",
         "binary": "",
+        "wasm": "",
         "website": "https://www.entangle.fi",
         "twitter": "https://twitter.com/Entanglefi",
         "discord": "https://discord.gg/entanglefi",
@@ -346,6 +420,7 @@
       "links": {
         "repository": "https://github.com/chain4energy/c4e-chain.git",
         "binary": "",
+        "wasm": "",
         "website": "https://mantrachain.io",
         "twitter": "https://twitter.com/MANTRA_Chain",
         "discord": "https://discord.gg/2RPywgGx",
