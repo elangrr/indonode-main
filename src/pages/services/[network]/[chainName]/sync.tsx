@@ -1,15 +1,5 @@
 import ServiceLayout from '@/components/ServiceLayout'
-import {
-  Heading,
-  Stack,
-  Text,
-  Tooltip,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-} from '@chakra-ui/react'
+import { Heading, Stack, Text, Tooltip } from '@chakra-ui/react'
 import CodeSnippet from '@/components/CodeSnippet'
 import { useSelector } from 'react-redux'
 import { selectChain } from '@/store/chainSlice'
@@ -80,19 +70,22 @@ sudo systemctl restart ${chain?.binary} && sudo journalctl -fu ${chain?.binary} 
             Statesync
           </Heading>
           <CodeSnippet
-            code={`sudo systemctl stop ${chain?.binary}
+            code={`# Stop chain and backup validator state
+sudo systemctl stop ${chain?.binary}
 cp $HOME/.${chain?.dir}/data/priv_validator_state.json $HOME/.${chain?.dir}/priv_validator_state.json.backup
 ${chain?.binary} tendermint unsafe-reset-all --keep-addr-book --home $HOME/.${chain?.dir}`}
           ></CodeSnippet>
           <CodeSnippet
-            code={`STATE_SYNC_RPC=${chain?.links.rpc}
+            code={`# Setup variable config
+STATE_SYNC_RPC=${chain?.links.rpc}
 STATE_SYNC_PEER=${chain?.links.peer}
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
 SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 2000))
 SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)`}
           ></CodeSnippet>
           <CodeSnippet
-            code={`sed -i \\
+            code={`# Setup chain config
+sed -i \\
 -e "s|^enable *=.*|enable = true|" \\
 -e "s|^rpc_servers *=.*|rpc_servers = \"$STATE_SYNC_RPC,$STATE_SYNC_RPC\"|" \\
 -e "s|^trust_height *=.*|trust_height = $SYNC_BLOCK_HEIGHT|" \\
@@ -100,28 +93,19 @@ SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq
 -e "s|^persistent_peers *=.*|persistent_peers = \"$STATE_SYNC_PEER\"|" \\
 $HOME/.${chain?.dir}/config/config.toml`}
           ></CodeSnippet>
-          <Tabs size="md" variant="enclosed">
-            <TabList>
-              <Tab isDisabled={!chain?.links.backup}>Backup State</Tab>
-              <Tab isDisabled={!chain?.links.wasm}>Download Wasm</Tab>
-            </TabList>
-            <TabPanels borderWidth={1} borderColor={'gray.200'}>
-              <TabPanel>
-                <CodeSnippet
-                  code={`mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json
-`}
-                ></CodeSnippet>
-              </TabPanel>
-              <TabPanel>
-                <CodeSnippet
-                  code={`mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json
-curl -L ${chain?.links.wasm} | lz4 -dc - | tar -xf - -C $HOME/.${chain?.dir}`}
-                ></CodeSnippet>
-              </TabPanel>
-            </TabPanels>
-          </Tabs>
           <CodeSnippet
-            code={`sudo systemctl start ${chain?.binary} && sudo journalctl -u ${chain?.binary} -f`}
+            code={`# Restore validator state from backup
+mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json`}
+          ></CodeSnippet>
+          {chain?.links.wasm && (
+            <CodeSnippet
+              code={`# Download wasm
+curl -L ${chain?.links.wasm} | lz4 -dc - | tar -xf - -C $HOME/.${chain?.dir}`}
+            ></CodeSnippet>
+          )}
+          <CodeSnippet
+            code={`# Restart chain
+sudo systemctl start ${chain?.binary} && sudo journalctl -u ${chain?.binary} -f`}
           ></CodeSnippet>
         </Stack>
       </Stack>
