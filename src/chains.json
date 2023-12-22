@@ -20,8 +20,8 @@
       "gasPrice": "30000000000aplanq",
       "links": {
         "repository": "https://github.com/planq-network/planq.git",
-        "wasm":"",
-        "backup":"mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json",
+        "binary": "https://github.com/planq-network/planq/releases/download/v1.0.8/planq_1.0.8_Linux_x86_64.tar.gz",
+        "wasm": "",
         "website": "https://planq.network",
         "twitter": "https://twitter.com/PlanqFoundation",
         "discord": "https://discord.gg/planq-network",
@@ -55,8 +55,8 @@
       "gasPrice": "0.0025uc4e",
       "links": {
         "repository": "https://github.com/chain4energy/c4e-chain.git",
-        "wasm":"",
-        "backup":"mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json",
+        "binary": "",
+        "wasm": "",
         "website": "https://c4e.io",
         "twitter": "https://twitter.com/Chain4Energy",
         "discord": "https://discord.com/invite/chain4energy",
@@ -90,8 +90,8 @@
       "gasPrice": "0ubcna",
       "links": {
         "repository": "https://github.com/BitCannaGlobal/bcna.git",
-        "wasm":"",
-        "backup":"mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json",
+        "binary": "",
+        "wasm": "",
         "website": "https://www.bitcanna.io",
         "twitter": "https://twitter.com/BitCannaGlobal",
         "discord": "https://discord.gg/XDUSpFn6rN",
@@ -125,8 +125,8 @@
       "gasPrice": "0.025usource",
       "links": {
         "repository": "https://github.com/Source-Protocol-Cosmos/source.git",
-        "wasm":"",
-        "backup":"mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json",
+        "binary": "",
+        "wasm": "",
         "website": "https://www.sourceprotocol.io/",
         "twitter": "https://twitter.com/SourceProtocol_",
         "discord": "https://discord.gg/zj8xxUCeZQ",
@@ -160,8 +160,8 @@
       "gasPrice": "0.025usge",
       "links": {
         "repository": "https://github.com/sge-network/sge",
-        "wasm":"",
-        "backup":"mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json",
+        "binary": "",
+        "wasm": "",
         "website": "https://sgenetwork.io/",
         "twitter": "https://twitter.com/sge_network",
         "discord": "https://discord.gg/P6cccvJRpW",
@@ -195,8 +195,8 @@
       "gasPrice": "0.025apoint",
       "links": {
         "repository": "https://github.com/pointnetwork/point-chain",
-        "wasm":"",
-        "backup":"mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json",
+        "binary": "",
+        "wasm": "",
         "website": "https://pointnetwork.io",
         "twitter": "https://twitter.com/PointNetwork",
         "discord": "https://discord.gg/f4zr29AnbW",
@@ -230,8 +230,8 @@
       "gasPrice": "0.025uqck",
       "links": {
         "repository": "https://github.com/ingenuity-build/quicksilver.git",
-        "wasm":"",
-        "backup":"mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json",
+        "binary": "",
+        "wasm": "",
         "website": "https://quicksilver.zone",
         "twitter": "https://twitter.com/quicksilverzone",
         "discord": "https://discord.com/invite/xrSmYMDVrQ",
@@ -266,8 +266,9 @@
       "denom": "upryzm",
       "gasPrice": "0.015upryzm, 0.01factory/pryzm15k9s9p0ar0cx27nayrgk6vmhyec3lj7vkry7rx/uusdsim",
       "links": {
+        "repository": "",
         "binary": "https://storage.googleapis.com/pryzm-resources/pryzmd-0.9.0-linux-amd64.tar.gz",
-        "wasm":"https://snapshots.indonode.net/pryzm/wasm.tar.lz4",
+        "wasm": "https://snapshots.indonode.net/pryzm/wasm.tar.lz4",
         "website": "https://pryzm.zone",
         "twitter": "https://twitter.com/Pryzm_Zone",
         "discord": "https://discord.gg/Gzmy7ySQq6",
@@ -296,6 +297,8 @@
       "gasPrice": "0.005uself",
       "links": {
         "repository": "https://github.com/chain4energy/c4e-chain.git",
+        "binary": "",
+        "wasm": "",
         "website": "https://selfchain.xyz",
         "twitter": "https://twitter.com/selfchainxyz",
         "discord": "https://discord.gg/selfchainxyz",
@@ -325,6 +328,8 @@
       "gasPrice": "0.0025uc4e",
       "links": {
         "repository": "https://github.com/chain4energy/c4e-chain.git",
+        "binary": "",
+        "wasm": "",
         "website": "https://c4e.io",
         "twitter": "https://twitter.com/Chain4Energy",
         "discord": "https://discord.com/invite/chain4energy",
@@ -353,6 +358,8 @@
       "gasPrice": "0.005uself",
       "links": {
         "repository": "https://github.com/chain4energy/c4e-chain.git",
+        "binary": "",
+        "wasm": "",
         "website": "https://selfchain.xyz",
         "twitter": "https://twitter.com/selfchainxyz",
         "discord": "https://discord.gg/selfchainxyz",
@@ -382,6 +389,8 @@
       "gasPrice": "10angl",
       "links": {
         "repository": "https://github.com/Entangle-Protocol/entangle-blockchain.git",
+        "binary": "",
+        "wasm": "",
         "website": "https://www.entangle.fi",
         "twitter": "https://twitter.com/Entanglefi",
         "discord": "https://discord.gg/entanglefi",
@@ -410,6 +419,8 @@
       "gasPrice": "50uaum",
       "links": {
         "repository": "https://github.com/chain4energy/c4e-chain.git",
+        "binary": "",
+        "wasm": "",
         "website": "https://mantrachain.io",
         "twitter": "https://twitter.com/MANTRA_Chain",
         "discord": "https://discord.gg/2RPywgGx",

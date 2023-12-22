@@ -2,6 +2,7 @@ import chains from '@/chains.json'
 
 export type Links = {
   repository: string
+  binary: string
   website: string
   twitter: string
   discord: string
@@ -15,8 +16,6 @@ export type Links = {
   explorer: string
   staking?: string
   wasm?: string
-  backup?: string
-
 }
 
 export type Chain = {

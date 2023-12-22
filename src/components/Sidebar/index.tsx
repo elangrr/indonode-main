@@ -141,6 +141,10 @@ const menuList = [
         link: '/installation#setup',
       },
       {
+        name: 'Install Go',
+        link: '/installation#go',
+      },
+      {
         name: 'Node Installation',
         link: '/installation#node',
       },
