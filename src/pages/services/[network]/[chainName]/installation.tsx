@@ -92,8 +92,8 @@ make install
                 <CodeSnippet
                   code={`# Install ${chain?.name} through binary
 cd $HOME
-wget -qO- ${chain?.links.binary} | tar xvz
-sudo mv ./${chain?.name} /usr/local/bin/
+curl -L ${chain?.links.binary} | tar -xvzf - -C $HOME
+sudo mv ${chain?.binary} /usr/local/bin/
 `}
                 ></CodeSnippet>
               </TabPanel>
