@@ -276,7 +276,7 @@
         "rpc": "https://rpc.pryzm-t.indonode.net:443",
         "api": "https://api.pryzm-t.indonode.net",
         "grpc": "https://grpc.pryzm-t.indonode.net:10790",
-        "addrbook": "https://snapshots.indonode.net/pryzmt-t/addrbook.json",
+        "addrbook": "https://snapshots.indonode.net/pryzm-t/addrbook.json",
         "genesis": "https://snapshots.indonode.net/pryzm-t/genesis.json",
         "snapshot": "https://snapshots.indonode.net/pryzm-t/log.json",
         "explorer": "https://explorer.indonode.net/pryzm-testnet"
@@ -310,7 +310,7 @@
         "rpc": "https://rpc.artela-t.indonode.net:443",
         "api": "https://api.artela-t.indonode.net",
         "grpc": "https://grpc.artela-t.indonode.net:10890",
-        "addrbook": "https://snapshots.indonode.net/artelat-t/addrbook.json",
+        "addrbook": "https://snapshots.indonode.net/artela-t/addrbook.json",
         "genesis": "https://snapshots.indonode.net/artela-t/genesis.json",
         "snapshot": "https://snapshots.indonode.net/artela-t/log.json",
         "explorer": "https://explorer.indonode.net/artela-testnet"
