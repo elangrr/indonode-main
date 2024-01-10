@@ -283,6 +283,40 @@
       }
     },
     {
+      "title": "Artela",
+      "name": "artela",
+      "dir": "artelad",
+      "go": "1.20.7",
+      "coinGeckoId": "",
+      "imageURL": "/networks/artela.jpg",
+      "version": "v0.4.7-rc4",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "artela_11822-1",
+      "description": [
+        "Artela is an extensible blockchain network enabling developers to build feature-rich dApps. Developers can build smart contract in EVM and add WASM native extension at blockchain runtime called Aspect. Artela is fully EVM compatible and built with Cosmos SDK. You can seamlessly deploy your EVM dApps on Artela without any issue. And at the mean time, you can also leverage your dApp with Aspect programming to make it even more powerful."
+      ],
+      "binary": "artelad",
+      "denom": "uart",
+      "gasPrice": "0.02uart",
+      "links": {
+        "repository": "https://github.com/artela-network/artela",
+        "binary": "",
+        "wasm": "",
+        "website": "https://artela.network",
+        "twitter": "https://twitter.com/Artela_Network",
+        "discord": "https://discord.com/invite/artela",
+        "peer": "6a900e94ab61ac620966d4ef48996bef50f83a76@rpc.artela-t.indonode.net:10856",
+        "rpc": "https://rpc.artela-t.indonode.net:443",
+        "api": "https://api.artela-t.indonode.net",
+        "grpc": "https://grpc.artela-t.indonode.net:10890",
+        "addrbook": "https://snapshots.indonode.net/artelat-t/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/artela-t/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/artela-t/log.json",
+        "explorer": "https://explorer.indonode.net/artela-testnet"
+      }
+    },
+    {
       "title": "Selfchain",
       "name": "selfchain",
       "coinGeckoId": "",
