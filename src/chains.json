@@ -148,7 +148,7 @@
       "go": "1.19.7",
       "coinGeckoId": "six-sigma",
       "imageURL": "/networks/sge.jpg",
-      "version": "v1.3.0",
+      "version": "v1.3.1",
       "upgradever": "v1.3.1",
       "upgrade": "1911750",
       "chainId": "sgenet-1",
