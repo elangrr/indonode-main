@@ -245,7 +245,42 @@
         "explorer": "https://explorer.indonode.net/quicksilver",
         "staking": ""
       }
-    }
+    },
+    {
+      "title": "Blockx",
+      "name": "blockx",
+      "dir": "blockxd",
+      "go": "1.21.5",
+      "coinGeckoId": "",
+      "imageURL": "/networks/blockx.png",
+      "version": "c940d186c0d118ea017f6abc00225fdd9b26fe14",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "blockx_100-1",
+      "description": [
+        "BlockX Network is a Layer 1 Ethereum alternative blockchain that offers multi-chain operability, an off-chain oracle infrastructure, and enables sovereign digital identity for the next-gen of Web3."
+      ],
+      "binary": "blockxd",
+      "denom": "abcx",
+      "gasPrice": "0.025abcx",
+      "links": {
+        "repository": "https://github.com/BlockXLabs/BlockX-Genesis-Mainnet1",
+        "binary": "",
+        "wasm": "",
+        "website": "https://www.blockxnet.com",
+        "twitter": "https://twitter.com/BlockXnet",
+        "discord": "https://discord.gg/g8hPUq3uAX",
+        "peer": "72639ce4ce7e0260d7ae129e6acc07dcb54d6af1@rpc.blockx.indonode.net:20656",
+        "rpc": "https://rpc.blockx.indonode.net",
+        "api": "https://api.blockx.indonode.net",
+        "grpc": "grpc.blockx.indonode.net:20090",
+        "addrbook": "https://snapshots.indonode.net/blockx/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/blockx/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/blockx/log.json",
+        "explorer": "https://explorer.indonode.net/blockx",
+        "staking": "https://explorer.indonode.net/blockx/staking/blockxvaloper1sh77ruh2c8w5a4mqpsw52vwk0g2jttn3m7k0xg"
+      }
+    }  
   ],
   "testnet": [
     {
