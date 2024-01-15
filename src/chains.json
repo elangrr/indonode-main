@@ -248,7 +248,7 @@
     },
     {
       "title": "Blockx",
-      "name": "blockx",
+      "name": "BlockX-Genesis-Mainnet1",
       "dir": "blockxd",
       "go": "1.21.5",
       "coinGeckoId": "",
