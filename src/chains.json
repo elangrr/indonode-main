@@ -113,7 +113,7 @@
       "go": "1.20.7",
       "coinGeckoId": "source",
       "imageURL": "/networks/source.png",
-      "version": "v3.0.0",
+      "version": "v3.0.1",
       "upgradever": "",
       "upgrade": "",
       "chainId": "source-1",
