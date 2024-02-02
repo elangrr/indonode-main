@@ -280,6 +280,41 @@
         "explorer": "https://explorer.indonode.net/blockx",
         "staking": "https://explorer.indonode.net/blockx/staking/blockxvaloper1sh77ruh2c8w5a4mqpsw52vwk0g2jttn3m7k0xg"
       }
+    },
+    {
+      "title": "Arkhadian",
+      "name": "arkhadian",
+      "dir": "arkh",
+      "go": "1.21.5",
+      "coinGeckoId": "",
+      "imageURL": "/networks/arkhadian.png",
+      "version": "v2.0.0",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "arkh",
+      "description": [
+        "ARKH is a blockchain built using Cosmos SDK and Tendermint, created with Starport. The purpose of $ARKH token is enormous, made for DAO creation, transactional purposes and spendings, built on the cosmos Blockchain."
+      ],
+      "binary": "arkhd",
+      "denom": "arkh",
+      "gasPrice": "0.0arkh",
+      "links": {
+        "repository": "",
+        "binary": "https://github.com/vincadian/arkh-blockchain/releases/download/v2.0.0/arkh-blockchain_v2.0.0_linux_amd64.tar.gz",
+        "wasm": "",
+        "website": "https://www.arkhadian.io",
+        "twitter": "https://twitter.com/ArkhadianSas",
+        "discord": "https://discord.gg/ssbQeafe3u",
+        "peer": "f619f0a3b4b8da222209b2332b9f91da24b8b413@rpc.arkhadian.indonode.net:21656",
+        "rpc": "https://rpc.arkhadian.indonode.net",
+        "api": "https://api.arkhadian.indonode.net",
+        "grpc": "grpc.arkhadian.indonode.net:21090",
+        "addrbook": "https://snapshots.indonode.net/arkhadian/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/arkhadian/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/arkhadian/log.json",
+        "explorer": "https://explorer.indonode.net/arkhadian",
+        "staking": "https://explorer.indonode.net/arkhadian/staking/arkhvaloper17hlrw8m4es5fnqqu9qx254qszpdv0avq2frly7"
+      }
     }  
   ],
   "testnet": [
@@ -324,7 +359,7 @@
       "go": "1.20.7",
       "coinGeckoId": "",
       "imageURL": "/networks/artela.jpg",
-      "version": "v0.4.7-rc4",
+      "version": "v0.4.7-rc6",
       "upgradever": "",
       "upgrade": "",
       "chainId": "artela_11822-1",
