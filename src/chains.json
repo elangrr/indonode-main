@@ -321,7 +321,7 @@
       "name": "dymension",
       "dir": "dymension",
       "go": "1.21.5",
-      "coinGeckoId": "",
+      "coinGeckoId": "dymension",
       "imageURL": "/networks/dymension.png",
       "version": "v3.0.0",
       "upgradever": "",
@@ -353,6 +353,40 @@
     }  
   ],
   "testnet": [
+    {
+      "title": "Swisstronik",
+      "name": "swisstronik",
+      "dir": "swisstronik",
+      "go": "1.21.4",
+      "coinGeckoId": "",
+      "imageURL": "/networks/swisstronik.png",
+      "version": "v1.0.1",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "swisstronik_1291-1",
+      "description": [
+        "Swisstronik is an identity-based hybrid blockchain ecosystem. It lets Web 3.0 and traditional companies build KYC, AML and DPR-compliant applications with enhanced data privacy."
+      ],
+      "binary": "swisstronikd",
+      "denom": "uswrt",
+      "gasPrice": "7uswrt",
+      "links": {
+        "repository": "",
+        "binary": "https://snapshot.indonode.net/swisstronik-t/swisstronikd.tar.gz",
+        "wasm": "",
+        "website": "https://www.swisstronik.com",
+        "twitter": "https://twitter.com/swisstronik",
+        "discord": "https://discord.gg/BZSsQD7jvR",
+        "peer": "c5c5ca79524e4b9e9f9d698a1eb6abb95d8c7d59@rpc.swisstronik.indonode.net:20656",
+        "rpc": "https://rpc.swisstronik.indonode.net:443",
+        "api": "https://api.swisstronik.indonode.net",
+        "grpc": "https://grpc.swisstronik.indonode.net:20090",
+        "addrbook": "https://snapshot.indonode.net/swisstronik-t/addrbook.json",
+        "genesis": "https://snapshot.indonode.net/swisstronik-t/genesis.json",
+        "snapshot": "https://snapshot.indonode.net/swisstronik-t/log.json",
+        "explorer": "https://explorer.indonode.net/swisstronik-testnet"
+      }
+    },
     {
       "title": "Pryzm",
       "name": "pryzm",
