@@ -393,7 +393,7 @@
       "dir": "mineplex-chain",
       "go": "1.21.5",
       "coinGeckoId": "",
-      "imageURL": "/networks/crossfi.jpg",
+      "imageURL": "/networks/crossfi.png",
       "version": "0.3.0-prebuild3",
       "upgradever": "",
       "upgrade": "",
