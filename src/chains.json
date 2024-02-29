@@ -388,6 +388,40 @@
       }
     },
     {
+      "title": "Crossfi",
+      "name": "crossfi",
+      "dir": "mineplex-chain",
+      "go": "1.21.5",
+      "coinGeckoId": "",
+      "imageURL": "/networks/pryzm.jpg",
+      "version": "0.3.0-prebuild3",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "crossfi-evm-testnet-1",
+      "description": [
+        "CrossFi Chain is a layer 1 blockchain with a modular architecture. It consists of two integral parts, Cosmos and EVM. Each part is responsible for its specific functionality, with their work completely synchronized as a single organism."
+      ],
+      "binary": "crossfid",
+      "denom": "mpx",
+      "gasPrice": "10000000000000mpx",
+      "links": {
+        "repository": "",
+        "binary": "https://snapshots.indonode.net/crossfi-t/crossfid.tar.gz",
+        "wasm": "",
+        "website": "https://crossfi.org",
+        "twitter": "https://twitter.com/crossfichain",
+        "discord": "https://discord.gg/crossfi",
+        "peer": "dda09f9625cab3fb655c22ef85d756fc77132b9d@rpc.crossfi-t.indonode.net:10956",
+        "rpc": "https://rpc.crossfi-t.indonode.net:443",
+        "api": "https://api.crossfi-t.indonode.net",
+        "grpc": "https://grpc.crossfi-t.indonode.net:10990",
+        "addrbook": "https://snapshots.indonode.net/crossfi-t/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/crossfi-t/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/crossfi-t/log.json",
+        "explorer": "https://explorer.indonode.net/crossfi-testnet"
+      }
+    },
+    {
       "title": "Pryzm",
       "name": "pryzm",
       "dir": "pryzm",
