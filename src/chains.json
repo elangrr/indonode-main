@@ -422,6 +422,40 @@
       }
     },
     {
+      "title": "Side Protocol",
+      "name": "side",
+      "dir": "side",
+      "go": "1.21.6",
+      "coinGeckoId": "",
+      "imageURL": "/networks/side.jpg",
+      "version": "v0.6.0",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "side-testnet-2",
+      "description": [
+        "Side Protocol is a full-stack and omnichain exchange infrastructure that offers dedicated infrastructure, tools, and applications for decentralized asset exchange. "
+      ],
+      "binary": "sided",
+      "denom": "uside",
+      "gasPrice": "0.05uside",
+      "links": {
+        "repository": "https://github.com/sideprotocol/sidechain.git",
+        "binary": "",
+        "wasm": "https://snapshots.indonode.net/side-t/wasm.tar.lz4",
+        "website": "https://side.one",
+        "twitter": "https://twitter.com/SideProtocol",
+        "discord": "https://discord.com/invite/sideprotocol",
+        "peer": "bdedf4e9839fb2896ccb568535584affbaf68492@rpc.side-t.indonode.net:11156",
+        "rpc": "https://rpc.side-t.indonode.net:443",
+        "api": "https://api.side-t.indonode.net",
+        "grpc": "https://grpc.side-t.indonode.net:11190",
+        "addrbook": "https://snapshots.indonode.net/side-t/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/side-t/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/side-t/log.json",
+        "explorer": "https://explorer.indonode.net/side-testnet"
+      }
+    },
+    {
       "title": "Pryzm",
       "name": "pryzm",
       "dir": "pryzm",
@@ -548,36 +582,6 @@
         "genesis": "https://snapshots.indonode.net/c4e/testnet/genesis.json",
         "snapshot": "https://snapshots.indonode.net/entrypoint/log.json",
         "explorer": "https://explorer.indonode.net/c4e-testnet"
-      }
-    },
-    {
-      "title": "Selfchain",
-      "name": "selfchain",
-      "coinGeckoId": "",
-      "imageURL": "/networks/selfchain.jpg",
-      "version": "0.2.2",
-      "chainId": "self-dev-1",
-      "description": [
-        "Self Chain Is User-Centric Decentralized Blockchain Network And Infrastructure That Serves As The Storage Medium For Countless Applications. Opening The Gateway To The Crypto World For A Wide Range Of Users."
-      ],
-      "binary": "selfchaind",
-      "denom": "uself",
-      "gasPrice": "0.005uself",
-      "links": {
-        "repository": "https://github.com/chain4energy/c4e-chain.git",
-        "binary": "",
-        "wasm": "",
-        "website": "https://selfchain.xyz",
-        "twitter": "https://twitter.com/selfchainxyz",
-        "discord": "https://discord.gg/selfchainxyz",
-        "peer": "",
-        "rpc": "https://rpc.selfchain-t.indonode.net",
-        "api": "https://api.selfchain-t.indonode.net",
-        "grpc": "",
-        "addrbook": "https://snapshots.indonode.net/selfchain/addrbook.json",
-        "genesis": "https://raw.githubusercontent.com/hotcrosscom/selfchain-genesis/main/networks/devnet/genesis.json",
-        "snapshot": "https://snapshots.indonode.net/entrypoint/log.json",
-        "explorer": "https://explorer.indonode.net/selfchain-testnet"
       }
     },
     {
