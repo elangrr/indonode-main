@@ -219,8 +219,8 @@
       "coinGeckoId": "quicksilver",
       "imageURL": "/networks/quicksilver.png",
       "version": "v1.4.6",
-      "upgradever": "v1.4.6",
-      "upgrade": "5493000",
+      "upgradever": "v1.5.0",
+      "upgrade": "6365700",
       "chainId": "quicksilver-2",
       "description": [
         "Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Interchain ecosystem."
