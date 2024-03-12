@@ -315,42 +315,7 @@
         "explorer": "https://explorer.indonode.net/arkhadian",
         "staking": "https://explorer.indonode.net/arkhadian/staking/arkhvaloper17hlrw8m4es5fnqqu9qx254qszpdv0avq2frly7"
       }
-    },
-    {
-      "title": "Dymension",
-      "name": "dymension",
-      "dir": "dymension",
-      "go": "1.21.5",
-      "coinGeckoId": "dymension",
-      "imageURL": "/networks/dymension.png",
-      "version": "v3.0.0",
-      "upgradever": "",
-      "upgrade": "",
-      "chainId": "dymension_1100-1",
-      "description": [
-        "Dymension is a home for easily deployable and lightning fast app-chains, called RollApps."
-      ],
-      "binary": "dymd",
-      "denom": "adym",
-      "gasPrice": "20000000000adym",
-      "links": {
-        "repository": "https://github.com/dymensionxyz/dymension.git",
-        "binary": "",
-        "wasm": "",
-        "website": "https://dymension.xyz",
-        "twitter": "https://twitter.com/dymension",
-        "discord": "https://discord.gg/dymension",
-        "peer": "e57f9b9a6c9ccb12d1e91a5212d3abcdc1088e00@rpc.dymension.indonode.net:22656",
-        "rpc": "https://rpc.dymension.indonode.net",
-        "api": "https://api.dymension.indonode.net",
-        "grpc": "grpc.dymension.indonode.net:22090",
-        "addrbook": "https://snapshots.indonode.net/dymension/addrbook.json",
-        "genesis": "https://snapshots.indonode.net/dymension/genesis.json",
-        "snapshot": "https://snapshots.indonode.net/dymension/log.json",
-        "explorer": "https://explorer.indonode.net/dymension",
-        "staking": "https://explorer.indonode.net/dymension/staking/dymvaloper1stkzwjenj2hw48n7dp5402vd2vem8qnalnt2dg"
-      }
-    }  
+    }
   ],
   "testnet": [
     {
