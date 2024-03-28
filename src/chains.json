@@ -254,7 +254,7 @@
       "coinGeckoId": "",
       "imageURL": "/networks/realio.png",
       "version": "v0.8.3",
-      "upgradever": "multstaking",
+      "upgradever": "v0.9.0",
       "upgrade": "5989000",
       "chainId": "realionetwork_3301-1",
       "description": [
