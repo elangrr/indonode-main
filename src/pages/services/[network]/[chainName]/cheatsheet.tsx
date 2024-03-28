@@ -302,13 +302,13 @@ export default function ServiceCheatSheet() {
           <Stack>
             <Text>Delegate to your validator</Text>
             <CodeSnippet
-              code={`${chain?.binary} tx staking delegate $(${chain?.binary} keys show wallet --bech val -a) 1000000${chain?.denom} --from wallet --chain-id ${chain?.chainId} --gas-prices ${chain?.gasPrice} \ --gas-adjustment 1.5 --gas "auto" -y `}
+              code={`${chain?.binary} tx staking delegate $(${chain?.binary} keys show wallet --bech val -a) ${tokenAmount}${chain?.denom} --from wallet --chain-id ${chain?.chainId} --gas-prices ${chain?.gasPrice} \ --gas-adjustment 1.5 --gas "auto" -y `}
             ></CodeSnippet>
           </Stack>
           <Stack>
             <Text>Delegate to other</Text>
             <CodeSnippet
-              code={`c4ed tx staking delegate ${tokenValoperAddr} 1000000${chain?.denom} --from wallet --chain-id ${chain?.chainId} --gas-prices ${chain?.gasPrice} \ --gas-adjustment 1.5 --gas "auto" -y `}
+              code={`c4ed tx staking delegate ${tokenValoperAddr} ${tokenAmount}${chain?.denom} --from wallet --chain-id ${chain?.chainId} --gas-prices ${chain?.gasPrice} \ --gas-adjustment 1.5 --gas "auto" -y `}
             ></CodeSnippet>
           </Stack>
           <Stack>

@@ -247,6 +247,41 @@
       }
     },
     {
+      "title": "Realio Network",
+      "name": "realio",
+      "dir": "realio-network",
+      "go": "1.21.5",
+      "coinGeckoId": "",
+      "imageURL": "/networks/realio.png",
+      "version": "v0.8.3",
+      "upgradever": "multstaking",
+      "upgrade": "5989000",
+      "chainId": "realionetwork_3301-1",
+      "description": [
+        "Realio Network is a blockchain-based Software as a Service (SaaS) platform that focuses on the issuance, investment, and life-cycle management of digital securities and cryptoassets."
+      ],
+      "binary": "realio-networkd",
+      "denom": "ario",
+      "gasPrice": "5000000000000000ario",
+      "links": {
+        "repository": "https://github.com/realiotech/realio-network.git",
+        "binary": "",
+        "wasm": "",
+        "website": "https://www.realio.fund",
+        "twitter": "https://twitter.com/realio_network",
+        "discord": "https://discord.gg/nXwTags6w3",
+        "peer": "ae925f32ead79c394bb7f6f8abb5345f7a16b064@rpc.realio.indonode.net:16656",
+        "rpc": "https://rpc.realio.indonode.net",
+        "api": "https://api.realio.indonode.net",
+        "grpc": "grpc.realio.indonode.net:16090",
+        "addrbook": "https://snapshots.indonode.net/realio/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/realio/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/realio/log.json",
+        "explorer": "https://explorer.indonode.net/realio",
+        "staking": "https://restake.app/realio/realiovaloper15w6rmc2jh7u4w78cl4mqrv5tx25f4dss37u3z0/stake"
+      }
+    },
+    {
       "title": "Blockx",
       "name": "blockx",
       "dir": "blockxd",
