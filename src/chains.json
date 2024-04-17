@@ -526,6 +526,7 @@
     {
       "title": "Selfchain",
       "name": "selfchain",
+      "dir": "selfchain",
       "coinGeckoId": "",
       "imageURL": "/networks/selfchain.jpg",
       "version": "0.2.2",
@@ -587,6 +588,7 @@
     {
       "title": "Entangle",
       "name": "entangle",
+      "dir": "entangle",
       "coinGeckoId": "",
       "imageURL": "/networks/entangle.jpg",
       "version": "1.0.1",
@@ -618,6 +620,7 @@
     {
       "title": "Mantra",
       "name": "mantra",
+      "dir": ".mantrachain",
       "coinGeckoId": "",
       "imageURL": "/networks/mantra.jpg",
       "version": "",
