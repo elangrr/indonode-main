@@ -620,7 +620,7 @@
     {
       "title": "Mantra",
       "name": "mantra",
-      "dir": ".mantrachain",
+      "dir": "mantrachain",
       "coinGeckoId": "",
       "imageURL": "/networks/mantra.jpg",
       "version": "",
