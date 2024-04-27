@@ -32,7 +32,7 @@ export default function ServiceCheatSheet() {
   const [validatorIdentity, setValidatorIdentity] = useState('')
   const [validatorDetails, setValidatorDetails] = useState('Indonode Guide')
   const [validatorAmount, setValidatorAmount] = useState(1000000)
-  const [validatorComissionRate, setValidatorComissionRate] = useState(0.01)
+  const [validatorComissionRate, setValidatorComissionRate] = useState(0.05)
   const [validatorComissionMaxRate, setValidatorComissionMaxRate] =
     useState(0.2)
   const [validatorComissionMaxChangeRate, setValidatorComissionMaxChangeRate] =
@@ -218,7 +218,7 @@ export default function ServiceCheatSheet() {
               code={`${chain?.binary} tx slashing unjail \\
 --chain-id ${chain?.chainId} \\
 --gas-prices ${chain?.gasPrice} \\
---gas-adjustment 1.5\\
+--gas-adjustment 1.5 \\
 --gas "auto" \\
 --from wallet \\
 -y `}
@@ -308,7 +308,7 @@ export default function ServiceCheatSheet() {
           <Stack>
             <Text>Delegate to other</Text>
             <CodeSnippet
-              code={`c4ed tx staking delegate ${tokenValoperAddr} ${tokenAmount}${chain?.denom} --from wallet --chain-id ${chain?.chainId} --gas-prices ${chain?.gasPrice} \ --gas-adjustment 1.5 --gas "auto" -y `}
+              code={`${chain?.binary} tx staking delegate ${tokenValoperAddr} ${tokenAmount}${chain?.denom} --from wallet --chain-id ${chain?.chainId} --gas-prices ${chain?.gasPrice} \ --gas-adjustment 1.5 --gas "auto" -y `}
             ></CodeSnippet>
           </Stack>
           <Stack>

@@ -18,14 +18,14 @@ export default function SplitScreen() {
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack spacing={6} w={'full'}>
           <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-            Trusted PoS Validator & Non Custodial
+            Your Trusted Non Custodial PoS Validator
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-            Stake your funds in our Proof-of-Stake Validator for high security,
-            low commission, and 24/7 monitoring
+            Invest your assets with our Proof-of-Stake Validator for 
+              unparalleled security, minimal fees, and round-the-clock surveillance.
           </Text>
-          <CardInfo title={'Total Assets Staked'} info={'$4,231,224'} />
-          <CardInfo title={'Supported Chains'} info={'10'} />
+          <CardInfo title={'Total Assets Staked & Secured'} info={'$4,231,224'} />
+          <CardInfo title={'Supported Chains'} info={'20'} />
         </Stack>
       </Flex>
       <Flex flex={1}>

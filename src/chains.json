@@ -282,6 +282,41 @@
       }
     },
     {
+      "title": "Entangle",
+      "name": "entangle",
+      "dir": "entangled",
+      "go": "1.21.5",
+      "coinGeckoId": "entangle",
+      "imageURL": "/networks/entangle.jpg",
+      "version": "main",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "entangle_33033-1",
+      "description": [
+        "Entangle is The Omnichain Blockchain Infrastructure consisting of core primitives and tools unifying the blockchain ecosystem whilst delivering universal Web2 or Web3 data to smart contracts on any chain."
+      ],
+      "binary": "entangled",
+      "denom": "aNGL",
+      "gasPrice": "10aNGL",
+      "links": {
+        "repository": "https://github.com/Entangle-Protocol/entangle-blockchain",
+        "binary": "",
+        "wasm": "",
+        "website": "https://www.entangle.fi",
+        "twitter": "https://twitter.com/Entanglefi",
+        "discord": "https://discord.gg/entangle",
+        "peer": "c3318235ce692b7d9abe0833faeba667d04b5f83@rpc.entangle.indonode.net:22656",
+        "rpc": "https://rpc.entangle.indonode.net",
+        "api": "https://api.entangle.indonode.net",
+        "grpc": "grpc.entangle.indonode.net:22090",
+        "addrbook": "https://snapshots.indonode.net/entangle/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/entangle/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/entangle/log.json",
+        "explorer": "https://explorer.indonode.net/entangle",
+        "staking": "https://explorer.indonode.net/entangle/staking/entvaloper1r9td2u3eplrkwshan7wwtlstu3r52nv33r0dl0"
+      }
+    },
+    {
       "title": "Blockx",
       "name": "blockx",
       "dir": "blockxd",

@@ -135,6 +135,8 @@ sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 \"$PRUNING_INTERVAL\"/" $HOME/.${chain?.dir}/config/app.toml
 sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.${chain?.dir}/config/config.toml
+sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.${chain?.dir}/config/config.toml
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"${chain?.gasPrice}\"/" $HOME/.${chain?.dir}/config/app.toml
 `}
           ></CodeSnippet>
           <CodeSnippet
@@ -164,8 +166,7 @@ curl -L ${snapshotInfo?.url} | tar -Ilz4 -xf - -C $HOME/.${chain?.dir}
           ></CodeSnippet>
           <CodeSnippet
             code={`# Start the Node
-sudo systemctl restart ${chain?.binary}
-sudo journalctl -fu ${chain?.binary} -o cat
+sudo systemctl restart ${chain?.binary} && sudo journalctl -fu ${chain?.binary} -o cat
 `}
           ></CodeSnippet>
         </Stack>
