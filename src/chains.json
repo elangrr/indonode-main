@@ -148,9 +148,9 @@
       "go": "1.19.7",
       "coinGeckoId": "six-sigma",
       "imageURL": "/networks/sge.jpg",
-      "version": "v1.5.2",
-      "upgradever": "v1.5.3",
-      "upgrade": "2973740",
+      "version": "v1.6.2",
+      "upgradever": "v1.6.2",
+      "upgrade": "3685910",
       "chainId": "sgenet-1",
       "description": [
         "A Cosmos SDK-based layer-1 blockchain utilizing its own native utility token (SGE token). The SGE Network leverages the modular components, blockchain interoperability and minimal gas fees of the Cosmos-based design to support applications at the intersection of blockchain, sports, gaming and entertainment that are pioneering novel ways of engaging users with a UX, value proposition and utility never before seen in the space."
@@ -420,6 +420,40 @@
         "genesis": "https://snapshot.indonode.net/swisstronik-t/genesis.json",
         "snapshot": "https://snapshot.indonode.net/swisstronik-t/log.json",
         "explorer": "https://explorer.indonode.net/swisstronik-testnet"
+      }
+    },
+    {
+      "title": "Initia",
+      "name": "initia",
+      "dir": "initia",
+      "go": "1.22.5",
+      "coinGeckoId": "",
+      "imageURL": "/networks/initia.png",
+      "version": "0.2.11",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "initiation-1",
+      "description": [
+        "Initia is a highly interwoven system of modular networks through architectural ownership of the L1 orchestration layer, L2 network, and the communication protocol."
+      ],
+      "binary": "initiad",
+      "denom": "uinit",
+      "gasPrice": "0.15uinit,0.01uusdc",
+      "links": {
+        "repository": "https://github.com/initia-labs/initia.git",
+        "binary": "",
+        "wasm": "",
+        "website": "https://initia.xyz",
+        "twitter": "https://twitter.com/initiaFDN",
+        "discord": "https://discord.gg/initia",
+        "peer": "92dc0d7298ca172001c66fa2d69914ca4267b6cb@rpc.initia-t.indonode.net:11556",
+        "rpc": "https://rpc.initia-t.indonode.net:443",
+        "api": "https://api.initia-t.indonode.net",
+        "grpc": "https://grpc.initia-t.indonode.net:11590",
+        "addrbook": "https://snapshots.indonode.net/initia-t/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/initia-t/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/initia-t/log.json",
+        "explorer": "https://explorer.indonode.net/initia-testnet"
       }
     },
     {
