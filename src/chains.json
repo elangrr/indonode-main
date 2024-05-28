@@ -317,6 +317,41 @@
       }
     },
     {
+      "title": "Quasar",
+      "name": "quasar",
+      "dir": "quasarnode",
+      "go": "1.21.5",
+      "coinGeckoId": "quasar-2",
+      "imageURL": "/networks/quasar.png",
+      "version": "1.0.1",
+      "upgradever": "1.0.1",
+      "upgrade": "2249500",
+      "chainId": "quasar-1",
+      "description": [
+        "Quasar is a decentralized asset management (D.A.M.) platform enabled by IBC. A secure, permissionless, composable, and diversified interchain DeFi experience is finally here."
+      ],
+      "binary": "quasarnoded",
+      "denom": "uqsr",
+      "gasPrice": "0.1uqsr,0.01ibc/0471F1C4E7AFD3F07702BEF6DC365268D64570F7C1FDC98EA6098DD6DE59817B,0.01ibc/FA0006F056DB6719B8C16C551FC392B62F5729978FC0B125AC9A432DBB2AA1A5,0.01ibc/FA7775734CC73176B7425910DE001A1D2AD9B6D9E93129A5D0750EAD13E4E63A",
+      "links": {
+        "repository": "https://github.com/quasar-finance/quasar.git",
+        "binary": "",
+        "wasm": "https://snapshots.indonode.net/quasar/wasm.tar.lz4",
+        "website": "https://www.quasar.fi",
+        "twitter": "https://x.com/QuasarFi",
+        "discord": "https://discord.gg/quasarfi",
+        "peer": "f9c69c5ab02af3af6d4781aff585db26604fe9b4@rpc.quasar.indonode.net:18656",
+        "rpc": "https://rpc.quasar.indonode.net",
+        "api": "https://api.quasar.indonode.net",
+        "grpc": "grpc.quasar.indonode.net:18090",
+        "addrbook": "https://snapshots.indonode.net/quasar/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/quasar/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/quasar/log.json",
+        "explorer": "https://explorer.indonode.net/quasar",
+        "staking": "https://explorer.indonode.net/quasar/staking/quasarvaloper12hxpgn298vkw5mvetud5f5t84mf02l7jez5f8q"
+      }
+    },
+    {
       "title": "Blockx",
       "name": "blockx",
       "dir": "blockxd",
