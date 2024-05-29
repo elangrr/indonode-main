@@ -352,6 +352,41 @@
       }
     },
     {
+      "title": "Shido",
+      "name": "shido",
+      "dir": "shidod",
+      "go": "1.22.3",
+      "coinGeckoId": "shido-2",
+      "imageURL": "/networks/shido.png",
+      "version": "15b43d6",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "shido_9008-1",
+      "description": [
+        "Shido is a non-custodial decentralized multi-chain Crypto App. Users can seamlessly Buy, Store, Send and Swap Cryptocurrencies and NFTs."
+      ],
+      "binary": "shidod",
+      "denom": "shido",
+      "gasPrice": "0.025",
+      "links": {
+        "repository": "",
+        "binary": "https://snapshots.indonode.net/shido/shido.tar.gz",
+        "wasm": "https://snapshots.indonode.net/shido/wasm.tar.lz4",
+        "website": "https://www.shido.io",
+        "twitter": "https://x.com/ShidoGlobal",
+        "discord": "https://discord.gg/",
+        "peer": "ecfa8fecb479d1e30be4cac20dc8b0f3ef8b761d@rpc.shido.indonode.net:23656",
+        "rpc": "https://rpc.shido.indonode.net",
+        "api": "https://api.shido.indonode.net",
+        "grpc": "grpc.shido.indonode.net:23090",
+        "addrbook": "https://snapshots.indonode.net/shido/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/shido/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/shido/log.json",
+        "explorer": "https://explorer.indonode.net/shido",
+        "staking": "https://explorer.indonode.net/shido/staking/shidovaloper145xez3t96wz9st98vhzrexjaumydvkyq0tp2gy"
+      }
+    },
+    {
       "title": "Blockx",
       "name": "blockx",
       "dir": "blockxd",
