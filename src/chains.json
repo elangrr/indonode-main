@@ -533,9 +533,9 @@
       "go": "1.21.5",
       "coinGeckoId": "",
       "imageURL": "/networks/crossfi.png",
-      "version": "0.3.0-prebuild3",
-      "upgradever": "",
-      "upgrade": "",
+      "version": "0.3.0-prebuild9",
+      "upgradever": "f9e48928071a4e99270f163b17f5b10a440fcf9b",
+      "upgrade": "3520000",
       "chainId": "crossfi-evm-testnet-1",
       "description": [
         "CrossFi Chain is a layer 1 blockchain with a modular architecture. It consists of two integral parts, Cosmos and EVM. Each part is responsible for its specific functionality, with their work completely synchronized as a single organism."
@@ -545,7 +545,7 @@
       "gasPrice": "10000000000000mpx",
       "links": {
         "repository": "",
-        "binary": "https://snapshots.indonode.net/crossfi-t/crossfid.tar.gz",
+        "binary": "https://github.com/crossfichain/crossfi-node/releases/download/v0.3.0-prebuild9/crossfi-node_0.3.0-prebuild9_linux_amd64.tar.gz",
         "wasm": "",
         "website": "https://crossfi.org",
         "twitter": "https://twitter.com/crossfichain",
