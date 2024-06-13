@@ -41,7 +41,7 @@
       "name": "c4e",
       "dir": "c4e-chain",
       "go": "1.21.5",
-      "coinGeckoId": "",
+      "coinGeckoId": "chain4energy",
       "imageURL": "/networks/c4e.png",
       "version": "v1.3.1",
       "upgradever": "v1.3.1",
