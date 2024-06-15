@@ -148,9 +148,9 @@
       "go": "1.22.3",
       "coinGeckoId": "six-sigma",
       "imageURL": "/networks/sge.jpg",
-      "version": "v1.6.2",
-      "upgradever": "v1.6.2",
-      "upgrade": "3685910",
+      "version": "v1.7.0-tmfix",
+      "upgradever": "",
+      "upgrade": "",
       "chainId": "sgenet-1",
       "description": [
         "A Cosmos SDK-based layer-1 blockchain utilizing its own native utility token (SGE token). The SGE Network leverages the modular components, blockchain interoperability and minimal gas fees of the Cosmos-based design to support applications at the intersection of blockchain, sports, gaming and entertainment that are pioneering novel ways of engaging users with a UX, value proposition and utility never before seen in the space."
@@ -215,7 +215,7 @@
       "title": "Quicksilver",
       "name": "quicksilver",
       "dir": "quicksilverd",
-      "go": "1.22.3",
+      "go": "1.21.11",
       "coinGeckoId": "quicksilver",
       "imageURL": "/networks/quicksilver.png",
       "version": "v1.5.6",
