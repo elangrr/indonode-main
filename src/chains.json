@@ -195,7 +195,7 @@
       "gasPrice": "1uslf",
       "links": {
         "repository": "",
-        "binary": "https://snapshot.indonode.net/selfchain/selfchaind.tar.gz",
+        "binary": "https://snapshots.indonode.net/selfchain/selfchaind.tar.gz",
         "wasm": "",
         "website": "https://selfchain.xyz",
         "twitter": "https://x.com/selfchainxyz",
@@ -512,7 +512,7 @@
       "gasPrice": "7aswtr",
       "links": {
         "repository": "",
-        "binary": "https://snapshot.indonode.net/swisstronik-t/swisstronikd.tar.gz",
+        "binary": "https://snapshots.indonode.net/swisstronik-t/swisstronikd.tar.gz",
         "wasm": "",
         "website": "https://www.swisstronik.com",
         "twitter": "https://twitter.com/swisstronik",
