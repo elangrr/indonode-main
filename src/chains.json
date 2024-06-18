@@ -177,6 +177,41 @@
       }
     },
     {
+      "title": "Selfchain",
+      "name": "selfchain",
+      "dir": "selfchain",
+      "go": "1.22.3",
+      "coinGeckoId": "",
+      "imageURL": "/networks/selfchain.jpg",
+      "version": "",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "self-1",
+      "description": [
+        "Self Chain Is The First Modular Intent-Centric Access Layer L1 Blockchain And Keyless Wallet Infrastructure Service That Uses MPC-TSS/AA For Multi-Chain Web3 Access."
+      ],
+      "binary": "selfchaind",
+      "denom": "uslf",
+      "gasPrice": "1uslf",
+      "links": {
+        "repository": "",
+        "binary": "https://snapshot.indonode.net/selfchain/selfchaind.tar.gz",
+        "wasm": "",
+        "website": "https://selfchain.xyz",
+        "twitter": "https://x.com/selfchainxyz",
+        "discord": "https://discord.gg/selfchainxyz",
+        "peer": "f958f4e2d1384514ed8c62b1bc753d0b8a8d0430@rpc.selfchain.indonode.net:24656",
+        "rpc": "https://rpc.selfchain.indonode.net",
+        "api": "https://api.selfchain.indonode.net",
+        "grpc": "grpc.selfchain.indonode.net:24090",
+        "addrbook": "https://snapshots.indonode.net/selfchain/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/selfchain/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/selfchain/log.json",
+        "explorer": "https://explorer.indonode.net/selfchain",
+        "staking": "https://explorer.indonode.net/selfchain/staking/selfvaloper1pz7mrvat8mzu2h3rqadjmzhf5fu0tluzxe9fv6"
+      }
+    },
+    {
       "title": "Point Network",
       "name": "point",
       "dir": "pointd",
