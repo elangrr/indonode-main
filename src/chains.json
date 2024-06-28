@@ -286,11 +286,11 @@
       "name": "realio",
       "dir": "realio-network",
       "go": "1.21.5",
-      "coinGeckoId": "",
+      "coinGeckoId": "realio-network",
       "imageURL": "/networks/realio.png",
       "version": "v0.9.0",
-      "upgradever": "v0.9.0",
-      "upgrade": "5989000",
+      "upgradever": "v0.9.3",
+      "upgrade": "7526754",
       "chainId": "realionetwork_3301-1",
       "description": [
         "Realio Network is a blockchain-based Software as a Service (SaaS) platform that focuses on the issuance, investment, and life-cycle management of digital securities and cryptoassets."
