@@ -21,6 +21,9 @@ export default function ServiceInstallation() {
 
   const { data: snapshotInfo } = useSnapshotInfo(chain?.links.snapshot ?? '')
 
+  const hasRepository = !!chain?.links.repository
+  const hasBinary = !!chain?.links.binary
+
   return (
     <ServiceLayout>
       <Stack spacing={6}>
@@ -66,19 +69,22 @@ go version
 `}
           ></CodeSnippet>
         </Stack>
+
         <Stack spacing={4}>
           <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="node">
             Node Installation
           </Heading>
-          <Tabs size="md" variant="enclosed">
-            <TabList>
-              <Tab isDisabled={!chain?.links.repository}>Repository</Tab>
-              <Tab isDisabled={!chain?.links.binary}>Binary</Tab>
-            </TabList>
-            <TabPanels borderWidth={1} borderColor={'gray.200'}>
-              <TabPanel>
-                <CodeSnippet
-                  code={`# Install ${chain?.name} through repository
+          {hasRepository || hasBinary ? (
+            <Tabs size="md" variant="enclosed">
+              <TabList>
+                {hasRepository && <Tab>Repository</Tab>}
+                {hasBinary && <Tab>Binary</Tab>}
+              </TabList>
+              <TabPanels borderWidth={1} borderColor={'gray.200'}>
+                {hasRepository && (
+                  <TabPanel>
+                    <CodeSnippet
+                      code={`# Install ${chain?.name} through repository
 cd $HOME
 rm -rf ${chain?.name}
 git clone ${chain?.links.repository} ${chain?.name}
@@ -86,19 +92,26 @@ cd ${chain?.name}
 git checkout ${chain?.version}
 make install
 `}
-                ></CodeSnippet>
-              </TabPanel>
-              <TabPanel>
-                <CodeSnippet
-                  code={`# Install ${chain?.name} through binary
+                    ></CodeSnippet>
+                  </TabPanel>
+                )}
+                {hasBinary && (
+                  <TabPanel>
+                    <CodeSnippet
+                      code={`# Install ${chain?.name} through binary
 cd $HOME
 curl -L ${chain?.links.binary} | tar -xvzf - -C $HOME
 sudo mv ${chain?.binary} /usr/local/bin/
 `}
-                ></CodeSnippet>
-              </TabPanel>
-            </TabPanels>
-          </Tabs>
+                    ></CodeSnippet>
+                  </TabPanel>
+                )}
+              </TabPanels>
+            </Tabs>
+          ) : (
+            <p>No installation method available.</p>
+          )}
+
           <CodeSnippet
             code={`# Set Configuration for your node
 ${chain?.binary} config chain-id ${chain?.chainId}
