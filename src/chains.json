@@ -698,6 +698,37 @@
       }
     },
     {
+      "title": "Empeiria",
+      "name": "empe",
+      "dir": "empe-chain",
+      "coinGeckoId": "",
+      "imageURL": "/networks/empe.jpg",
+      "version": "0.1.0",
+      "chainId": "empe-testnet-2",
+      "description": [
+        "Empeiria is the first End-to-End Verifiable Data Infrastructure (EVDI). It enables seamless web3 adoption through one-click deployment, empowering organizations with the data of the future."
+      ],
+      "binary": "emped",
+      "denom": "uempe",
+      "gasPrice": "0.001uempe",
+      "links": {
+        "repository": "",
+        "binary": "https://snapshots.indonode.net/empeiria/emped.tar.gz",
+        "wasm": "",
+        "website": "https://www.empe.io",
+        "twitter": "https://x.com/empe_io",
+        "discord": "",
+        "peer": "2354e634c9e8f630e2f93c6d3a7b845c681d00bb@rpc.empe-t.indonode.net:11756",
+        "rpc": "https://rpc.empe-t.indonode.net",
+        "api": "https://api.empe-t.indonode.net",
+        "grpc": "",
+        "addrbook": "https://snapshots.indonode.net/empeiria/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/empeiria/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/empeiria/log.json",
+        "explorer": "https://explorer.indonode.net/empeiria-testnet"
+      }
+    },
+    {
       "title": "Selfchain",
       "name": "selfchain",
       "dir": "selfchain",
