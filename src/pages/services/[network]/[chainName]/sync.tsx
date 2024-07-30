@@ -54,6 +54,10 @@ rm -rf $HOME/.${chain?.dir}/data`}
 curl -L ${snapshotInfo?.url} | lz4 -dc - | tar -xf - -C $HOME/.${chain?.dir}
 mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json`}
           />
+          <CodeSnippet
+            code={`# Restart chain
+sudo systemctl start ${chain?.binary} && sudo journalctl -u ${chain?.binary} -f -o cat`}
+          />
           <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="statesync">
             Statesync
           </Heading>
