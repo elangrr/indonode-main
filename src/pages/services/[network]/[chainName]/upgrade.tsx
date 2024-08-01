@@ -11,10 +11,10 @@ export default function ServiceUpgrade() {
     <ServiceLayout>
       <Stack spacing={6}>
         <Stack spacing={4}>
-          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="guide">
+          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id='guide'>
             Upgrade Guide
           </Heading>
-          <Heading fontSize={{ base: 'md', md: 'lg', lg: 'lg' }} color="red">
+          <Heading fontSize={{ base: 'md', md: 'lg', lg: 'lg' }} color='red'>
             Upgrade Height : {chain?.upgrade} , Only upgrade after specified
             block height reached!
           </Heading>

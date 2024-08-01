@@ -39,20 +39,21 @@ export default function Service() {
   }, [chain?.links.rpc])
 
   const peersCommand = `PEERS="$(curl -sS ${chain?.links.rpc}/net_info | jq -r '.result.peers[] | "\\(.node_info.id)@\\(.remote_ip):\\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | sed -z 's|\\n|,|g;s|.$||')"
-  sed -i -e 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.${chain?.dir}/config/config.toml`
-  
+  sed -i -e 's|^persistent_peers *=.*|persistent_peers = "$PEERS"|' $HOME/.${chain?.dir}/config/config.toml`
+
   return (
     <ServiceLayout>
       <Stack spacing={6}>
         <Stack>
           <Heading
             fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }}
-            id="overview"
+            id='overview'
           >
             Overview
           </Heading>
           <Image
             src={chain?.imageURL}
+            alt={chain?.title || 'Chain Image'}
             w={'auto'}
             objectFit={'contain'}
             h={32}
@@ -62,7 +63,7 @@ export default function Service() {
             <Text key={index}>{item}</Text>
           ))}
           <TableContainer>
-            <Table variant="simple">
+            <Table variant='simple'>
               <Thead>
                 <Tr>
                   <Th>Version</Th>
@@ -79,7 +80,7 @@ export default function Service() {
           </TableContainer>
         </Stack>
         <Stack>
-          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="rpc">
+          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id='rpc'>
             Public Endpoints
           </Heading>
           {chain?.links.peer && (

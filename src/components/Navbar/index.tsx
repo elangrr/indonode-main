@@ -32,7 +32,7 @@ export default function WithSubnavigation() {
   }, [router, scrollTop])
 
   return (
-    <Box as="header" position={'fixed'} w={'100%'} zIndex={99}>
+    <Box as='header' position={'fixed'} w={'100%'} zIndex={99}>
       <Flex
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
@@ -48,11 +48,11 @@ export default function WithSubnavigation() {
         align={'center'}
       >
         <Flex flex={{ base: 1 }} justify={'space-between'}>
-          <Link href="/#">
+          <Link href='/#'>
             <Image
-              src="/logo.png"
-              alt="Logo"
-              width="auto"
+              src='/logo.png'
+              alt='Logo'
+              width='auto'
               height={{
                 base: '46px',
                 md: scrollTop > 0 || router.pathname !== '/' ? '46px' : '86px',
@@ -138,8 +138,8 @@ const MobileNavItem = ({ label, href, isExternal }: NavItem) => {
       <Link href={href ?? '#'} target={isExternal ? '_blank' : '_self'}>
         <Box
           py={2}
-          justifyContent="space-between"
-          alignItems="center"
+          justifyContent='space-between'
+          alignItems='center'
           _hover={{
             textDecoration: 'none',
           }}

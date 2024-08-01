@@ -14,27 +14,25 @@ export default function ServiceLayout({ children }: { children: ReactNode }) {
   const router = useRouter()
   const { network, chainName } = router.query
   const chain = useSelector(selectChain)
-
   const { data, isFetched } = useChain(network as string, chainName as string)
 
   useEffect(() => {
     dispatch(setChain(data))
     dispatch(setIsFetched(isFetched))
-  }, [data, isFetched])
+  }, [data, isFetched, dispatch]) // Ensure dispatch is included
+
+  const bgColor = useColorModeValue('white', 'gray.900')
+  const color = useColorModeValue('gray.900', 'white')
 
   return (
     <>
       <Head>
         <title>{chain?.title} - Services</title>
-        <meta name="description" content={`${chain?.title} - Services`} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='description' content={`${chain?.title} - Services`} />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main
-        style={{
-          background: '#F1F1F1',
-        }}
-      >
+      <main style={{ background: '#F1F1F1' }}>
         {chain ? (
           <Box w={'100%'} minH={'100vh'} pt={'60px'}>
             <Flex
@@ -46,16 +44,13 @@ export default function ServiceLayout({ children }: { children: ReactNode }) {
               <Sidebar chain={chain} />
               <Flex
                 direction={'column'}
-                w={{
-                  md: calc('100%').subtract('300px').toString(),
-                  lg: calc('100%').subtract('380px').toString(),
-                }}
+                w={{ md: 'calc(100% - 300px)', lg: 'calc(100% - 380px)' }}
                 gap={4}
               >
                 <ChainBar chain={chain} />
                 <Box
-                  bg={useColorModeValue('white', 'gray.900')}
-                  color={useColorModeValue('gray.900', 'white')}
+                  bg={bgColor}
+                  color={color}
                   boxShadow={'sm'}
                   rounded={'lg'}
                   px={6}

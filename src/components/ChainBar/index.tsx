@@ -19,7 +19,7 @@ import {
 import { Chain, getChains } from '@/utils/chains'
 import { RepeatIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
-import { ReactEventHandler, useEffect, useState } from 'react'
+import { ReactEventHandler, useEffect, useState, useCallback } from 'react'
 import {
   SyncInfo,
   CurrentPrice,
@@ -38,7 +38,7 @@ export default function ChainBar({ chain }: { chain: Chain | undefined }) {
   const [price, setPrice] = useState<CurrentPrice | null>(null)
   const [isLoadedPrice, setIsLoadedPrice] = useState(false)
 
-  const updatePrice = () => {
+  const updatePrice = useCallback(() => {
     if (!!chain?.coinGeckoId) {
       fetchPrice(chain.coinGeckoId)
         .then((data) => {
@@ -53,9 +53,9 @@ export default function ChainBar({ chain }: { chain: Chain | undefined }) {
     } else {
       setIsLoadedPrice(true)
     }
-  }
+  }, [chain?.coinGeckoId])
 
-  const updateSyncInfo = () => {
+  const updateSyncInfo = useCallback(() => {
     if (chain && chain.name === chainName) {
       fetchSyncInfo(chain.links.rpc)
         .then((data) => {
@@ -68,7 +68,7 @@ export default function ChainBar({ chain }: { chain: Chain | undefined }) {
           setIsLoaded(true)
         })
     }
-  }
+  }, [chain, chainName])
 
   useEffect(() => {
     if (chain?.name !== chainName) {
@@ -87,7 +87,7 @@ export default function ChainBar({ chain }: { chain: Chain | undefined }) {
     return () => {
       clearInterval(intervalId)
     }
-  }, [chain?.links.rpc, chainName, isLoaded])
+  }, [chain?.name, chain?.links.rpc, chainName, isLoaded, updateSyncInfo])
 
   useEffect(() => {
     if (chain?.name !== chainName) {
@@ -98,7 +98,7 @@ export default function ChainBar({ chain }: { chain: Chain | undefined }) {
     if (!isLoadedPrice) {
       updatePrice()
     }
-  }, [chain?.coinGeckoId, chainName, isLoadedPrice])
+  }, [chain?.name, chain?.coinGeckoId, chainName, isLoadedPrice, updatePrice])
 
   const animationGreen = keyframes`
     0% {
@@ -161,6 +161,7 @@ export default function ChainBar({ chain }: { chain: Chain | undefined }) {
               <Flex gap={2} alignItems={'center'}>
                 <Image
                   src={chain?.imageURL}
+                  alt={chain?.title || 'Chain Image'} // Add alt attribute
                   w={'auto'}
                   objectFit={'contain'}
                   h={6}
@@ -276,6 +277,7 @@ export const ChainItem = ({
       >
         <Image
           src={chain.imageURL}
+          alt={chain.title} // Add alt attribute
           w={'auto'}
           objectFit={'contain'}
           h={6}

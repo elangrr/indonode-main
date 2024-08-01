@@ -21,10 +21,14 @@ export default function SplitScreen() {
             Your Trusted Non Custodial PoS Validator
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-            Invest your assets with our Proof-of-Stake Validator for 
-              unparalleled security, minimal fees, and round-the-clock surveillance.
+            Invest your assets with our Proof-of-Stake Validator for
+            unparalleled security, minimal fees, and round-the-clock
+            surveillance.
           </Text>
-          <CardInfo title={'Total Assets Staked & Secured'} info={'$4,231,224'} />
+          <CardInfo
+            title={'Total Assets Staked & Secured'}
+            info={'$4,231,224'}
+          />
           <CardInfo title={'Supported Chains'} info={'20'} />
         </Stack>
       </Flex>
@@ -32,7 +36,7 @@ export default function SplitScreen() {
         <Image
           alt={'Home Image'}
           objectFit={{ base: 'cover', lg: 'contain' }}
-          src="/home.png"
+          src='/home.png'
         />
       </Flex>
     </Stack>

@@ -103,7 +103,7 @@ export default function Sidebar({ chain }: { chain: Chain | undefined }) {
                 _hover={{ bgColor: 'gray.200' }}
               >
                 <Icon as={menu.icon} boxSize={4} color={'purple.800'} />
-                <Text fontSize="sm" textAlign={'center'}>
+                <Text fontSize='sm' textAlign={'center'}>
                   {menu.name}
                 </Text>
               </Flex>
@@ -220,20 +220,20 @@ const MenuAccordion = () => {
   return (
     <Flex>
       <Container p={0}>
-        <Accordion allowMultiple width="100%" maxW="lg" rounded="lg">
+        <Accordion allowMultiple width='100%' maxW='lg' rounded='lg'>
           {menuList.map((menu) => (
             <AccordionItem key={menu.name}>
               <AccordionButton
-                display="flex"
-                alignItems="center"
-                justifyContent="space-between"
+                display='flex'
+                alignItems='center'
+                justifyContent='space-between'
                 p={2}
               >
                 <Flex alignItems={'center'} gap={2}>
                   <Icon as={menu.icon} boxSize={4} color={'purple.800'} />
-                  <Text fontSize="md">{menu.name}</Text>
+                  <Text fontSize='md'>{menu.name}</Text>
                 </Flex>
-                <ChevronDownIcon fontSize="24px" />
+                <ChevronDownIcon fontSize='24px' />
               </AccordionButton>
               <AccordionPanel pb={4}>
                 {menu.submenus.map((submenu) => (
@@ -249,8 +249,8 @@ const MenuAccordion = () => {
                       px={1}
                       rounded={'lg'}
                     >
-                      <ChevronRightIcon fontSize="20px" />
-                      <Text color="gray.600">{submenu.name}</Text>
+                      <ChevronRightIcon fontSize='20px' />
+                      <Text color='gray.600'>{submenu.name}</Text>
                     </Flex>
                   </Link>
                 ))}

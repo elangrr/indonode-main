@@ -18,7 +18,7 @@ const CodeSnippet = ({ code }: { code: string }) => {
       <CopyButton code={code} theme={'light'} />
       <SyntaxHighlighter
         customStyle={{ background: 'none' }}
-        language="bash"
+        language='bash'
         style={atomOneLight}
         showLineNumbers={false}
       >

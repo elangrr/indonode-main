@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import ServiceLayout from '@/components/ServiceLayout'
+import React, { ChangeEvent } from 'react'
 import {
   Heading,
   Stack,
@@ -31,11 +32,19 @@ export default function ServiceInstallation() {
   const [peersCommand, setPeersCommand] = useState('')
   const [livePeersCount, setLivePeersCount] = useState(0)
 
-  const handlePortChange = (e) => {
+  const handlePortChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     if (/^\d{0,2}$/.test(value)) {
       setPort(value)
     }
+  }
+
+  interface Peer {
+    node_info: {
+      id: string;
+      listen_addr: string;
+    };
+    remote_ip: string;
   }
 
   const fetchLivePeers = async () => {
@@ -43,14 +52,22 @@ export default function ServiceInstallation() {
       const response = await fetch(`${chain?.links.rpc}/net_info`)
       const data = await response.json()
       const peers = data.result.peers
-        .map(peer => `${peer.node_info.id}@${peer.remote_ip}:${peer.node_info.listen_addr.split(':').pop()}`)
+        .map(
+          (peer: Peer) =>
+            `${peer.node_info.id}@${peer.remote_ip}:${peer.node_info.listen_addr
+              .split(':')
+              .pop()}` // Ensure there is no missing comma here
+        )
         .join(',')
       setLivePeersCount(data.result.peers.length)
-      setPeersCommand(`PEERS="${peers}"\nsed -i -e "s|^persistent_peers *=.*|persistent_peers = \\"$PEERS\\"|" $HOME/.${chain?.dir}/config/config.toml`)
+      setPeersCommand(
+        `PEERS="${peers}"\nsed -i -e "s|^persistent_peers *=.*|persistent_peers = \\"$PEERS\\"|" $HOME/.${chain?.dir}/config/config.toml`
+      )
     } catch (error) {
       console.error('Error fetching live peers:', error)
     }
   }
+
 
   useEffect(() => {
     if (chain?.links.rpc) {
@@ -58,7 +75,7 @@ export default function ServiceInstallation() {
       const interval = setInterval(fetchLivePeers, 3 * 60 * 1000) // Fetch peers every 3 minutes
       return () => clearInterval(interval)
     }
-  }, [chain?.links.rpc])
+  }, [chain?.links.rpc, fetchLivePeers])
 
   const hasRepository = !!chain?.links.repository
   const hasBinary = !!chain?.links.binary
@@ -67,7 +84,7 @@ export default function ServiceInstallation() {
     <ServiceLayout>
       <Stack spacing={6}>
         <Stack spacing={4}>
-          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="setup">
+          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id='setup'>
             Setup Server
           </Heading>
           <CodeSnippet
@@ -93,7 +110,7 @@ sudo ufw enable
 
         {/* Go Installation */}
         <Stack spacing={4}>
-          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="go">
+          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id='go'>
             Install GO
           </Heading>
           <CodeSnippet
@@ -110,51 +127,52 @@ go version
         </Stack>
 
         <Stack spacing={4}>
-          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="node">
+          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id='node'>
             Node Installation
           </Heading>
-          <Stack direction="row" spacing={4}>
-            <FormControl width="10%">
+          <Stack direction='row' spacing={4}>
+            <FormControl width='10%'>
               <FormLabel>Node Name (Moniker)</FormLabel>
               <Input
-                placeholder="Node Name"
+                placeholder='Node Name'
                 value={moniker}
                 onChange={(e) => setMoniker(e.target.value)}
-                size="md"
-                borderRadius="md"
+                size='md'
+                borderRadius='md'
                 opacity={moniker ? 1 : 0.5}
                 color={moniker ? 'black' : 'gray'}
               />
             </FormControl>
-            <FormControl width="10%">
+            <FormControl width='10%'>
               <FormLabel>Port (Optional)</FormLabel>
               <Input
-                placeholder="Port"
-                value={port}
-                onChange={handlePortChange}
-                size="md"
-                borderRadius="md"
-                opacity={port ? 1 : 0.5}
-                color={port ? 'black' : 'gray'}
-                type="number"
-                maxLength="2"
-              />
+  placeholder='Port'
+  value={port}
+  onChange={handlePortChange}
+  size='md'
+  borderRadius='md'
+  opacity={port ? 1 : 0.5}
+  color={port ? 'black' : 'gray'}
+  type='number'
+  maxLength={2}  // Ensure this is a number, not a string
+/>
+
             </FormControl>
-            <FormControl width="10%">
+            <FormControl width='10%'>
               <FormLabel>Wallet Name</FormLabel>
               <Input
-                placeholder="Wallet Name"
+                placeholder='Wallet Name'
                 value={walletName}
                 onChange={(e) => setWalletName(e.target.value)}
-                size="md"
-                borderRadius="md"
+                size='md'
+                borderRadius='md'
                 opacity={walletName ? 1 : 0.5}
                 color={walletName ? 'black' : 'gray'}
               />
             </FormControl>
           </Stack>
           {hasRepository || hasBinary ? (
-            <Tabs size="md" variant="enclosed">
+            <Tabs size='md' variant='enclosed'>
               <TabList>
                 {hasRepository && <Tab>Repository</Tab>}
                 {hasBinary && <Tab>Binary</Tab>}
@@ -264,10 +282,16 @@ sudo systemctl restart ${chain?.binary} && sudo journalctl -fu ${chain?.binary} 
 
         {/* Validator Setup */}
         <Stack spacing={4}>
-          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="validator">
+          <Heading
+            fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }}
+            id='validator'
+          >
             Setup Validator
           </Heading>
-          <Text>You need a wallet for validator , there is 2 option here you can either create new or recover it.</Text>
+          <Text>
+            You need a wallet for validator , there is 2 option here you can
+            either create new or recover it.
+          </Text>
           <CodeSnippet
             code={`# Option 1 : Create Wallet
 ${chain?.binary} keys add ${walletName}
@@ -278,25 +302,33 @@ ${chain?.binary} keys add ${walletName}
 ${chain?.binary} keys add ${walletName} --recover
 `}
           />
-            <Text color="red.500" fontWeight="bold">
-              Warning: Backup your seed phrase in a safe place!!!
-            </Text>
+          <Text color='red.500' fontWeight='bold'>
+            Warning: Backup your seed phrase in a safe place!!!
+          </Text>
           <Text>To see the list of all your wallets</Text>
           <CodeSnippet
             code={`# List Keys
 ${chain?.binary} keys list
 `}
           />
-          <Text>Fund your wallet with tokens atleast 1, and check to the balance</Text>
+          <Text>
+            Fund your wallet with tokens atleast 1, and check to the balance
+          </Text>
           <CodeSnippet
             code={`# Check Balance
 ${chain?.binary} q bank balances $(${chain?.binary} keys show ${walletName} -a)
 `}
           />
-            <Heading as="h3" size="md">Create Validator</Heading>
-            <Text color="orange.500" fontWeight="bold">
-              Caution: Make sure to edit value of YOUR_KEYBASE_ID , YOUR_DETAILS , YOUR_WEBSITE_URL, You can leave it empty if you don't have any of those!
-            </Text>
+          <Heading as='h3' size='md'>
+            Create Validator
+          </Heading>
+          {/* eslint-disable react/no-unescaped-entities */}
+          <Text color='orange.500' fontWeight='bold'>
+            Caution: Make sure to edit the value of YOUR_KEYBASE_ID, YOUR
+            DETAILS, YOUR_WEBSITE_URL, You can leave it empty if you don't have
+            any of those!
+          </Text>
+          {/* eslint-enable react/no-unescaped-entities */}
           <CodeSnippet
             code={`# Create Validator
 ${chain?.binary} tx staking create-validator \\
@@ -318,9 +350,11 @@ ${chain?.binary} tx staking create-validator \\
   -y
 `}
           />
-            <Text color="red.500" fontWeight="bold">
-              Save the $HOME/.{chain?.dir}/config/priv_validator_key.json to recover your validator as this is the only file you need to recover your validator if you lose it!!!
-            </Text>
+          <Text color='red.500' fontWeight='bold'>
+            Save the $HOME/.{chain?.dir}/config/priv_validator_key.json to
+            recover your validator as this is the only file you need to recover
+            your validator if you lose it!!!
+          </Text>
         </Stack>
       </Stack>
     </ServiceLayout>

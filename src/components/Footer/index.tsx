@@ -41,7 +41,7 @@ export const SocialButton = ({
       _hover={{
         bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
       }}
-      target="_blank"
+      target='_blank'
     >
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}
@@ -60,7 +60,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 export default function Footer() {
   return (
     <Box
-      id="contact"
+      id='contact'
       bg={useColorModeValue('gray.50', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}
     >
@@ -72,9 +72,9 @@ export default function Footer() {
           <Stack spacing={6}>
             <Box>
               <Image
-                src="/logo.png"
-                alt="Logo"
-                width="auto"
+                src='/logo.png'
+                alt='Logo'
+                width='auto'
                 height={'46px'}
               ></Image>
             </Box>
@@ -101,31 +101,31 @@ export default function Footer() {
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Services</ListHeader>
-            <Box as="a" href={'#'}>
+            <Box as='a' href={'#'}>
               Staking
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as='a' href={'#'}>
               Infrastructure
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as='a' href={'#'}>
               Monitoring
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as='a' href={'#'}>
               RPC Endpoints
             </Box>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Company</ListHeader>
-            <Box as="a" href={'#'}>
+            <Box as='a' href={'#'}>
               About us
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as='a' href={'#'}>
               Terms
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as='a' href={'#'}>
               Cookies
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as='a' href={'#'}>
               Privacy
             </Box>
           </Stack>
@@ -146,7 +146,7 @@ export default function Footer() {
                 _hover={{
                   bg: 'purple.600',
                 }}
-                aria-label="Subscribe"
+                aria-label='Subscribe'
                 icon={<BiMailSend />}
               />
             </Stack>

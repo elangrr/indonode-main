@@ -18,6 +18,7 @@ interface CardNetworkProps {
   explorer: string
   staking?: string
 }
+
 export default function CardNetwork({
   title,
   name,
@@ -38,8 +39,8 @@ export default function CardNetwork({
       w={'231px'}
       bg={useColorModeValue('white', 'gray.900')}
       color={useColorModeValue('gray.900', 'white')}
-      border="1px"
-      borderColor="gray.300"
+      border='1px'
+      borderColor='gray.300'
       rounded={'xl'}
       px={6}
       py={4}
@@ -48,11 +49,13 @@ export default function CardNetwork({
     >
       <Image
         src={imageURL}
+        alt={title || 'Chain Logo'}
         w={'auto'}
         objectFit={'contain'}
-        h={16}
-        mb={4}
-      ></Image>
+        h={12} // Adjusted height to make the image larger
+        mb={4}  // Add margin bottom for spacing
+      />
+
       <Heading fontSize={'lg'} textAlign={'center'}>
         {title}
       </Heading>
@@ -69,9 +72,9 @@ export default function CardNetwork({
       </Flex>
       <Flex gap={1}>
         <Button
-          colorScheme="purple"
-          variant="outline"
-          size="sm"
+          colorScheme='purple'
+          variant='outline'
+          size='sm'
           onClick={() =>
             router.push(`/services/${network.toLowerCase()}/${name}`)
           }
@@ -80,9 +83,9 @@ export default function CardNetwork({
         </Button>
         <Button
           as={'a'}
-          colorScheme="purple"
-          variant="outline"
-          size="sm"
+          colorScheme='purple'
+          variant='outline'
+          size='sm'
           href={explorer}
           target={'_blank'}
         >
@@ -91,7 +94,7 @@ export default function CardNetwork({
       </Flex>
       {network.toLocaleLowerCase() === 'mainnet' && (
         <Box
-          as="a"
+          as='a'
           display={'flex'}
           w={'full'}
           justifyContent={'center'}
@@ -103,11 +106,11 @@ export default function CardNetwork({
           target={'_blank'}
         >
           <Text
-            fontWeight="bold"
+            fontWeight='bold'
             animation={`${animation} 1s linear infinite`}
-            bgGradient="linear(to-l, purple.500, red.500)"
-            bgClip="text"
-            backgroundSize="200% auto"
+            bgGradient='linear(to-l, purple.500, red.500)'
+            bgClip='text'
+            backgroundSize='200% auto'
           >
             Stake with Us
           </Text>

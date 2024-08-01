@@ -20,7 +20,7 @@ function CategoryNetwork({
     <Flex
       boxShadow={isSelected ? 'lg' : 'none'}
       border={isSelected ? '1px' : 'none'}
-      borderColor="gray.100"
+      borderColor='gray.100'
       rounded={'lg'}
       p={4}
       w={64}
@@ -58,7 +58,7 @@ export default function Networks() {
   const [categoryNetwork, setCategoryNetwork] = useState('Mainnet')
 
   return (
-    <Box id="networks" p={6} mb={36}>
+    <Box id='networks' p={6} mb={36}>
       <Heading
         fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
         textAlign={'center'}
@@ -79,12 +79,12 @@ export default function Networks() {
           gap={4}
         >
           <CategoryNetwork
-            category="Mainnet"
+            category='Mainnet'
             isSelected={categoryNetwork === 'Mainnet'}
             onClick={() => setCategoryNetwork('Mainnet')}
           />
           <CategoryNetwork
-            category="Testnet"
+            category='Testnet'
             isSelected={categoryNetwork === 'Testnet'}
             onClick={() => setCategoryNetwork('Testnet')}
           />

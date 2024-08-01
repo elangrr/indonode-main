@@ -35,7 +35,7 @@ const offerList = [
 export default function Offered() {
   return (
     <Box
-      id="values"
+      id='values'
       bg={useColorModeValue('purple.900', 'white')}
       color={useColorModeValue('white', 'gray.800')}
       minH={800}
@@ -78,9 +78,9 @@ export default function Offered() {
       </Box>
       <Box
         bgImage="url('/wave.svg')"
-        bgPosition="center top"
-        bgRepeat="no-repeat"
-        bgSize="cover"
+        bgPosition='center top'
+        bgRepeat='no-repeat'
+        bgSize='cover'
         position={'absolute'}
         w={'100%'}
         h={'100%'}

@@ -9,9 +9,9 @@ export default function Services() {
     <>
       <Head>
         <title>Indonode - Services</title>
-        <meta name="description" content="Indonode - Services" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='description' content='Indonode - Services' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
         <Box

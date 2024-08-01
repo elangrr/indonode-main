@@ -14,28 +14,31 @@ export default function ServiceSnapshot() {
     <ServiceLayout>
       <Stack spacing={6}>
         <Stack>
-          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="snapshot">
+          <Heading
+            fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }}
+            id='snapshot'
+          >
             Snapshot
           </Heading>
           {snapshotInfo && (
-            <Stack direction="row" wrap="wrap">
-              <Stack direction="row">
+            <Stack direction='row' wrap='wrap'>
+              <Stack direction='row'>
                 <Text>Height:</Text>
-                <Text fontWeight="medium">{snapshotInfo.block_height}</Text>
+                <Text fontWeight='medium'>{snapshotInfo.block_height}</Text>
               </Stack>
               <span>|</span>
-              <Stack direction="row">
+              <Stack direction='row'>
                 <Text>Last updated:</Text>
                 <Tooltip label={new Date(snapshotInfo.created_at).toString()}>
-                  <Text fontWeight="medium">
+                  <Text fontWeight='medium'>
                     {displayDateToNow(snapshotInfo.created_at)}
                   </Text>
                 </Tooltip>
               </Stack>
               <span>|</span>
-              <Stack direction="row">
+              <Stack direction='row'>
                 <Text>Size:</Text>
-                <Text fontWeight="medium">{snapshotInfo.size}</Text>
+                <Text fontWeight='medium'>{snapshotInfo.size}</Text>
               </Stack>
             </Stack>
           )}
@@ -58,7 +61,10 @@ mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/da
             code={`# Restart chain
 sudo systemctl start ${chain?.binary} && sudo journalctl -u ${chain?.binary} -f -o cat`}
           />
-          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="statesync">
+          <Heading
+            fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }}
+            id='statesync'
+          >
             Statesync
           </Heading>
           <CodeSnippet
@@ -86,7 +92,7 @@ sed -i \\
 # Restore validator state from backup
 mv $HOME/.${chain?.dir}/priv_validator_state.json.backup $HOME/.${chain?.dir}/data/priv_validator_state.json`}
           />
-          {chain?.links.wasm && chain.links.wasm !== "" && (
+          {chain?.links.wasm && chain.links.wasm !== '' && (
             <CodeSnippet
               code={`# Download wasm
 curl -L ${chain.links.wasm} | lz4 -dc - | tar -xf - -C $HOME/.${chain?.dir}`}

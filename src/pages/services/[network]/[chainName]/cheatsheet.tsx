@@ -49,7 +49,7 @@ export default function ServiceCheatSheet() {
     <ServiceLayout>
       <Stack spacing={6}>
         <Stack spacing={4}>
-          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="key">
+          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id='key'>
             Key Management
           </Heading>
           <Stack>
@@ -97,7 +97,7 @@ export default function ServiceCheatSheet() {
         <Stack spacing={4}>
           <Heading
             fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }}
-            id="validator"
+            id='validator'
           >
             Validator Management
           </Heading>
@@ -106,7 +106,7 @@ export default function ServiceCheatSheet() {
               <FormLabel>Moniker</FormLabel>
               <Input
                 type={'text'}
-                placeholder="<MONIKER>"
+                placeholder='<MONIKER>'
                 onChange={(e) => setValidatorMoniker(e.target.value)}
               />
             </FormControl>
@@ -114,7 +114,7 @@ export default function ServiceCheatSheet() {
               <FormLabel>Identity</FormLabel>
               <Input
                 type={'text'}
-                placeholder="<KEYBASE_ID>"
+                placeholder='<KEYBASE_ID>'
                 onChange={(e) => setValidatorIdentity(e.target.value)}
               />
             </FormControl>
@@ -251,7 +251,7 @@ export default function ServiceCheatSheet() {
         </Stack>
 
         <Stack spacing={4}>
-          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="token">
+          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id='token'>
             Token Management
           </Heading>
           <Stack direction={'row'} spacing={2} wrap={'wrap'}>
@@ -259,7 +259,7 @@ export default function ServiceCheatSheet() {
               <FormLabel>To valoper address</FormLabel>
               <Input
                 type={'text'}
-                placeholder="<TO_VALOPER_ADDRESS>"
+                placeholder='<TO_VALOPER_ADDRESS>'
                 onChange={(e) => setTokenValoperAddr(e.target.value)}
               />
             </FormControl>
@@ -267,7 +267,7 @@ export default function ServiceCheatSheet() {
               <FormLabel>To wallet address</FormLabel>
               <Input
                 type={'text'}
-                placeholder="<TO_WALLET_ADDRESS>"
+                placeholder='<TO_WALLET_ADDRESS>'
                 onChange={(e) => setTokenWalletAddr(e.target.value)}
               />
             </FormControl>
@@ -334,7 +334,7 @@ export default function ServiceCheatSheet() {
         <Stack spacing={4}>
           <Heading
             fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }}
-            id="governance"
+            id='governance'
           >
             Governance
           </Heading>
@@ -407,11 +407,11 @@ export default function ServiceCheatSheet() {
                 onChange={setGovProposalOption}
                 value={govProposalOption}
               >
-                <Stack direction="row" h={'40px'}>
-                  <Radio value="yes">Yes</Radio>
-                  <Radio value="no">No</Radio>
-                  <Radio value="no_with_veto">No with veto</Radio>
-                  <Radio value="abstain">Abstain</Radio>
+                <Stack direction='row' h={'40px'}>
+                  <Radio value='yes'>Yes</Radio>
+                  <Radio value='no'>No</Radio>
+                  <Radio value='no_with_veto'>No with veto</Radio>
+                  <Radio value='abstain'>Abstain</Radio>
                 </Stack>
               </RadioGroup>
             </FormControl>
@@ -431,7 +431,7 @@ export default function ServiceCheatSheet() {
         </Stack>
 
         <Stack spacing={4}>
-          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="utility">
+          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id='utility'>
             Utility
           </Heading>
           <Stack direction={'row'} spacing={4} wrap={'wrap'}>
@@ -441,9 +441,9 @@ export default function ServiceCheatSheet() {
                 onChange={(value) => setIndexer(value)}
                 value={indexer}
               >
-                <Stack direction="row">
-                  <Radio value="NULL">NULL</Radio>
-                  <Radio value="KV">KV</Radio>
+                <Stack direction='row'>
+                  <Radio value='NULL'>NULL</Radio>
+                  <Radio value='KV'>KV</Radio>
                 </Stack>
               </RadioGroup>
             </FormControl>
@@ -500,7 +500,7 @@ sed -i.bak -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:\${
         <Stack spacing={4}>
           <Heading
             fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }}
-            id="services"
+            id='services'
           >
             Services Management
           </Heading>
