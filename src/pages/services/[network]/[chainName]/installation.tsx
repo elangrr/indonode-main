@@ -256,10 +256,71 @@ curl -L ${snapshotInfo?.url} | tar -Ilz4 -xf - -C $HOME/.${chain?.dir}
 `}
           />
           <CodeSnippet
-            code={`# Start the Node
+            code={`# Start the Node, CTRL + C to exit logs
 sudo systemctl restart ${chain?.binary} && sudo journalctl -fu ${chain?.binary} -o cat
 `}
           />
+        </Stack>
+
+        {/* Validator Setup */}
+        <Stack spacing={4}>
+          <Heading fontSize={{ base: 'xl', md: '2xl', lg: '2xl' }} id="validator">
+            Setup Validator
+          </Heading>
+          <Text>You need a wallet for validator , there is 2 option here you can either create new or recover it.</Text>
+          <CodeSnippet
+            code={`# Option 1 : Create Wallet
+${chain?.binary} keys add ${walletName}
+`}
+          />
+          <CodeSnippet
+            code={`# Option 2 : Recover Wallet
+${chain?.binary} keys add ${walletName} --recover
+`}
+          />
+            <Text color="red.500" fontWeight="bold">
+              Warning: Backup your seed phrase in a safe place!!!
+            </Text>
+          <Text>To see the list of all your wallets</Text>
+          <CodeSnippet
+            code={`# List Keys
+${chain?.binary} keys list
+`}
+          />
+          <Text>Fund your wallet with tokens atleast 1, and check to the balance</Text>
+          <CodeSnippet
+            code={`# Check Balance
+${chain?.binary} q bank balances $(${chain?.binary} keys show ${walletName} -a)
+`}
+          />
+            <Heading as="h3" size="md">Create Validator</Heading>
+            <Text color="orange.500" fontWeight="bold">
+              Caution: Make sure to edit value of YOUR_KEYBASE_ID , YOUR_DETAILS , YOUR_WEBSITE_URL, You can leave it empty if you don't have any of those!
+            </Text>
+          <CodeSnippet
+            code={`# Create Validator
+${chain?.binary} tx staking create-validator \\
+  --amount 1000000${chain?.denom} \\
+  --pubkey $(${chain?.binary} tendermint show-validator) \\
+  --moniker "${moniker}" \\
+  --identity "YOUR_KEYBASE_ID" \\
+  --details "YOUR_DETAILS" \\
+  --website "YOUR_WEBSITE_URL" \\
+  --chain-id ${chain?.chainId} \\
+  --commission-rate 0.05 \\
+  --commission-max-rate 0.20 \\
+  --commission-max-change-rate 0.05 \\
+  --min-self-delegation "1" \\
+  --from ${walletName} \\
+  --gas auto \\
+  --gas-adjustment 1.4 \\
+  --gas-prices ${chain?.gasPrice} \\
+  -y
+`}
+          />
+            <Text color="red.500" fontWeight="bold">
+              Save the $HOME/.{chain?.dir}/config/priv_validator_key.json to recover your validator as this is the only file you need to recover your validator if you lose it!!!
+            </Text>
         </Stack>
       </Stack>
     </ServiceLayout>
