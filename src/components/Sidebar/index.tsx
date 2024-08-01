@@ -148,6 +148,10 @@ const menuList = [
         name: 'Node Installation',
         link: '/installation#node',
       },
+      {
+        name: 'Setup Validator',
+        link: '/installation#validator',
+      },
     ],
   },
   {
