@@ -75,7 +75,7 @@
       "title": "Bitcanna",
       "name": "bitcanna",
       "dir": "bcna",
-      "go": "1.21.5",
+      "go": "1.22.5",
       "coinGeckoId": "bitcanna",
       "imageURL": "/networks/bitcanna.png",
       "version": "v3.0.2",
@@ -110,10 +110,10 @@
       "title": "Source Protocol",
       "name": "source",
       "dir": "source",
-      "go": "1.21.5",
+      "go": "1.22.5",
       "coinGeckoId": "source",
       "imageURL": "/networks/source.png",
-      "version": "v3.0.1",
+      "version": "v3.0.3",
       "upgradever": "",
       "upgrade": "",
       "chainId": "source-1",
@@ -148,7 +148,7 @@
       "go": "1.22.3",
       "coinGeckoId": "six-sigma",
       "imageURL": "/networks/sge.jpg",
-      "version": "v1.7.0-tmfix",
+      "version": "v1.7.2",
       "upgradever": "",
       "upgrade": "",
       "chainId": "sgenet-1",
@@ -253,9 +253,9 @@
       "go": "1.21.11",
       "coinGeckoId": "quicksilver",
       "imageURL": "/networks/quicksilver.png",
-      "version": "v1.5.6",
-      "upgradever": "v1.5.6",
-      "upgrade": "7810000",
+      "version": "v1.6.2",
+      "upgradever": "",
+      "upgrade": "",
       "chainId": "quicksilver-2",
       "description": [
         "Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Interchain ecosystem."
@@ -288,9 +288,9 @@
       "go": "1.21.5",
       "coinGeckoId": "realio-network",
       "imageURL": "/networks/realio.png",
-      "version": "v0.9.0",
-      "upgradever": "v0.9.3",
-      "upgrade": "7526754",
+      "version": "v0.9.3",
+      "upgradever": "",
+      "upgrade": "",
       "chainId": "realionetwork_3301-1",
       "description": [
         "Realio Network is a blockchain-based Software as a Service (SaaS) platform that focuses on the issuance, investment, and life-cycle management of digital securities and cryptoassets."
@@ -431,7 +431,7 @@
       "version": "c940d186c0d118ea017f6abc00225fdd9b26fe14",
       "upgradever": "",
       "upgrade": "",
-      "chainId": "blockx_190-1",
+      "chainId": "blockx_19191-1",
       "description": [
         "BlockX Network is a Layer 1 Ethereum alternative blockchain that offers multi-chain operability, an off-chain oracle infrastructure, and enables sovereign digital identity for the next-gen of Web3."
       ],
@@ -500,9 +500,9 @@
       "go": "1.22.3",
       "coinGeckoId": "",
       "imageURL": "/networks/swisstronik.png",
-      "version": "v1.0.2",
-      "upgradever": "",
-      "upgrade": "",
+      "version": "v1.0.4",
+      "upgradever": "v1.0.4",
+      "upgrade": "6625070 ",
       "chainId": "swisstronik_1291-1",
       "description": [
         "Swisstronik is an identity-based hybrid blockchain ecosystem. It lets Web 3.0 and traditional companies build KYC, AML and DPR-compliant applications with enhanced data privacy."
