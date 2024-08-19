@@ -147,7 +147,7 @@
       "dir": "sge",
       "go": "1.22.3",
       "coinGeckoId": "six-sigma",
-      "imageURL": "/networks/sge.jpg",
+      "imageURL": "/networks/sge.png",
       "version": "v1.7.4",
       "upgradever": "v1.7.4",
       "upgrade": "5084800",
