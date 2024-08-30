@@ -181,7 +181,7 @@
       "name": "selfchain",
       "dir": "selfchain",
       "go": "1.22.3",
-      "coinGeckoId": "",
+      "coinGeckoId": "self-chain",
       "imageURL": "/networks/selfchain.jpg",
       "version": "",
       "upgradever": "",
@@ -738,7 +738,7 @@
       "go": "1.22.3",
       "coinGeckoId": "",
       "imageURL": "/networks/empe.jpg",
-      "version": "0.1.0",
+      "version": "0.2.2",
       "chainId": "empe-testnet-2",
       "description": [
         "Empeiria is the first End-to-End Verifiable Data Infrastructure (EVDI). It enables seamless web3 adoption through one-click deployment, empowering organizations with the data of the future."
