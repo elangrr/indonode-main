@@ -483,9 +483,9 @@
         "rpc": "https://rpc.cnho-t.indonode.net",
         "api": "https://api.cnho-t.indonode.net",
         "grpc": "https://grpc.cnho-t.indonode.net:1290",
-        "addrbook": "https://snapshot.indonode.net/cnho-t/addrbook.json",
-        "genesis": "https://snapshot.indonode.net/cnho-t/genesis.json",
-        "snapshot": "https://snapshot.indonode.net/cnho-t/log.json",
+        "addrbook": "https://snapshots.indonode.net/cnho-t/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/cnho-t/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/cnho-t/log.json",
         "explorer": "https://explorer.indonode.net/cnho-testnet"
       }
     },
