@@ -41,10 +41,10 @@ export default function ServiceInstallation() {
 
   interface Peer {
     node_info: {
-      id: string;
-      listen_addr: string;
-    };
-    remote_ip: string;
+      id: string
+      listen_addr: string
+    }
+    remote_ip: string
   }
 
   const fetchLivePeers = async () => {
@@ -67,7 +67,6 @@ export default function ServiceInstallation() {
       console.error('Error fetching live peers:', error)
     }
   }
-
 
   useEffect(() => {
     if (chain?.links.rpc) {
@@ -146,17 +145,16 @@ go version
             <FormControl width='10%'>
               <FormLabel>Port (Optional)</FormLabel>
               <Input
-  placeholder='Port'
-  value={port}
-  onChange={handlePortChange}
-  size='md'
-  borderRadius='md'
-  opacity={port ? 1 : 0.5}
-  color={port ? 'black' : 'gray'}
-  type='number'
-  maxLength={2}  // Ensure this is a number, not a string
-/>
-
+                placeholder='Port'
+                value={port}
+                onChange={handlePortChange}
+                size='md'
+                borderRadius='md'
+                opacity={port ? 1 : 0.5}
+                color={port ? 'black' : 'gray'}
+                type='number'
+                maxLength={2} // Ensure this is a number, not a string
+              />
             </FormControl>
             <FormControl width='10%'>
               <FormLabel>Wallet Name</FormLabel>

@@ -53,7 +53,7 @@ export default function CardNetwork({
         w={'auto'}
         objectFit={'contain'}
         h={12} // Adjusted height to make the image larger
-        mb={4}  // Add margin bottom for spacing
+        mb={4} // Add margin bottom for spacing
       />
 
       <Heading fontSize={'lg'} textAlign={'center'}>
