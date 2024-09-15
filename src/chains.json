@@ -422,7 +422,7 @@
       }
     },
     {
-      "title": "CNHO",
+      "title": "CNHO Stables",
       "name": "cnho",
       "dir": "cnho",
       "go": "1.22.3",
@@ -432,7 +432,7 @@
       "upgradever": "",
       "upgrade": "",
       "chainId": "cnho_stables-1",
-      "description": ["CNHO is Offshore Fiat Stablecoin Service DAO"],
+      "description": ["CNHO Stables is Offshore Fiat Stablecoin Service DAO"],
       "binary": "cnhod",
       "denom": "ucnho",
       "gasPrice": "0.00001ucnho",
