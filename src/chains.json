@@ -450,7 +450,8 @@
         "addrbook": "https://snapshots.indonode.net/cnho/addrbook.json",
         "genesis": "https://snapshots.indonode.net/cnho/genesis.json",
         "snapshot": "https://snapshots.indonode.net/cnho/log.json",
-        "explorer": "https://explorer.indonode.net/cnho"
+        "explorer": "https://explorer.indonode.net/cnho",
+        "staking": "https://explorer.indonode.net/cnho/staking/cnhovaloper1jzmlpl2klfuw2p3n9036ca6zw0033dnaun9z93"
       }
     }
   ],
