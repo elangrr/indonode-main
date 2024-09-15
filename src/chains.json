@@ -420,6 +420,38 @@
         "explorer": "https://explorer.indonode.net/lava",
         "staking": "https://explorer.indonode.net/lava/staking/lava@valoper195h3nu4xsy990xq5qcfu53h8qlfnyy6aeqrrry"
       }
+    },
+    {
+      "title": "CNHO",
+      "name": "cnho",
+      "dir": "cnho",
+      "go": "1.22.3",
+      "coinGeckoId": "",
+      "imageURL": "/networks/cnho.png",
+      "version": "v1.0.0",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "cnho_stables-1",
+      "description": ["CNHO is Offshore Fiat Stablecoin Service DAO"],
+      "binary": "cnhod",
+      "denom": "ucnho",
+      "gasPrice": "0.00001ucnho",
+      "links": {
+        "repository": "",
+        "binary": "https://snapshots.indonode.net/cnho/cnhod.tar.gz",
+        "wasm": "",
+        "website": "https://www.cnho.io",
+        "twitter": "https://x.com/cnho_io",
+        "discord": "https://discord.gg/epENUgc9D8",
+        "peer": "5f7efe8512e3a7560c3012db2bdeb790d599b803@rpc.cnho.indonode.net:26656",
+        "rpc": "https://rpc.cnho.indonode.net",
+        "api": "https://api.cnho.indonode.net",
+        "grpc": "https://grpc.cnho.indonode.net:26090",
+        "addrbook": "https://snapshots.indonode.net/cnho/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/cnho/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/cnho/log.json",
+        "explorer": "https://explorer.indonode.net/cnho"
+      }
     }
   ],
   "testnet": [
@@ -455,38 +487,6 @@
         "genesis": "https://snapshot.indonode.net/swisstronik-t/genesis.json",
         "snapshot": "https://snapshot.indonode.net/swisstronik-t/log.json",
         "explorer": "https://explorer.indonode.net/swisstronik-testnet"
-      }
-    },
-    {
-      "title": "CNHO",
-      "name": "cnho",
-      "dir": "cnho",
-      "go": "1.22.3",
-      "coinGeckoId": "",
-      "imageURL": "/networks/cnho.png",
-      "version": "v1.0.0",
-      "upgradever": "",
-      "upgrade": "",
-      "chainId": "cnho_stables-1",
-      "description": ["CNHO is Offshore Fiat Stablecoin Service DAO"],
-      "binary": "cnhod",
-      "denom": "ucnho",
-      "gasPrice": "0.00001ucnho",
-      "links": {
-        "repository": "",
-        "binary": "https://snapshots.indonode.net/cnho-t/cnhod.tar.gz",
-        "wasm": "",
-        "website": "https://www.cnho.io",
-        "twitter": "https://x.com/cnho_io",
-        "discord": "https://discord.gg/epENUgc9D8",
-        "peer": "5f7efe8512e3a7560c3012db2bdeb790d599b803@rpc.cnho-t.indonode.net:12056",
-        "rpc": "https://rpc.cnho-t.indonode.net",
-        "api": "https://api.cnho-t.indonode.net",
-        "grpc": "https://grpc.cnho-t.indonode.net:1290",
-        "addrbook": "https://snapshots.indonode.net/cnho-t/addrbook.json",
-        "genesis": "https://snapshots.indonode.net/cnho-t/genesis.json",
-        "snapshot": "https://snapshots.indonode.net/cnho-t/log.json",
-        "explorer": "https://explorer.indonode.net/cnho-testnet"
       }
     },
     {
