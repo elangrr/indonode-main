@@ -531,10 +531,10 @@
       "go": "1.22.3",
       "coinGeckoId": "",
       "imageURL": "/networks/symphony.png",
-      "version": "0.3.0",
-      "upgradever": "",
+      "version": "0.4.1",
+      "upgradever": "0.4.1",
       "upgrade": "",
-      "chainId": "symphony-testnet-3",
+      "chainId": "symphony-testnet-4",
       "description": [
         "Symphony is a chain built on Cosmos that provides a crypto-native solution for real-world assets not reliant on traditional banking infrastructure. It can peg to any assets, allowing global access to trade across mediums such as real-estate and gold, as well as easily accessed infrastructure to build market systems such as ForEx."
       ],
@@ -548,7 +548,7 @@
         "website": "https://orchestralabs.org/",
         "twitter": "https://twitter.com/orchestra_labs",
         "discord": "https://discord.gg/96BnqUVeJx",
-        "peer": "247a415a06766df181c30328d30a89aeb8822afe@rpc.symphony-t.indonode.net:11856",
+        "peer": "5f7efe8512e3a7560c3012db2bdeb790d599b803@rpc.symphony-t.indonode.net:11856",
         "rpc": "https://rpc.symphony-t.indonode.net",
         "api": "https://api.symphony-t.indonode.net",
         "grpc": "https://grpc.symphony-t.indonode.net:11890",
