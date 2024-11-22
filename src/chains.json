@@ -78,9 +78,9 @@
       "go": "1.22.5",
       "coinGeckoId": "bitcanna",
       "imageURL": "/networks/bitcanna.png",
-      "version": "v3.1.1",
-      "upgradever": "",
-      "upgrade": "",
+      "version": "v4.0.0",
+      "upgradever": "v4.0.0",
+      "upgrade": "16782000",
       "chainId": "bitcanna-1",
       "description": [
         "BitCanna aims to solve a problem that has plagued the cannabis industry from its inception. Companies like Visa and MasterCard deny cannabis companies access to their services due to the legal status of marijuana. Since the legality of the herb is regulated differently in European countries, the industry leaders operate in gray areas. BitCanna wants to solve this problem by providing a decentralized blockchain network that is specifically designed for the cannabis industry and provides much-needed services to both consumers and businesses."
