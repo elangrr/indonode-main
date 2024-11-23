@@ -78,8 +78,8 @@
       "go": "1.22.5",
       "coinGeckoId": "bitcanna",
       "imageURL": "/networks/bitcanna.png",
-      "version": "v4.0.0",
-      "upgradever": "v4.0.0",
+      "version": "v4.0.1",
+      "upgradever": "v4.0.1",
       "upgrade": "16782000",
       "chainId": "bitcanna-1",
       "description": [
