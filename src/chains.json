@@ -418,6 +418,41 @@
         "explorer": "https://explorer.indonode.net/cnho",
         "staking": "https://explorer.indonode.net/cnho/staking/cnhovaloper1jzmlpl2klfuw2p3n9036ca6zw0033dnaun9z93"
       }
+    },
+    {
+      "title": "Elys",
+      "name": "elys",
+      "dir": "elys",
+      "go": "1.23.5",
+      "coinGeckoId": "elys-network",
+      "imageURL": "/networks/elys.jpg",
+      "version": "v1.4.0",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "elys-1",
+      "description": [
+        "Elys is a layer 1 blockchain that brings a suite of Defi products and features fueled by Wallet and Chain Abstraction"
+      ],
+      "binary": "elysd",
+      "denom": "uelys",
+      "gasPrice": "0.0003uelys",
+      "links": {
+        "repository": "https://github.com/elys-network/elys.git",
+        "binary": "",
+        "wasm": "",
+        "website": "https://www.elys.network",
+        "twitter": "https://x.com/elys_network",
+        "discord": "https://discord.gg/elysnetwork",
+        "peer": "50c189f8a8902302718ae684fce6f0799345d3f3@rpc.elys.indonode.net:27656",
+        "rpc": "https://rpc.elys.indonode.net",
+        "api": "https://api.elys.indonode.net",
+        "grpc": "https://grpc.elys.indonode.net:27090",
+        "addrbook": "https://snapshots.indonode.net/elys/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/elys/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/elys/log.json",
+        "explorer": "https://explorer.indonode.net/elys",
+        "staking": "https://explorer.indonode.net/elys/staking/elysvaloper1z0amxpw29229ylua8vr8s7mgzw5xru6g0qkm4w"
+      }
     }
   ],
   "testnet": [
