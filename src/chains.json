@@ -453,6 +453,41 @@
         "explorer": "https://explorer.indonode.net/elys",
         "staking": "https://explorer.indonode.net/elys/staking/elysvaloper1z0amxpw29229ylua8vr8s7mgzw5xru6g0qkm4w"
       }
+    },
+    {
+      "title": "Medasdigital",
+      "name": "medasdigital",
+      "dir": "medasdigital",
+      "go": "1.23.5",
+      "coinGeckoId": "",
+      "imageURL": "/networks/medasdigital.jpg",
+      "version": "v1.0.0",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "medasdigital-2",
+      "description": [
+        "Medas Digital is an IT company with over 25 years of experience, specializing in supporting decentralized blockchain networks by operating validator nodes for projects like Sentinel dVPN and Mars Protocol. They focus on security, privacy, and innovation in Web 3.0 infrastructure."
+      ],
+      "binary": "medasdigitald",
+      "denom": "umedas",
+      "gasPrice": "0.025umedas",
+      "links": {
+        "repository": "",
+        "binary": "https://github.com/oxygene76/medasdigital-2/releases/download/v1.0.0/medasdigitald",
+        "wasm": "",
+        "website": "https://medas-digital.io",
+        "twitter": "https://x.com/medasdigital",
+        "discord": "",
+        "peer": "9d80b15b8256316e2bbd58bd3a70a0a543393db5@rpc.medasdigital.indonode.net:28656",
+        "rpc": "https://rpc.medasdigital.indonode.net",
+        "api": "https://api.medasdigital.indonode.net",
+        "grpc": "https://grpc.medasdigital.indonode.net:28090",
+        "addrbook": "https://snapshots.indonode.net/medasdigital/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/medasdigital/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/medasdigital/log.json",
+        "explorer": "https://explorer.indonode.net/medasdigital",
+        "staking": "https://explorer.indonode.net/medasdigital/staking/medasvaloper1adwfjkeppa8qkzsqu5mhes9yl2jkyxmhtf3naj"
+      }
     }
   ],
   "testnet": [
