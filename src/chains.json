@@ -488,6 +488,41 @@
         "explorer": "https://explorer.indonode.net/medasdigital",
         "staking": "https://explorer.indonode.net/medasdigital/staking/medasvaloper1adwfjkeppa8qkzsqu5mhes9yl2jkyxmhtf3naj"
       }
+    },
+    {
+      "title": "Aaronetwork",
+      "name": "aaronetwork",
+      "dir": "aaronetwork",
+      "go": "1.23.5",
+      "coinGeckoId": "",
+      "imageURL": "/networks/aaronetwork.png",
+      "version": "v1.0.0",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "aaronetwork",
+      "description": [
+        "Aaron Network is an innovative platform for secure and private messaging, integrated into the blockchain ecosystem"
+      ],
+      "binary": "aaronetworkd",
+      "denom": "uaaron",
+      "gasPrice": "0uaaron",
+      "links": {
+        "repository": "",
+        "binary": "https://snapshots.indonode.net/aaronetwork/aaronetworkd.tar.gz",
+        "wasm": "",
+        "website": "https://aaronetwork.xyz",
+        "twitter": "https://x.com/aaronetwork",
+        "discord": "https://discord.gg/CVDHyTdQ7x",
+        "peer": "338ca80fa7826287c055e7bf41eea29a36aead44@rpc.aaronetwork.indonode.net:29656",
+        "rpc": "https://rpc.aaronetwork.indonode.net",
+        "api": "https://api.aaronetwork.indonode.net",
+        "grpc": "https://grpc.aaronetwork.indonode.net:29090",
+        "addrbook": "https://snapshots.indonode.net/aaronetwork/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/aaronetwork/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/aaronetwork/log.json",
+        "explorer": "https://explorer.indonode.net/aaronetwork",
+        "staking": "https://explorer.indonode.net/aaronetwork/staking/aaronvaloper1uytlqkrz4wml8p50c0zq5dtgc2p9k3r2xruem2"
+      }
     }
   ],
   "testnet": [
