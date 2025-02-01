@@ -490,6 +490,41 @@
       }
     },
     {
+      "title": "AtomOne",
+      "name": "atomone",
+      "dir": "atomone",
+      "go": "1.21.13",
+      "coinGeckoId": "",
+      "imageURL": "/networks/atomone.png",
+      "version": "v1.0.0",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "atomone-1",
+      "description": [
+        "Aaron Network is an innovative platform for secure and private messaging, integrated into the blockchain ecosystem"
+      ],
+      "binary": "atomoned",
+      "denom": "uatone",
+      "gasPrice": "0.001uatone",
+      "links": {
+        "repository": "https://github.com/atomone-hub/atomone",
+        "binary": "",
+        "wasm": "",
+        "website": "https://atom.one",
+        "twitter": "https://x.com/_atomone",
+        "discord": "https://discord.gg/quXB3BpK4H",
+        "peer": "338ca80fa7826287c055e7bf41eea29a36aead44@rpc.atomone.indonode.net:30656",
+        "rpc": "https://rpc.atomone.indonode.net",
+        "api": "https://api.atomone.indonode.net",
+        "grpc": "https://grpc.atomone.indonode.net:30090",
+        "addrbook": "https://snapshots.indonode.net/atomone/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/atomone/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/atomone/log.json",
+        "explorer": "https://explorer.indonode.net/atomone",
+        "staking": "https://explorer.indonode.net/atomone/staking/atonevaloper19rp4ylh4grw46cwch9nkxz8w20w6fw3s2u5hau"
+      }
+    },
+    {
       "title": "Aaronetwork",
       "name": "aaronetwork",
       "dir": "aaronetwork",
