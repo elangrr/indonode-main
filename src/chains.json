@@ -568,9 +568,9 @@
       "go": "1.22.3",
       "coinGeckoId": "",
       "imageURL": "/networks/swisstronik.png",
-      "version": "v1.0.5",
-      "upgradever": "v1.0.5",
-      "upgrade": "7258000 ",
+      "version": "v1.0.7",
+      "upgradever": "v1.0.7",
+      "upgrade": "10173300  ",
       "chainId": "swisstronik_1291-1",
       "description": [
         "Swisstronik is an identity-based hybrid blockchain ecosystem. It lets Web 3.0 and traditional companies build KYC, AML and DPR-compliant applications with enhanced data privacy."
