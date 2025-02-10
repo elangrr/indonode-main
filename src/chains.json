@@ -513,7 +513,7 @@
         "website": "https://atom.one",
         "twitter": "https://x.com/_atomone",
         "discord": "https://discord.gg/quXB3BpK4H",
-        "peer": "338ca80fa7826287c055e7bf41eea29a36aead44@rpc.atomone.indonode.net:30656",
+        "peer": "50bea9d2088602c829ed3e5bd64451b284ea1b19@rpc.atomone.indonode.net:30656",
         "rpc": "https://rpc.atomone.indonode.net",
         "api": "https://api.atomone.indonode.net",
         "grpc": "https://grpc.atomone.indonode.net:30090",
