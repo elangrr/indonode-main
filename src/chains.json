@@ -496,7 +496,7 @@
       "go": "1.21.13",
       "coinGeckoId": "",
       "imageURL": "/networks/atomone.png",
-      "version": "v1.0.0",
+      "version": "v1.0.1",
       "upgradever": "",
       "upgrade": "",
       "chainId": "atomone-1",
