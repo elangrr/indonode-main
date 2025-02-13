@@ -426,9 +426,9 @@
       "go": "1.23.5",
       "coinGeckoId": "elys-network",
       "imageURL": "/networks/elys.jpg",
-      "version": "v1.4.0",
-      "upgradever": "",
-      "upgrade": "",
+      "version": "v2.0.0",
+      "upgradever": "v2.0.0",
+      "upgrade": "1550000",
       "chainId": "elys-1",
       "description": [
         "Elys is a layer 1 blockchain that brings a suite of Defi products and features fueled by Wallet and Chain Abstraction"
