@@ -184,8 +184,8 @@
       "coinGeckoId": "self-chain",
       "imageURL": "/networks/selfchain.jpg",
       "version": "",
-      "upgradever": "",
-      "upgrade": "",
+      "upgradever": "v2",
+      "upgrade": "4805959",
       "chainId": "self-1",
       "description": [
         "Self Chain Is The First Modular Intent-Centric Access Layer L1 Blockchain And Keyless Wallet Infrastructure Service That Uses MPC-TSS/AA For Multi-Chain Web3 Access."
