@@ -664,6 +664,40 @@
       }
     },
     {
+      "title": "Odiseo",
+      "name": "odiseo",
+      "dir": "achilles",
+      "go": "1.23.5",
+      "coinGeckoId": "",
+      "imageURL": "/networks/odiseo.png",
+      "version": "",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "ithaca-1",
+      "description": [
+        "ODISEO is an Open Ledger shared by the network of existing real estate development projects. It is a transparent environment where all parties can access reliable information about the assets under development. "
+      ],
+      "binary": "achillesd",
+      "denom": "uodis",
+      "gasPrice": "0uodis",
+      "links": {
+        "repository": "",
+        "binary": "https://snapshots.indonode.net/odiseo-t/achillesd.tar.gz",
+        "wasm": "",
+        "website": "https://daodiseo.money",
+        "twitter": "https://x.com/DaoDiseoMoney",
+        "discord": "",
+        "peer": "ae9ee35cfdc7ecc5da1ccb63178a5f6b0228ec8e@rpc.odiseo-t.indonode.net:12156",
+        "rpc": "https://rpc.odiseo-t.indonode.net",
+        "api": "https://api.odiseo-t.indonode.net",
+        "grpc": "https://grpc.odiseo-t.indonode.net:12190",
+        "addrbook": "https://snapshots.indonode.net/odiseo-t/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/odiseo-t/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/odiseo-t/log.json",
+        "explorer": "https://explorer.indonode.net/odiseo-testnet"
+      }
+    },
+    {
       "title": "Side Protocol",
       "name": "side",
       "dir": "side",
