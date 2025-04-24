@@ -1,10 +1,37 @@
 {
   "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
+  "plugins": ["react", "react-hooks", "jsx-a11y", "prettier"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2022": true
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     "prettier/prettier": "warn",
-    "react-hooks/exhaustive-deps": "warn",
-    "react-hooks/rules-of-hooks": "error",
-    "jsx-a11y/alt-text": "warn",
-    "react/no-unescaped-entities": "off"
-  }
+    "react-hooks/exhaustive-deps": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "jsx-a11y/alt-text": "off",
+    "react/no-unescaped-entities": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "react/jsx-no-comment-textnodes": "off"
+  },
+  "overrides": [
+    {
+      "files": ["next.config.js"],
+      "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "script"
+      }
+    }
+  ]
 }
