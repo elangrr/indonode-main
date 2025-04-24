@@ -38,7 +38,7 @@ export default function WithSubnavigation() {
         color={useColorModeValue('gray.600', 'white')}
         minH={{
           base: '60px',
-          md: scrollTop > 0 || router.pathname !== '/' ? '60px' : '150px',
+          md: scrollTop > 0 || router.pathname !== '/' ? '40px' : '80px',
         }}
         py={{ base: 2 }}
         px={{ base: 2, lg: 24 }}
@@ -54,8 +54,8 @@ export default function WithSubnavigation() {
               alt='Logo'
               width='auto'
               height={{
-                base: '46px',
-                md: scrollTop > 0 || router.pathname !== '/' ? '46px' : '86px',
+                base: '40px',
+                md: scrollTop > 0 || router.pathname !== '/' ? '46px' : '66px',
               }}
             ></Image>
           </Link>

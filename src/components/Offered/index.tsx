@@ -32,6 +32,7 @@ const offerList = [
     icon: FaKey,
   },
 ]
+
 export default function Offered() {
   return (
     <Box
@@ -48,7 +49,8 @@ export default function Offered() {
         mx={'auto'}
         height={'100%'}
         width={'100%'}
-        p={6}
+        maxWidth="1200px"  // Added max width for better large screen appearance
+        p={{ base: 4, md: 6 }}  // Responsive padding
         position={'relative'}
         zIndex={11}
       >
@@ -56,14 +58,16 @@ export default function Offered() {
           <Heading
             fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
             textAlign={'center'}
-            mb={{ base: 6, md: 8 }}
+            mb={{ base: 10, md: 12 }}  // More space below heading
+            letterSpacing="tight"  // Tighter letter spacing for modern look
           >
             What We Offer
           </Heading>
           <SimpleGrid
             columns={{ base: 1, md: 2, lg: 4 }}
-            spacingY={20}
-            spacingX={{ base: 4, md: 6, lg: 6 }}
+            spacingY={{ base: 8, md: 16, lg: 20 }}  // Responsive vertical spacing
+            spacingX={{ base: 4, md: 6, lg: 8 }}  // Responsive horizontal spacing
+            width="100%"  // Ensure grid takes full width
           >
             {offerList.map((offer) => (
               <CardOffer

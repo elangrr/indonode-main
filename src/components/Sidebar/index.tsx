@@ -13,6 +13,10 @@ import {
   Stack,
   Text,
   useColorModeValue,
+  Badge,
+  Divider,
+  HStack,
+  Tooltip
 } from '@chakra-ui/react'
 import {
   FaHome,
@@ -23,6 +27,7 @@ import {
   FaTwitter,
   FaDiscord,
   FaGlobe,
+  FaGithub
 } from 'react-icons/fa'
 import { SocialButton } from '@/components/Footer'
 import { Chain } from '@/utils/chains'
@@ -32,83 +37,155 @@ import Link from 'next/link'
 export default function Sidebar({ chain }: { chain: Chain | undefined }) {
   const router = useRouter()
   const { network, chainName } = router.query
+  
+  // Color scheme
+  const cardBg = useColorModeValue('white', 'gray.800')
+  const textColor = useColorModeValue('gray.800', 'white')
+  const borderColor = useColorModeValue('gray.200', 'gray.700')
+  const subTextColor = useColorModeValue('gray.600', 'gray.400')
+
   return (
     <Box position={'relative'} w={{ base: '100%', md: '300px', lg: '380px' }}>
+      {/* Desktop Sidebar */}
       <Box
-        bg={useColorModeValue('white', 'gray.900')}
-        color={useColorModeValue('gray.900', 'white')}
+        bg={cardBg}
+        color={textColor}
         boxShadow={'sm'}
         rounded={'lg'}
         py={6}
         px={4}
         display={{ base: 'none', md: 'block' }}
+        borderWidth="1px"
+        borderColor={borderColor}
       >
-        <Flex direction={'row'} gap={4} alignItems={'center'} mb={6}>
-          <Image
-            src={chain?.imageURL}
-            w={'auto'}
-            objectFit={'contain'}
-            h={8}
-          ></Image>
-          <Heading fontSize={'lg'}>{chain?.title}</Heading>
+        {/* Enhanced Header Section */}
+        <Flex direction="column" gap={4} mb={6}>
+          <Flex alignItems="center" gap={4}>
+            {chain?.imageURL && (
+              <Image
+                src={chain.imageURL}
+                w="auto"
+                objectFit="contain"
+                h={10}
+                borderRadius="full"
+                p={1}
+                bg={useColorModeValue('gray.50', 'gray.700')}
+                borderWidth="1px"
+                borderColor={borderColor}
+              />
+            )}
+            <Box>
+              <Heading fontSize="xl">{chain?.title}</Heading>
+              <HStack mt={1}>
+                <Badge colorScheme="green" fontSize="xs">
+                  {chain?.chainId}
+                </Badge>
+                {chain?.version && (
+                  <Badge colorScheme="blue" fontSize="xs">
+                    {chain.version}
+                  </Badge>
+                )}
+              </HStack>
+            </Box>
+          </Flex>
+          
+          <Divider />
         </Flex>
+        
+        {/* Keep Your Original Menu Accordion */}
         <MenuAccordion />
+        
+        {/* Enhanced Social Links Section */}
         <Flex mt={4} direction={'column'} gap={2}>
-          <Text fontWeight={400} color={'gray.500'} fontSize={'sm'}>
+          <Text fontWeight={500} color={subTextColor} fontSize={'sm'}>
             Official Resources
           </Text>
-          <Flex gap={1}>
-            {chain?.links.website && (
-              <SocialButton label={'Web'} href={chain.links.website}>
-                <FaGlobe />
-              </SocialButton>
-            )}
-            {chain?.links.twitter && (
-              <SocialButton label={'Twitter'} href={chain.links.twitter}>
-                <FaTwitter />
-              </SocialButton>
-            )}
-            {chain?.links.discord && (
-              <SocialButton label={'Discord'} href={chain.links.discord}>
-                <FaDiscord />
-              </SocialButton>
-            )}
-          </Flex>
+          <Flex gap={2} flexWrap="wrap">
+  {chain?.links.website && (
+    <Tooltip label="Website">
+      <Box>
+        <SocialButton label={'Web'} href={chain.links.website}>
+          <FaGlobe />
+        </SocialButton>
+      </Box>
+    </Tooltip>
+  )}
+  {chain?.links.github && (
+    <Tooltip label="GitHub">
+      <Box>
+        <SocialButton label={'GitHub'} href={chain.links.github}>
+          <FaGithub />
+        </SocialButton>
+      </Box>
+    </Tooltip>
+  )}
+  {chain?.links.twitter && (
+    <Tooltip label="Twitter">
+      <Box>
+        <SocialButton label={'Twitter'} href={chain.links.twitter}>
+          <FaTwitter />
+        </SocialButton>
+      </Box>
+    </Tooltip>
+  )}
+  {chain?.links.discord && (
+    <Tooltip label="Discord">
+      <Box>
+        <SocialButton label={'Discord'} href={chain.links.discord}>
+          <FaDiscord />
+        </SocialButton>
+      </Box>
+    </Tooltip>
+  )}
+</Flex>
         </Flex>
       </Box>
+
+      {/* Mobile Navigation - Enhanced */}
       <Box
         w={'100%'}
-        bg={useColorModeValue('white', 'gray.900')}
-        color={useColorModeValue('gray.900', 'white')}
+        bg={cardBg}
+        color={textColor}
         boxShadow={'sm'}
         rounded={'lg'}
         px={4}
         py={2}
         display={{ base: 'block', md: 'none' }}
         overflowX={'auto'}
+        borderWidth="1px"
+        borderColor={borderColor}
+        position="sticky"
+        top="0"
+        zIndex="10"
       >
         <Stack direction={'row'} justifyContent={'space-between'}>
-          {menuList.map((menu) => (
-            <Link
-              key={menu.name}
-              href={`/services/${network}/${chainName}${menu.link}`}
-            >
-              <Flex
-                direction={'column'}
-                alignItems={'center'}
-                justifyContent={'center'}
-                gap={1}
-                p={2}
-                cursor={'pointer'}
-                _hover={{ bgColor: 'gray.200' }}
+          {menuList.map((menu) => {
+            const isActive = router.asPath.includes(menu.link);
+            return (
+              <Link
+                key={menu.name}
+                href={`/services/${network}/${chainName}${menu.link}`}
               >
-                <Icon as={menu.icon} boxSize={4} color={'purple.800'} />
-                <Text fontSize='sm' textAlign={'center'}>
-                  {menu.name}
-                </Text>
-              </Flex>
-            </Link>
-          ))}
+                <Flex
+                  direction={'column'}
+                  alignItems={'center'}
+                  justifyContent={'center'}
+                  gap={1}
+                  p={2}
+                  cursor={'pointer'}
+                  borderRadius="md"
+                  bg={isActive ? useColorModeValue('gray.100', 'gray.700') : 'transparent'}
+                  _hover={{ bgColor: useColorModeValue('gray.100', 'gray.700') }}
+                  minW="60px"
+                >
+                  <Icon as={menu.icon} boxSize={4} color={isActive ? 'purple.800' : 'gray.500'} />
+                  <Text fontSize='xs' textAlign={'center'} fontWeight={isActive ? "medium" : "normal"}>
+                    {menu.name}
+                  </Text>
+                </Flex>
+              </Link>
+            );
+          })}
         </Stack>
       </Box>
     </Box>
@@ -213,6 +290,7 @@ const menuList = [
   },
 ]
 
+// Keeping your original MenuAccordion implementation
 const MenuAccordion = () => {
   const router = useRouter()
   const { network, chainName } = router.query
