@@ -34,6 +34,7 @@ export type Chain = {
   upgrade?: string
   gasPrice: string
   links: Links
+  network?: string;
 }
 
 export function getChains(network: string): Chain[] {
