@@ -6,9 +6,9 @@ import {
   Heading,
   Box,
   Button,
-  keyframes,
 } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
+import { keyframes } from '@emotion/react'
 
 interface CardNetworkProps {
   title: string

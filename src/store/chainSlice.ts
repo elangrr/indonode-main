@@ -1,3 +1,4 @@
+// Update the extraReducers section with builder callback pattern
 import { createSlice } from '@reduxjs/toolkit'
 import { AppState } from './index'
 import { HYDRATE } from 'next-redux-wrapper'
@@ -28,14 +29,15 @@ export const chainSlice = createSlice({
     },
   },
 
-  // Special reducer for hydrating the state. Special case for next-redux-wrapper
-  extraReducers: {
-    [HYDRATE]: (state, action) => {
-      return {
-        ...state,
-        ...action.payload.chain,
-      }
-    },
+  // Special reducer for hydrating the state using builder callback pattern
+  extraReducers: (builder) => {
+    builder
+      .addCase(HYDRATE, (state, action) => {
+        return {
+          ...state,
+          ...action.payload.chain,
+        }
+      })
   },
 })
 
