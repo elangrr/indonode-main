@@ -1,8 +1,8 @@
-// Update the extraReducers section with builder callback pattern
 import { createSlice } from '@reduxjs/toolkit'
-import { AppState } from './index'
 import { HYDRATE } from 'next-redux-wrapper'
-import { Chain } from '@/utils/chains'
+import type { AnyAction } from 'redux'
+import type { AppState } from './index'
+import type { Chain } from '@/utils/chains'
 
 // Type for our state
 export interface ChainState {
@@ -31,13 +31,12 @@ export const chainSlice = createSlice({
 
   // Special reducer for hydrating the state using builder callback pattern
   extraReducers: (builder) => {
-    builder
-      .addCase(HYDRATE, (state, action) => {
-        return {
-          ...state,
-          ...action.payload.chain,
-        }
-      })
+    builder.addCase(HYDRATE, (state, action: AnyAction) => {
+      return {
+        ...state,
+        ...action.payload.chain,
+      }
+    })
   },
 })
 
