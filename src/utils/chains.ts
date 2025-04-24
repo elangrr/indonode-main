@@ -16,6 +16,7 @@ export type Links = {
   explorer: string
   staking?: string
   wasm?: string
+  github?: string
 }
 
 export type Chain = {
