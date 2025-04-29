@@ -88,7 +88,7 @@ sed -i -e 's|^persistent_peers *=.*|persistent_peers = "$PEERS"|' $HOME/.${chain
     setTimeout(() => setCopiedText(''), 2000)
   }
 
-  // Section component for consistency
+  // Enhanced Section component with better layout
   const Section = ({ children, title, id }: { children: React.ReactNode, title: string, id: string }) => (
     <Box 
       bg={bgColor} 
@@ -99,6 +99,10 @@ sed -i -e 's|^persistent_peers *=.*|persistent_peers = "$PEERS"|' $HOME/.${chain
       boxShadow="sm"
       mb={6}
       id={id}
+      transition="all 0.3s ease"
+      _hover={{
+        boxShadow: "md",
+      }}
     >
       <Heading 
         fontSize={{ base: 'xl', md: '2xl' }} 
@@ -107,6 +111,16 @@ sed -i -e 's|^persistent_peers *=.*|persistent_peers = "$PEERS"|' $HOME/.${chain
         borderBottomWidth="1px" 
         borderColor={borderColor}
         color={accentColor}
+        position="relative"
+        _after={{
+          content: '""',
+          position: 'absolute',
+          bottom: '-1px',
+          left: 0,
+          width: '50px',
+          height: '2px',
+          bg: accentColor,
+        }}
       >
         {title}
       </Heading>
@@ -117,7 +131,7 @@ sed -i -e 's|^persistent_peers *=.*|persistent_peers = "$PEERS"|' $HOME/.${chain
   return (
     <ServiceLayout>
       <Stack spacing={8}>
-        {/* Hero Section */}
+        {/* Enhanced Hero Section with better layout */}
         <Box 
           bg={bgColor} 
           p={6} 
@@ -128,31 +142,58 @@ sed -i -e 's|^persistent_peers *=.*|persistent_peers = "$PEERS"|' $HOME/.${chain
           position="relative"
           overflow="hidden"
         >
-          <Flex direction={{ base: 'column', md: 'row' }} align="center">
-            <Box flex={{ base: '1', md: '2' }} pr={{ md: 8 }}>
-              <HStack mb={4}>
-                <Heading color={textColor} size="xl">{chain?.title || 'Chain Information'}</Heading>
-                <Badge colorScheme="green" fontSize="md" borderRadius="md">
+          <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={8}>
+            <Box flex={{ base: '1', md: '2' }}>
+              <HStack mb={4} spacing={4} align="center">
+                <Heading 
+                  color={textColor} 
+                  size="xl"
+                  position="relative"
+                >
+                  {chain?.title || 'Chain Information'}
+                </Heading>
+                <Badge 
+                  colorScheme="green" 
+                  fontSize="md" 
+                  borderRadius="md"
+                  px={3}
+                  py={1}
+                >
                   {chain?.network}
                 </Badge>
               </HStack>
               
               <Box mt={4}>
                 {chain?.description.map((item, index) => (
-                  <Text key={index} mb={3} fontSize="md" color={textColor}>
+                  <Text 
+                    key={index} 
+                    mb={3} 
+                    fontSize="md" 
+                    color={textColor}
+                    lineHeight="tall"
+                  >
                     {item}
                   </Text>
                 ))}
               </Box>
               
-              <HStack spacing={4} mt={6}>
+              <HStack spacing={4} mt={8}>
                 <NextLink href="#installation" passHref>
-                  <Button colorScheme="blue" size="md">
+                  <Button 
+                    colorScheme="blue" 
+                    size="md"
+                    px={6}
+                  >
                     Installation Guide
                   </Button>
                 </NextLink>
                 <NextLink href="#endpoints" passHref>
-                  <Button variant="outline" colorScheme="blue" size="md">
+                  <Button 
+                    variant="outline" 
+                    colorScheme="blue" 
+                    size="md"
+                    px={6}
+                  >
                     Network Endpoints
                   </Button>
                 </NextLink>
@@ -162,8 +203,7 @@ sed -i -e 's|^persistent_peers *=.*|persistent_peers = "$PEERS"|' $HOME/.${chain
             <Flex 
               flex={{ base: '1', md: '1' }} 
               justify="center" 
-              align="center" 
-              mt={{ base: 6, md: 0 }}
+              align="center"
             >
               <Image
                 src={chain?.imageURL}
@@ -180,183 +220,101 @@ sed -i -e 's|^persistent_peers *=.*|persistent_peers = "$PEERS"|' $HOME/.${chain
           </Flex>
         </Box>
 
-        {/* Network Stats */}
+        {/* Enhanced Network Stats with better layout */}
         <Section title="Network Information" id="info">
           <Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }} gap={6}>
-            <GridItem>
-              <Stat bg={cardBg} p={4} borderRadius="md" borderWidth="1px" borderColor={borderColor}>
-                <StatLabel fontSize="sm">Chain ID</StatLabel>
-                <StatNumber fontSize="xl" fontWeight="bold" color={accentColor}>
-                  {chain?.chainId}
-                </StatNumber>
-              </Stat>
-            </GridItem>
-            
-            <GridItem>
-              <Stat bg={cardBg} p={4} borderRadius="md" borderWidth="1px" borderColor={borderColor}>
-                <StatLabel fontSize="sm">Version</StatLabel>
-                <StatNumber fontSize="xl" fontWeight="bold" color={accentColor}>
-                  {chain?.version}
-                </StatNumber>
-              </Stat>
-            </GridItem>
-            
-            <GridItem>
-              <Stat bg={cardBg} p={4} borderRadius="md" borderWidth="1px" borderColor={borderColor}>
-                <StatLabel fontSize="sm">Live Peers</StatLabel>
-                <StatNumber fontSize="xl" fontWeight="bold" color={accentColor}>
-                  {isLoading ? "Loading..." : livePeersCount}
-                </StatNumber>
-              </Stat>
-            </GridItem>
-            
-            <GridItem>
-              <Stat bg={cardBg} p={4} borderRadius="md" borderWidth="1px" borderColor={borderColor}>
-                <StatLabel fontSize="sm">Recommended GO</StatLabel>
-                <StatNumber fontSize="xl" fontWeight="bold" color={accentColor}>
-                  {chain?.go}
-                </StatNumber>
-              </Stat>
-            </GridItem>
+            {[
+              { label: "Chain ID", value: chain?.chainId },
+              { label: "Version", value: chain?.version },
+              { label: "Live Peers", value: isLoading ? "Loading..." : livePeersCount },
+              { label: "Recommended GO", value: chain?.go }
+            ].map((stat, index) => (
+              <GridItem key={index}>
+                <Stat 
+                  bg={cardBg} 
+                  p={4} 
+                  borderRadius="md" 
+                  borderWidth="1px" 
+                  borderColor={borderColor}
+                >
+                  <StatLabel fontSize="sm" opacity={0.8}>{stat.label}</StatLabel>
+                  <StatNumber 
+                    fontSize="xl" 
+                    fontWeight="bold" 
+                    color={accentColor}
+                  >
+                    {stat.value}
+                  </StatNumber>
+                </Stat>
+              </GridItem>
+            ))}
           </Grid>
 
-          <HStack mt={6} spacing={4} flexWrap="wrap">
-            {chain?.links.explorer && (
-              <Link href={chain.links.explorer} isExternal _hover={{ textDecoration: 'none' }}>
-                <Button rightIcon={<ExternalLinkIcon />} variant="outline" size="sm">
-                  Explorer
-                </Button>
-              </Link>
-            )}
-            
-            {chain?.links.website && (
-              <Link href={chain.links.website} isExternal _hover={{ textDecoration: 'none' }}>
-                <Button rightIcon={<ExternalLinkIcon />} variant="outline" size="sm">
-                  Website
-                </Button>
-              </Link>
-            )}
-            
-            {chain?.links.github && (
-              <Link href={chain.links.github} isExternal _hover={{ textDecoration: 'none' }}>
-                <Button rightIcon={<ExternalLinkIcon />} variant="outline" size="sm">
-                  GitHub
-                </Button>
-              </Link>
-            )}
+          <HStack mt={8} spacing={4} flexWrap="wrap">
+            {[
+              { label: "Explorer", href: chain?.links.explorer },
+              { label: "Website", href: chain?.links.website },
+              { label: "GitHub", href: chain?.links.github }
+            ].map((link, index) => (
+              link.href && (
+                <Link key={index} href={link.href} isExternal _hover={{ textDecoration: 'none' }}>
+                  <Button 
+                    rightIcon={<ExternalLinkIcon />} 
+                    variant="outline" 
+                    size="sm"
+                    px={4}
+                  >
+                    {link.label}
+                  </Button>
+                </Link>
+              )
+            ))}
           </HStack>
         </Section>
 
-        {/* Public Endpoints */}
+        {/* Enhanced Endpoints Section */}
         <Section title="Network Endpoints" id="endpoints">
           <Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }} gap={6}>
-            {chain?.links.rpc && (
-              <GridItem>
-                <Box 
-                  bg={cardBg} 
-                  p={4} 
-                  borderRadius="md" 
-                  borderWidth="1px" 
-                  borderColor={borderColor}
-                >
-                  <HStack justify="space-between" mb={2}>
-                    <Text fontWeight="bold">RPC Endpoint</Text>
-                    <Button 
-                      size="xs" 
-                      leftIcon={copiedText === 'rpc' ? <CheckIcon /> : <CopyIcon />}
-                      onClick={() => handleCopy(chain.links.rpc || '', 'rpc')}
-                      colorScheme={copiedText === 'rpc' ? "green" : "gray"}
+            {[
+              { label: "RPC Endpoint", value: chain?.links.rpc },
+              { label: "API Endpoint", value: chain?.links.api },
+              { label: "gRPC Endpoint", value: chain?.links.grpc },
+              { label: "Seed Node", value: chain?.links.peer }
+            ].map((endpoint, index) => (
+              endpoint.value && (
+                <GridItem key={index}>
+                  <Box 
+                    bg={cardBg} 
+                    p={4} 
+                    borderRadius="md" 
+                    borderWidth="1px" 
+                    borderColor={borderColor}
+                  >
+                    <HStack justify="space-between" mb={2}>
+                      <Text fontWeight="bold">{endpoint.label}</Text>
+                      <Button 
+                        size="xs" 
+                        leftIcon={copiedText === endpoint.label.toLowerCase() ? <CheckIcon /> : <CopyIcon />}
+                        onClick={() => handleCopy(endpoint.value || '', endpoint.label.toLowerCase())}
+                        colorScheme={copiedText === endpoint.label.toLowerCase() ? "green" : "gray"}
+                      >
+                        {copiedText === endpoint.label.toLowerCase() ? "Copied" : "Copy"}
+                      </Button>
+                    </HStack>
+                    <Text 
+                      fontFamily="mono" 
+                      fontSize="sm" 
+                      p={2} 
+                      bg={useColorModeValue('gray.100', 'gray.600')} 
+                      borderRadius="md"
+                      overflowX="auto"
                     >
-                      {copiedText === 'rpc' ? "Copied" : "Copy"}
-                    </Button>
-                  </HStack>
-                  <Text fontFamily="mono" fontSize="sm" p={2} bg={useColorModeValue('gray.100', 'gray.600')} borderRadius="md">
-                    {chain.links.rpc}
-                  </Text>
-                </Box>
-              </GridItem>
-            )}
-            
-            {chain?.links.api && (
-              <GridItem>
-                <Box 
-                  bg={cardBg} 
-                  p={4} 
-                  borderRadius="md" 
-                  borderWidth="1px" 
-                  borderColor={borderColor}
-                >
-                  <HStack justify="space-between" mb={2}>
-                    <Text fontWeight="bold">API Endpoint</Text>
-                    <Button 
-                      size="xs" 
-                      leftIcon={copiedText === 'api' ? <CheckIcon /> : <CopyIcon />}
-                      onClick={() => handleCopy(chain.links.api || '', 'api')}
-                      colorScheme={copiedText === 'api' ? "green" : "gray"}
-                    >
-                      {copiedText === 'api' ? "Copied" : "Copy"}
-                    </Button>
-                  </HStack>
-                  <Text fontFamily="mono" fontSize="sm" p={2} bg={useColorModeValue('gray.100', 'gray.600')} borderRadius="md">
-                    {chain.links.api}
-                  </Text>
-                </Box>
-              </GridItem>
-            )}
-            
-            {chain?.links.grpc && (
-              <GridItem>
-                <Box 
-                  bg={cardBg} 
-                  p={4} 
-                  borderRadius="md" 
-                  borderWidth="1px" 
-                  borderColor={borderColor}
-                >
-                  <HStack justify="space-between" mb={2}>
-                    <Text fontWeight="bold">gRPC Endpoint</Text>
-                    <Button 
-                      size="xs" 
-                      leftIcon={copiedText === 'grpc' ? <CheckIcon /> : <CopyIcon />}
-                      onClick={() => handleCopy(chain.links.grpc || '', 'grpc')}
-                      colorScheme={copiedText === 'grpc' ? "green" : "gray"}
-                    >
-                      {copiedText === 'grpc' ? "Copied" : "Copy"}
-                    </Button>
-                  </HStack>
-                  <Text fontFamily="mono" fontSize="sm" p={2} bg={useColorModeValue('gray.100', 'gray.600')} borderRadius="md">
-                    {chain.links.grpc}
-                  </Text>
-                </Box>
-              </GridItem>
-            )}
-            
-            {chain?.links.peer && (
-              <GridItem>
-                <Box 
-                  bg={cardBg} 
-                  p={4} 
-                  borderRadius="md" 
-                  borderWidth="1px" 
-                  borderColor={borderColor}
-                >
-                  <HStack justify="space-between" mb={2}>
-                    <Text fontWeight="bold">Seed Node</Text>
-                    <Button 
-                      size="xs" 
-                      leftIcon={copiedText === 'peer' ? <CheckIcon /> : <CopyIcon />}
-                      onClick={() => handleCopy(chain.links.peer || '', 'peer')}
-                      colorScheme={copiedText === 'peer' ? "green" : "gray"}
-                    >
-                      {copiedText === 'peer' ? "Copied" : "Copy"}
-                    </Button>
-                  </HStack>
-                  <Text fontFamily="mono" fontSize="sm" p={2} bg={useColorModeValue('gray.100', 'gray.600')} borderRadius="md" overflowX="auto">
-                    {chain.links.peer}
-                  </Text>
-                </Box>
-              </GridItem>
-            )}
+                      {endpoint.value}
+                    </Text>
+                  </Box>
+                </GridItem>
+              )
+            ))}
           </Grid>
 
           {/* Live Peers Command */}
@@ -384,75 +342,67 @@ sed -i -e 's|^persistent_peers *=.*|persistent_peers = "$PEERS"|' $HOME/.${chain
           
           <Divider my={6} />
           
-          <HStack spacing={6} flexWrap="wrap">
+          <Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }} gap={6}>
             {chain?.links.genesis && (
-              <Box flex="1" minW={{ base: "100%", md: "45%" }}>
+              <GridItem>
                 <Text fontWeight="bold" mb={2}>Genesis File</Text>
                 <CodeSnippet code={chain.links.genesis} />
-              </Box>
+              </GridItem>
             )}
             
             {chain?.links.addrbook && (
-              <Box flex="1" minW={{ base: "100%", md: "45%" }}>
+              <GridItem>
                 <Text fontWeight="bold" mb={2}>Address Book (updated hourly)</Text>
                 <CodeSnippet code={chain.links.addrbook} />
-              </Box>
+              </GridItem>
             )}
-          </HStack>
+          </Grid>
         </Section>
         
-        {/* Quick Setup Guide */}
+        {/* Enhanced Quick Setup Section */}
         <Section title="Quick Setup Reference" id="installation">
-          <Alert status="info" mb={4} borderRadius="md">
+          <Alert status="info" mb={6} borderRadius="md">
             <AlertIcon />
             <Text>For detailed installation instructions, visit the Installation page.</Text>
           </Alert>
           
           <Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }} gap={6}>
-            <GridItem>
-              <Box bg={cardBg} p={4} borderRadius="md" borderWidth="1px" borderColor={borderColor}>
-                <Text fontWeight="bold" mb={2}>Binary Installation</Text>
-                <CodeSnippet 
-                  code={`# Install ${chain?.name}
-${chain?.binary} version # Check version after install`} 
-                />
-              </Box>
-            </GridItem>
-            
-            <GridItem>
-              <Box bg={cardBg} p={4} borderRadius="md" borderWidth="1px" borderColor={borderColor}>
-                <Text fontWeight="bold" mb={2}>Node Initialization</Text>
-                <CodeSnippet 
-                  code={`# Initialize node
-${chain?.binary} init <your_moniker> --chain-id ${chain?.chainId}`} 
-                />
-              </Box>
-            </GridItem>
-            
-            <GridItem>
-              <Box bg={cardBg} p={4} borderRadius="md" borderWidth="1px" borderColor={borderColor}>
-                <Text fontWeight="bold" mb={2}>Download Genesis</Text>
-                <CodeSnippet 
-                  code={`# Get genesis file
-curl -Ls ${chain?.links.genesis} > $HOME/.${chain?.dir}/config/genesis.json`} 
-                />
-              </Box>
-            </GridItem>
-            
-            <GridItem>
-              <Box bg={cardBg} p={4} borderRadius="md" borderWidth="1px" borderColor={borderColor}>
-                <Text fontWeight="bold" mb={2}>Start Node Service</Text>
-                <CodeSnippet 
-                  code={`# Start service
-sudo systemctl start ${chain?.binary} && journalctl -fu ${chain?.binary} -o cat`} 
-                />
-              </Box>
-            </GridItem>
+            {[
+              {
+                title: "Binary Installation",
+                code: `# Install ${chain?.name}\n${chain?.binary} version # Check version after install`
+              },
+              {
+                title: "Node Initialization",
+                code: `# Initialize node\n${chain?.binary} init <your_moniker> --chain-id ${chain?.chainId}`
+              },
+              {
+                title: "Download Genesis",
+                code: `# Get genesis file\ncurl -Ls ${chain?.links.genesis} > $HOME/.${chain?.dir}/config/genesis.json`
+              },
+              {
+                title: "Start Node Service",
+                code: `# Start service\nsudo systemctl start ${chain?.binary} && journalctl -fu ${chain?.binary} -o cat`
+              }
+            ].map((step, index) => (
+              <GridItem key={index}>
+                <Box 
+                  bg={cardBg} 
+                  p={4} 
+                  borderRadius="md" 
+                  borderWidth="1px" 
+                  borderColor={borderColor}
+                >
+                  <Text fontWeight="bold" mb={2}>{step.title}</Text>
+                  <CodeSnippet code={step.code} />
+                </Box>
+              </GridItem>
+            ))}
           </Grid>
           
-          <Flex justify="center" mt={6}>
+          <Flex justify="center" mt={8}>
             <NextLink href="/services/installation" passHref>
-              <Button colorScheme="blue" size="md">
+              <Button colorScheme="blue" size="md" px={6}>
                 View Full Installation Guide
               </Button>
             </NextLink>
