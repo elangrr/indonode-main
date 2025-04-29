@@ -268,7 +268,7 @@ export default function ServiceInstallation() {
             <SectionHeading id="setup" title="1. Server Setup" />
             <Text mt={3} mb={4}>First, update your system and install required dependencies:</Text>
             
-            <Accordion allowMultiple>
+            <Accordion defaultIndex={[0, 1]} allowMultiple>
               <AccordionItem>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
@@ -474,7 +474,7 @@ ${chain?.binary} version # Verify installation
               </Alert>
             )}
             
-            <Accordion allowMultiple>
+            <Accordion defaultIndex={[0, 1]} allowMultiple>
               <AccordionItem>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
