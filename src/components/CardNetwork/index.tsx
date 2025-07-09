@@ -107,10 +107,10 @@ export default function CardNetwork({
         >
           <Text
             fontWeight='bold'
-            animation={`${animation} 1s linear infinite`}
-            bgGradient='linear(to-l, purple.500, red.500)'
-            bgClip='text'
-            backgroundSize='200% auto'
+            fontSize="sm"
+            color="transparent"
+            bgGradient="linear(to-r, purple.500, pink.500)"
+            bgClip="text"
           >
             Stake with Us
           </Text>

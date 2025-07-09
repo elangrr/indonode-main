@@ -233,8 +233,6 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
                           label="Visit official website" 
                           href={chain.links.website}
                           aria-label="Visit official website"
-                          rel="noopener noreferrer"
-                          target="_blank"
                         >
                           <FaGlobe />
                         </SocialButton>
@@ -245,11 +243,9 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
                     <Tooltip label="View source code" hasArrow>
                       <Box>
                         <SocialButton 
-                          label="View source code" 
+                          label="Visit GitHub" 
                           href={chain.links.github}
-                          aria-label="View source code on GitHub"
-                          rel="noopener noreferrer"
-                          target="_blank"
+                          aria-label="Visit GitHub"
                         >
                           <FaGithub />
                         </SocialButton>
@@ -260,11 +256,9 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
                     <Tooltip label="Follow on Twitter" hasArrow>
                       <Box>
                         <SocialButton 
-                          label="Follow on Twitter" 
+                          label="Visit Twitter" 
                           href={chain.links.twitter}
-                          aria-label="Follow on Twitter"
-                          rel="noopener noreferrer"
-                          target="_blank"
+                          aria-label="Visit Twitter"
                         >
                           <FaTwitter />
                         </SocialButton>
@@ -275,11 +269,9 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
                     <Tooltip label="Join Discord community" hasArrow>
                       <Box>
                         <SocialButton 
-                          label="Join Discord community" 
+                          label="Join Discord" 
                           href={chain.links.discord}
-                          aria-label="Join Discord community"
-                          rel="noopener noreferrer"
-                          target="_blank"
+                          aria-label="Join Discord"
                         >
                           <FaDiscord />
                         </SocialButton>

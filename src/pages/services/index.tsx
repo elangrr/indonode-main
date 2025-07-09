@@ -284,14 +284,15 @@ export default function Services() {
       <Box as="main" bg={bgColor} minH="100vh">
         <Container maxW="container.xl" pt={{ base: '100px', md: '120px' }} pb="80px">
           {/* Enhanced Header Section */}
-          <VStack spacing={8} mb={12} align="stretch">
-            <Box textAlign="center" maxW="4xl" mx="auto">
+          <VStack spacing={10} mb={14} align="stretch">
+            <Box textAlign="center" maxW="3xl" mx="auto">
               <Heading 
                 fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }} 
                 fontWeight="bold"
                 lineHeight="1.1"
                 color={headingColor}
-                mb={6}
+                mb={5}
+                letterSpacing="-1px"
               >
                 Validator{' '}
                 <Box
@@ -308,8 +309,10 @@ export default function Services() {
                 color={textColor}
                 lineHeight="1.6"
                 fontWeight="medium"
-                maxW="3xl"
+                maxW="2xl"
                 mx="auto"
+                mb={2}
+                letterSpacing="-0.5px"
               >
                 Professional node setup guides, installation instructions, and comprehensive tooling for Cosmos ecosystem chains
               </Text>
@@ -319,31 +322,32 @@ export default function Services() {
             <Flex
               justify="center"
               wrap="wrap"
-              gap={8}
-              mt={8}
+              gap={{ base: 6, md: 10 }}
+              mt={2}
+              mb={2}
             >
-              <VStack spacing={2}>
+              <VStack spacing={1} minW="120px">
                 <HStack>
                   <Icon as={FaShieldAlt} color="green.500" boxSize={5} />
-                  <Text fontSize="2xl" fontWeight="bold" color={headingColor}>
+                  <Text fontSize="2xl" fontWeight="bold" color={headingColor} letterSpacing="-0.5px">
                     {mainnetChains.length}
                   </Text>
                 </HStack>
-                <Text fontSize="sm" color={textColor} fontWeight="medium">
+                <Text fontSize="sm" color={textColor} fontWeight="medium" letterSpacing="0.2px">
                   Mainnet Chains
                 </Text>
               </VStack>
               
-              <Box height="50px" width="1px" bg={useColorModeValue('gray.300', 'gray.600')} />
+              <Box height="40px" width="1px" bg={useColorModeValue('gray.300', 'gray.600')} alignSelf="center" />
               
-              <VStack spacing={2}>
+              <VStack spacing={1} minW="120px">
                 <HStack>
                   <Icon as={FaCube} color="purple.500" boxSize={5} />
-                  <Text fontSize="2xl" fontWeight="bold" color={headingColor}>
+                  <Text fontSize="2xl" fontWeight="bold" color={headingColor} letterSpacing="-0.5px">
                     {testnetChains.length}
                   </Text>
                 </HStack>
-                <Text fontSize="sm" color={textColor} fontWeight="medium">
+                <Text fontSize="sm" color={textColor} fontWeight="medium" letterSpacing="0.2px">
                   Testnet Chains
                 </Text>
               </VStack>
