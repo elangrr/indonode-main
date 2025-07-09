@@ -558,6 +558,41 @@
         "explorer": "https://explorer.indonode.net/aaronetwork",
         "staking": "https://explorer.indonode.net/aaronetwork/staking/aaronvaloper1uytlqkrz4wml8p50c0zq5dtgc2p9k3r2xruem2"
       }
+    },
+        {
+      "title": "Axone",
+      "name": "axone",
+      "dir": "axoned",
+      "go": "1.23.5",
+      "coinGeckoId": "",
+      "imageURL": "/networks/axone.jpg",
+      "version": "v12.0.0",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "axone-1",
+      "description": [
+        "Axone is a layer-1 blockchain protocol specifically designed to connect, share, and monetize resources within the AI stack. It operates as an open network dedicated to the collaborative management of AI workflows, universally compatible with all data, models, and infrastructure."
+      ],
+      "binary": "axoned",
+      "denom": "uaxone",
+      "gasPrice": "0.001uaxone",
+      "links": {
+        "repository": "https://github.com/axone-protocol/axoned.git",
+        "binary": "",
+        "wasm": "",
+        "website": "https://axone.xyz",
+        "twitter": "https://x.com/axonexyz",
+        "discord": "https://discord.gg/FhBZX3AYbs",
+        "peer": "338ca80fa7826287c055e7bf41eea29a36aead44@rpc.axone.indonode.net:31656",
+        "rpc": "https://rpc.axone.indonode.net",
+        "api": "https://api.axone.indonode.net",
+        "grpc": "https://grpc.axone.indonode.net:29090",
+        "addrbook": "https://snapshots.indonode.net/axone/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/axone/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/axone/log.json",
+        "explorer": "https://explorer.indonode.net/axone",
+        "staking": "https://explorer.indonode.net/axone/staking/"
+      }
     }
   ],
   "testnet": [
