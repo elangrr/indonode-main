@@ -85,27 +85,31 @@ export default function ChainBar({ chain }: { chain: Chain | undefined }) {
   const [priceChange, setPriceChange] = useState<number | null>(null)
   const [previousPrice, setPreviousPrice] = useState<number | null>(null)
 
-  const updatePrice = useCallback(() => {
-    if (!!chain?.coinGeckoId) {
-      fetchPrice(chain.coinGeckoId)
-        .then((data) => {
+const updatePrice = useCallback(() => {
+  if (!!chain?.coinGeckoId) {
+    fetchPrice(chain.coinGeckoId)
+      .then((data) => {
+        if (data) {
           if (price?.usd && data.usd !== price.usd) {
             setPreviousPrice(price.usd)
             setPriceChange(((data.usd - price.usd) / price.usd) * 100)
           }
           setPrice(data)
-          setIsLoadedPrice(true)
-          setLastUpdated(new Date())
-        })
-        .catch((err) => {
-          console.error(err)
+        } else {
           setPrice(null)
-          setIsLoadedPrice(true)
-        })
-    } else {
-      setIsLoadedPrice(true)
-    }
-  }, [chain?.coinGeckoId, price?.usd])
+        }
+        setIsLoadedPrice(true)
+        setLastUpdated(new Date())
+      })
+      .catch((err) => {
+        console.error(err)
+        setPrice(null)
+        setIsLoadedPrice(true)
+      })
+  } else {
+    setIsLoadedPrice(true)
+  }
+}, [chain?.coinGeckoId, price?.usd])
 
   const updateSyncInfo = useCallback(() => {
     if (chain && chain.name === chainName) {
