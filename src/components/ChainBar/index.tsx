@@ -283,7 +283,7 @@ const updatePrice = useCallback(() => {
             <InfoItem
               icon={FaServer}
               label="Block Height"
-              value={syncInfo?.latest_block_height || '-'}
+              value={syncInfo?.latest_block_height?.toString() || '-'}
               isLoading={!isLoaded}
               color={mutedColor}
             />
