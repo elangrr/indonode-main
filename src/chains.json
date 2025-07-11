@@ -551,12 +551,12 @@
         "peer": "17e6e445d79b608df52c36d9eae1deb32101f40f@rpc.axone.indonode.net:31656",
         "rpc": "https://rpc.axone.indonode.net",
         "api": "https://api.axone.indonode.net",
-        "grpc": "https://grpc.axone.indonode.net:29090",
+        "grpc": "https://grpc.axone.indonode.net:31090",
         "addrbook": "https://snapshots.indonode.net/axone/addrbook.json",
         "genesis": "https://snapshots.indonode.net/axone/genesis.json",
         "snapshot": "https://snapshots.indonode.net/axone/log.json",
         "explorer": "https://explorer.indonode.net/axone",
-        "staking": "https://explorer.indonode.net/axone/staking/"
+        "staking": "https://explorer.indonode.net/axone/staking/axonevaloper1th4hqeygmwdvqgv022agwudnhrvy9ex43xlzqw"
       }
     }
   ],
