@@ -583,7 +583,7 @@
         "website": "https://axone.xyz",
         "twitter": "https://x.com/axonexyz",
         "discord": "https://discord.gg/FhBZX3AYbs",
-        "peer": "338ca80fa7826287c055e7bf41eea29a36aead44@rpc.axone.indonode.net:31656",
+        "peer": "17e6e445d79b608df52c36d9eae1deb32101f40f@rpc.axone.indonode.net:31656",
         "rpc": "https://rpc.axone.indonode.net",
         "api": "https://api.axone.indonode.net",
         "grpc": "https://grpc.axone.indonode.net:29090",
