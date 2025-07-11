@@ -183,7 +183,7 @@
       "go": "1.22.3",
       "coinGeckoId": "self-chain",
       "imageURL": "/networks/selfchain.jpg",
-      "version": "",
+      "version": "v2",
       "upgradever": "v2",
       "upgrade": "4805959",
       "chainId": "self-1",
@@ -250,12 +250,12 @@
       "title": "Realio Network",
       "name": "realio",
       "dir": "realio-network",
-      "go": "1.22.5",
+      "go": "1.23.5",
       "coinGeckoId": "realio-network",
       "imageURL": "/networks/realio.png",
-      "version": "v1.0.1",
-      "upgradever": "v1.0.1",
-      "upgrade": "10233300",
+      "version": "v1.2.0",
+      "upgradever": "",
+      "upgrade": "",
       "chainId": "realionetwork_3301-1",
       "description": [
         "Realio Network is a blockchain-based Software as a Service (SaaS) platform that focuses on the issuance, investment, and life-cycle management of digital securities and cryptoassets."
@@ -279,41 +279,6 @@
         "snapshot": "https://snapshots.indonode.net/realio/log.json",
         "explorer": "https://explorer.indonode.net/realio",
         "staking": "https://restake.app/realio/realiovaloper15w6rmc2jh7u4w78cl4mqrv5tx25f4dss37u3z0/stake"
-      }
-    },
-    {
-      "title": "Entangle",
-      "name": "entangle",
-      "dir": "entangled",
-      "go": "1.21.5",
-      "coinGeckoId": "entangle",
-      "imageURL": "/networks/entangle.jpg",
-      "version": "main",
-      "upgradever": "",
-      "upgrade": "",
-      "chainId": "entangle_33033-1",
-      "description": [
-        "Entangle is The Omnichain Blockchain Infrastructure consisting of core primitives and tools unifying the blockchain ecosystem whilst delivering universal Web2 or Web3 data to smart contracts on any chain."
-      ],
-      "binary": "entangled",
-      "denom": "aNGL",
-      "gasPrice": "10aNGL",
-      "links": {
-        "repository": "https://github.com/Entangle-Protocol/entangle-blockchain",
-        "binary": "",
-        "wasm": "",
-        "website": "https://www.entangle.fi",
-        "twitter": "https://twitter.com/Entanglefi",
-        "discord": "https://discord.gg/entangle",
-        "peer": "c3318235ce692b7d9abe0833faeba667d04b5f83@rpc.entangle.indonode.net:22656",
-        "rpc": "https://rpc.entangle.indonode.net",
-        "api": "https://api.entangle.indonode.net",
-        "grpc": "grpc.entangle.indonode.net:22090",
-        "addrbook": "https://snapshots.indonode.net/entangle/addrbook.json",
-        "genesis": "https://snapshots.indonode.net/entangle/genesis.json",
-        "snapshot": "https://snapshots.indonode.net/entangle/log.json",
-        "explorer": "https://explorer.indonode.net/entangle",
-        "staking": "https://explorer.indonode.net/entangle/staking/entvaloper1r9td2u3eplrkwshan7wwtlstu3r52nv33r0dl0"
       }
     },
     {
@@ -426,16 +391,16 @@
       "go": "1.23.5",
       "coinGeckoId": "elys-network",
       "imageURL": "/networks/elys.jpg",
-      "version": "v2.3.0",
-      "upgradever": "v2.3.0",
-      "upgrade": "",
+      "version": "v6.4.0",
+      "upgradever": "v6.4.0",
+      "upgrade": "4842000",
       "chainId": "elys-1",
       "description": [
         "Elys is a layer 1 blockchain that brings a suite of Defi products and features fueled by Wallet and Chain Abstraction"
       ],
       "binary": "elysd",
       "denom": "uelys",
-      "gasPrice": "0.0003uelys",
+      "gasPrice": "0.01uelys,0.001ibc/F082B65C88E4B6D5EF1DB243CDA1D331D002759E938A0F5CD3FFDC5D53B3E349,0.0002ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9,11395000000ibc/8464A63954C0350A26C8588E20719F3A0AC8705E4CA0F7450B60C3F16B2D3421",
       "links": {
         "repository": "https://github.com/elys-network/elys.git",
         "binary": "",
