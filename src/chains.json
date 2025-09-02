@@ -458,19 +458,19 @@
       "title": "AtomOne",
       "name": "atomone",
       "dir": "atomone",
-      "go": "1.21.13",
-      "coinGeckoId": "",
+      "go": "1.22.10",
+      "coinGeckoId": "atomone",
       "imageURL": "/networks/atomone.png",
-      "version": "v1.1.2",
+      "version": "v2.0.0",
       "upgradever": "",
       "upgrade": "",
       "chainId": "atomone-1",
       "description": [
-        "Aaron Network is an innovative platform for secure and private messaging, integrated into the blockchain ecosystem"
+        "AtomOne is a community-driven, constitutionally governed blockchain designed to prioritize security, decentralization, and innovation within the Cosmos ecosystem. Serving as a minimal fork of the Cosmos Hub, it supports IBC and ICS for scalable interchain solutions."
       ],
       "binary": "atomoned",
-      "denom": "uatone",
-      "gasPrice": "0.001uatone",
+      "denom": "uphoton",
+      "gasPrice": "0.025uatone,0.225uphoton",
       "links": {
         "repository": "https://github.com/atomone-hub/atomone",
         "binary": "",
@@ -478,7 +478,7 @@
         "website": "https://atom.one",
         "twitter": "https://x.com/_atomone",
         "discord": "https://discord.gg/quXB3BpK4H",
-        "peer": "50bea9d2088602c829ed3e5bd64451b284ea1b19@rpc.atomone.indonode.net:30656",
+        "peer": "515ceece87f911801d53ebb873ac1cf7ead53f3e@rpc.atomone.indonode.net:30656",
         "rpc": "https://rpc.atomone.indonode.net",
         "api": "https://api.atomone.indonode.net",
         "grpc": "https://grpc.atomone.indonode.net:30090",
@@ -486,7 +486,7 @@
         "genesis": "https://snapshots.indonode.net/atomone/genesis.json",
         "snapshot": "https://snapshots.indonode.net/atomone/log.json",
         "explorer": "https://explorer.indonode.net/atomone",
-        "staking": "https://explorer.indonode.net/atomone/staking/atonevaloper19rp4ylh4grw46cwch9nkxz8w20w6fw3s2u5hau"
+        "staking": "https://explorer.indonode.net/atomone/staking/atonevaloper10mf53lhx7x2s7vgrulsxq4g2z9n7dm4t472su3"
       }
     },
     {
