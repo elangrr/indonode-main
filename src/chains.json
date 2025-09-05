@@ -554,7 +554,7 @@
         "grpc": "https://grpc.axone.indonode.net:31090",
         "addrbook": "https://snapshots.indonode.net/axone/addrbook.json",
         "genesis": "https://snapshots.indonode.net/axone/genesis.json",
-        "snapshot": "https://snapshots.indonode.net/axone/log.json",
+        "snapshot": "https://snapshots.indonode.net/axone/snapshot_info.json",
         "explorer": "https://explorer.indonode.net/axone",
         "staking": "https://explorer.indonode.net/axone/staking/axonevaloper1th4hqeygmwdvqgv022agwudnhrvy9ex43xlzqw"
       }
