@@ -142,7 +142,7 @@
       }
     },
     {
-      "title": "Six Sigma Sport",
+      "title": "Six Sigma Sport (Project Migrated)",
       "name": "sge",
       "dir": "sge",
       "go": "1.22.3",
@@ -212,7 +212,7 @@
       }
     },
     {
-      "title": "Point Network",
+      "title": "Point Network (Project Stopped)",
       "name": "point",
       "dir": "pointd",
       "go": "1.22.3",
@@ -253,9 +253,9 @@
       "go": "1.23.5",
       "coinGeckoId": "realio-network",
       "imageURL": "/networks/realio.png",
-      "version": "v1.2.0",
-      "upgradever": "",
-      "upgrade": "",
+      "version": "v1.3.0",
+      "upgradever": "v1.4.0",
+      "upgrade": "14590000",
       "chainId": "realionetwork_3301-1",
       "description": [
         "Realio Network is a blockchain-based Software as a Service (SaaS) platform that focuses on the issuance, investment, and life-cycle management of digital securities and cryptoassets."
@@ -385,7 +385,7 @@
       }
     },
     {
-      "title": "Elys",
+      "title": "Elys (Project Migrated)",
       "name": "elys",
       "dir": "elys",
       "go": "1.23.5",
@@ -893,39 +893,6 @@
         "genesis": "https://snapshots.indonode.net/c4e/testnet/genesis.json",
         "snapshot": "https://snapshots.indonode.net/entrypoint/log.json",
         "explorer": "https://explorer.indonode.net/c4e-testnet"
-      }
-    },
-    {
-      "title": "Entangle",
-      "name": "entangle",
-      "dir": "entangle",
-      "go": "1.22.3",
-      "coinGeckoId": "",
-      "imageURL": "/networks/entangle.jpg",
-      "version": "1.0.1",
-      "chainId": "entangle_33133-1",
-      "description": [
-        "Entangle Blockchain is built using the Cosmos SDK (includes IBC transferablity and EVM compatibility) featuring the Tendermint Core Consensus Algorithm for agreement between Validators.",
-        "The Entangle Blockchain is a highly specialized Oracle-centric Blockchain with the sole purpose of storing information for Entangle Distributed Oracle Solution and validating Oracle messages."
-      ],
-      "binary": "entangled",
-      "denom": "angl",
-      "gasPrice": "10angl",
-      "links": {
-        "repository": "https://github.com/Entangle-Protocol/entangle-blockchain.git",
-        "binary": "",
-        "wasm": "",
-        "website": "https://www.entangle.fi",
-        "twitter": "https://twitter.com/Entanglefi",
-        "discord": "https://discord.gg/entanglefi",
-        "peer": "",
-        "rpc": "https://rpc.entangle-t.indonode.net",
-        "api": "https://api.entangle-t.indonode.net",
-        "grpc": "",
-        "addrbook": "https://snapshots.indonode.net/entangle/addrbook.json",
-        "genesis": "https://snapshots.indonode.net/entangle/genesis.json",
-        "snapshot": "https://snapshots.indonode.net/entrypoint/log.json",
-        "explorer": "https://explorer.indonode.net/entangle-testnet"
       }
     }
   ]

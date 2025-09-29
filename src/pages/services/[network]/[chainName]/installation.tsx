@@ -118,28 +118,30 @@ export default function ServiceInstallation() {
     remote_ip: string
   }
 
-  const fetchLivePeers = async () => {
-    try {
-      if (!chain?.links.rpc) return;
-      
-      const response = await fetch(`${chain.links.rpc}/net_info`)
-      const data = await response.json()
-      const peers = data.result.peers
-        .map(
-          (peer: Peer) =>
-            `${peer.node_info.id}@${peer.remote_ip}:${peer.node_info.listen_addr
-              .split(':')
-              .pop()}`
-        )
-        .join(',')
-      setLivePeersCount(data.result.peers.length)
-      setPeersCommand(
-        `PEERS="${peers}"\nsed -i -e "s|^persistent_peers *=.*|persistent_peers = \\"$PEERS\\"|" $HOME/.${chain?.dir}/config/config.toml`
+const fetchLivePeers = async () => {
+  try {
+    if (!chain?.links.rpc) return;
+    
+    const response = await fetch(`${chain.links.rpc}/net_info`)
+    const data = await response.json()
+    const peers = data.result.peers
+      .map(
+        (peer: Peer) => {
+          const id = peer.node_info.id;
+          const ip = peer.remote_ip || peer.node_info.listen_addr.split(':')[1]?.replace('//', '');
+          const port = peer.node_info.listen_addr.split(':').pop();
+          return `${id}@${ip}:${port}`;
+        }
       )
-    } catch (error) {
-      console.error('Error fetching live peers:', error)
-    }
+      .join(',')
+    setLivePeersCount(data.result.peers.length)
+    setPeersCommand(
+      `PEeeERS="${peers}"\nsed -i -e "s|^persistent_peers *=.*|persistent_peers = \\"$PEERS\\"|" $HOME/.${chain?.dir}/config/config.toml`
+    )
+  } catch (error) {
+    console.error('Error fetching live peers:', error)
   }
+}
 
   useEffect(() => {
     if (chain?.links.rpc) {
