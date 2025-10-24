@@ -72,7 +72,7 @@
       }
     },
     {
-      "title": "Bitcanna",
+      "title": "Bitcanna (Project Stopped)",
       "name": "bitcanna",
       "dir": "bcna",
       "go": "1.22.5",
@@ -253,7 +253,7 @@
       "go": "1.23.5",
       "coinGeckoId": "realio-network",
       "imageURL": "/networks/realio.png",
-      "version": "v1.3.0",
+      "version": "v1.4.0",
       "upgradever": "v1.4.0",
       "upgrade": "14590000",
       "chainId": "realionetwork_3301-1",
@@ -462,15 +462,15 @@
       "coinGeckoId": "atomone",
       "imageURL": "/networks/atomone.png",
       "version": "v2.0.0",
-      "upgradever": "",
-      "upgrade": "",
+      "upgradever": "v3.0.3",
+      "upgrade": "5902000",
       "chainId": "atomone-1",
       "description": [
         "AtomOne is a community-driven, constitutionally governed blockchain designed to prioritize security, decentralization, and innovation within the Cosmos ecosystem. Serving as a minimal fork of the Cosmos Hub, it supports IBC and ICS for scalable interchain solutions."
       ],
       "binary": "atomoned",
       "denom": "uphoton",
-      "gasPrice": "0.025uatone,0.225uphoton",
+      "gasPrice": "0.225uphoton",
       "links": {
         "repository": "https://github.com/atomone-hub/atomone",
         "binary": "",
