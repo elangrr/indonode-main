@@ -1,5 +1,3 @@
-"use client"
-
 import {
   Box,
   Heading,
@@ -41,9 +39,17 @@ allChains.forEach((c: any) => {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const chain = ctx.params?.chain as string
-  const chainInfo = allChains.find((c: any) => c.chainId === chain || c.chain_id === chain)
-  const apiBase = chainInfo?.links?.api?.replace(/\/+$/, "")
-  if (!apiBase) return { notFound: true }
+
+  const chainInfo = allChains.find(
+    (c: any) => c.chainId === chain || c.chain_id === chain
+  )
+
+  // ✅ Hard guard: if chain or API not found, 404
+  if (!chainInfo?.links?.api) {
+    return { notFound: true }
+  }
+
+  const apiBase = chainInfo.links.api.replace(/\/+$/, "")
 
   let channels: any[] = []
   try {
@@ -66,7 +72,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 function CounterpartyChainBadge({
   channelId,
   portId,
-  counterpartyChannelId,
+  counterpartyChannelId, // still accepted, even if not used (no problem)
   apiBase,
 }: {
   channelId: string
@@ -82,7 +88,9 @@ function CounterpartyChainBadge({
     async function resolveCounterpartyChain() {
       try {
         // Step 1: Get the channel details to find connection_hops
-        const channelRes = await fetch(`${apiBase}/ibc/core/channel/v1/channels/${channelId}/ports/${portId}`)
+        const channelRes = await fetch(
+          `${apiBase}/ibc/core/channel/v1/channels/${channelId}/ports/${portId}`
+        )
         const channelData = await channelRes.json()
         const connectionId = channelData?.channel?.connection_hops?.[0]
 
@@ -92,7 +100,9 @@ function CounterpartyChainBadge({
         }
 
         // Step 2: Get the connection to find client_id
-        const connectionRes = await fetch(`${apiBase}/ibc/core/connection/v1/connections/${connectionId}`)
+        const connectionRes = await fetch(
+          `${apiBase}/ibc/core/connection/v1/connections/${connectionId}`
+        )
         const connectionData = await connectionRes.json()
         const clientId = connectionData?.connection?.client_id
 
@@ -102,9 +112,13 @@ function CounterpartyChainBadge({
         }
 
         // Step 3: Get the client state to find chain_id
-        const clientRes = await fetch(`${apiBase}/ibc/core/client/v1/client_states/${clientId}`)
+        const clientRes = await fetch(
+          `${apiBase}/ibc/core/client/v1/client_states/${clientId}`
+        )
         const clientData = await clientRes.json()
-        const resolvedChainId = clientData?.client_state?.chain_id
+        const resolvedChainId =
+          clientData?.client_state?.chain_id ||
+          clientData?.identified_client_state?.client_state?.chain_id
 
         if (resolvedChainId) {
           setChainId(resolvedChainId)
@@ -163,18 +177,25 @@ export default function IBCChainPage({
 
   const filteredChannels = channels.filter((ch) => {
     const isLive = ch.state === "STATE_OPEN"
-    const matchesFilter = filter === "all" || (filter === "live" && isLive) || (filter === "down" && !isLive)
+    const matchesFilter =
+      filter === "all" ||
+      (filter === "live" && isLive) ||
+      (filter === "down" && !isLive)
 
     const matchesSearch =
       search === "" ||
       ch.channel_id?.toLowerCase().includes(search.toLowerCase()) ||
       ch.port_id?.toLowerCase().includes(search.toLowerCase()) ||
-      ch.counterparty?.channel_id?.toLowerCase().includes(search.toLowerCase())
+      ch.counterparty?.channel_id
+        ?.toLowerCase()
+        .includes(search.toLowerCase())
 
     return matchesFilter && matchesSearch
   })
 
-  const liveCount = channels.filter((ch) => ch.state === "STATE_OPEN").length
+  const liveCount = channels.filter(
+    (ch) => ch.state === "STATE_OPEN"
+  ).length
   const downCount = channels.length - liveCount
 
   return (
@@ -220,7 +241,12 @@ export default function IBCChainPage({
       </HStack>
 
       {/* Filters */}
-      <Flex direction={{ base: "column", md: "row" }} gap={4} mb={6} align={{ base: "stretch", md: "center" }}>
+      <Flex
+        direction={{ base: "column", md: "row" }}
+        gap={4}
+        mb={6}
+        align={{ base: "stretch", md: "center" }}
+      >
         <InputGroup maxW={{ base: "100%", md: "300px" }}>
           <InputLeftElement pointerEvents="none">
             <Text color="gray.400">🔍</Text>
@@ -287,8 +313,14 @@ export default function IBCChainPage({
                 {/* Status */}
                 <GridItem>
                   <HStack>
-                    <Circle size="10px" bg={isLive ? "green.400" : "red.400"} />
-                    <Badge colorScheme={isLive ? "green" : "red"} variant="subtle">
+                    <Circle
+                      size="10px"
+                      bg={isLive ? "green.400" : "red.400"}
+                    />
+                    <Badge
+                      colorScheme={isLive ? "green" : "red"}
+                      variant="subtle"
+                    >
                       {isLive ? "LIVE" : "DOWN"}
                     </Badge>
                   </HStack>
@@ -297,43 +329,67 @@ export default function IBCChainPage({
                 {/* Channel */}
                 <GridItem>
                   <VStack align="start" spacing={0}>
-                    <Text fontSize="xs" color="gray.500" fontWeight="medium">
+                    <Text
+                      fontSize="xs"
+                      color="gray.500"
+                      fontWeight="medium"
+                    >
                       Channel
                     </Text>
-                    <Badge colorScheme="purple">{ch.channel_id}</Badge>
+                    <Badge colorScheme="purple">
+                      {ch.channel_id}
+                    </Badge>
                   </VStack>
                 </GridItem>
 
                 {/* Port */}
                 <GridItem>
                   <VStack align="start" spacing={0}>
-                    <Text fontSize="xs" color="gray.500" fontWeight="medium">
+                    <Text
+                      fontSize="xs"
+                      color="gray.500"
+                      fontWeight="medium"
+                    >
                       Port
                     </Text>
-                    <Badge colorScheme="blue">{ch.port_id}</Badge>
+                  <Badge colorScheme="blue">
+                    {ch.port_id}
+                  </Badge>
                   </VStack>
                 </GridItem>
 
                 {/* Counterparty Channel */}
                 <GridItem>
                   <VStack align="start" spacing={0}>
-                    <Text fontSize="xs" color="gray.500" fontWeight="medium">
+                    <Text
+                      fontSize="xs"
+                      color="gray.500"
+                      fontWeight="medium"
+                    >
                       Counterparty
                     </Text>
-                    <Badge colorScheme="teal">{ch.counterparty?.channel_id || "N/A"}</Badge>
+                    <Badge colorScheme="teal">
+                      {ch.counterparty?.channel_id || "N/A"}
+                    </Badge>
                   </VStack>
                 </GridItem>
 
                 {/* Counterparty Chain (auto-detected) */}
                 <GridItem>
                   <VStack align="start" spacing={0}>
-                    <Text fontSize="xs" color="gray.500" fontWeight="medium">
+                    <Text
+                      fontSize="xs"
+                      color="gray.500"
+                      fontWeight="medium"
+                    >
                       Chain
                     </Text>
                     <CounterpartyChainBadge
                       channelId={ch.channel_id}
                       portId={ch.port_id}
-                      counterpartyChannelId={ch.counterparty?.channel_id}
+                      counterpartyChannelId={
+                        ch.counterparty?.channel_id
+                      }
                       apiBase={api}
                     />
                   </VStack>
@@ -342,10 +398,16 @@ export default function IBCChainPage({
                 {/* Ordering */}
                 <GridItem>
                   <VStack align="start" spacing={0}>
-                    <Text fontSize="xs" color="gray.500" fontWeight="medium">
+                    <Text
+                      fontSize="xs"
+                      color="gray.500"
+                      fontWeight="medium"
+                    >
                       Ordering
                     </Text>
-                    <Badge variant="outline">{ch.ordering?.replace("ORDER_", "")}</Badge>
+                    <Badge variant="outline">
+                      {ch.ordering?.replace("ORDER_", "")}
+                    </Badge>
                   </VStack>
                 </GridItem>
               </Grid>
@@ -356,7 +418,15 @@ export default function IBCChainPage({
 
       {/* Empty State */}
       {filteredChannels.length === 0 && (
-        <Box mt={8} p={8} textAlign="center" bg={bgCard} rounded="lg" border="1px solid" borderColor={borderColor}>
+        <Box
+          mt={8}
+          p={8}
+          textAlign="center"
+          bg={bgCard}
+          rounded="lg"
+          border="1px solid"
+          borderColor={borderColor}
+        >
           <Text color="gray.500" fontSize="lg">
             {search || filter !== "all"
               ? "No channels match your filters."
