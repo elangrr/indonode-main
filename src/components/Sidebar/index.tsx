@@ -89,6 +89,8 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
     }
   }, [router.asPath, network, chainName])
 
+  // Safely reference chain links to avoid ReferenceError
+  const links = chain?.links
   // Loading skeleton component
   const LoadingSkeleton = () => (
     <VStack spacing={4} align="stretch">

@@ -63,6 +63,9 @@ export default function ChainBar({ chain }: { chain: Chain | undefined }) {
   const { chainName } = router.query
   const toast = useToast()
 
+  // Safely reference chain RPC endpoint
+  const rpc = chain?.links?.rpc
+
   const [syncInfo, setSyncInfo] = useState<SyncInfo | null>(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [price, setPrice] = useState<CurrentPrice | null>(null)
@@ -103,9 +106,9 @@ export default function ChainBar({ chain }: { chain: Chain | undefined }) {
 
   // ✅ ✅ FIXED SYNTAX + SAFE LINKS
   const updateSyncInfo = useCallback(() => {
-    if (!chain?.links?.rpc) return
+    if (!rpc) return
 
-    fetchSyncInfo(links?.rpc)
+    fetchSyncInfo(rpc)
       .then((data) => {
         setSyncInfo(data)
         setIsLoaded(true)
@@ -115,11 +118,11 @@ export default function ChainBar({ chain }: { chain: Chain | undefined }) {
         setSyncInfo(null)
         setIsLoaded(true)
       })
-  }, [chain])
+  }, [rpc])
 
   const handleCopyRpc = () => {
-    if (chain?.links?.rpc) {
-      navigator.clipboard.writeText(links?.rpc)
+    if (rpc) {
+      navigator.clipboard.writeText(rpc)
       setCopiedRpc(true)
       toast({
         title: 'RPC endpoint copied',
