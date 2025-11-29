@@ -52,25 +52,27 @@ export default function Service() {
   const accentColor = useColorModeValue('blue.500', 'blue.300')
   const textColor = useColorModeValue('gray.800', 'white')
 
-  const fetchLivePeersCount = async () => {
-    setIsLoading(true)
-    try {
-      const rpc = links?.rpc
-      if (!rpc) {
-        setIsLoading(false)
-        return
-      }
+const fetchLivePeersCount = async () => {
+  setIsLoading(true)
 
-      const response = await fetch(`${rpc}/net_info`)
-      const data = await response.json()
-      const count = data.result.peers.length
-      setLivePeersCount(count)
+  try {
+    if (!links?.rpc) {
       setIsLoading(false)
-    } catch (error) {
-      console.error('Error fetching live peers count:', error)
-      setIsLoading(false)
+      return
     }
+
+    const response = await fetch(`${links.rpc}/net_info`)
+    const data = await response.json()
+    const count = data?.result?.peers?.length || 0
+
+    setLivePeersCount(count)
+  } catch (error) {
+    console.error('Error fetching live peers count:', error)
+  } finally {
+    setIsLoading(false)
+  }
 }
+
 
 
   useEffect(() => {
