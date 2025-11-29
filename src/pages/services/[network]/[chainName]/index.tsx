@@ -41,6 +41,8 @@ import NextLink from 'next/link'
 export default function Service() {
   const chain = useSelector(selectChain)
   const links = chain?.links
+
+  const links = chain?.links
   const [livePeersCount, setLivePeersCount] = useState(0)
   const [copiedText, setCopiedText] = useState('')
   const [isLoading, setIsLoading] = useState(true)

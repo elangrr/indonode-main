@@ -41,6 +41,8 @@ import { useState } from 'react'
 
 export default function ServiceCheatSheet() {
   const chain = useSelector(selectChain)
+  const links = chain?.links
+
 
   // Form state
   const [tokenValoperAddr, setTokenValoperAddr] = useState('<TO_VALOPER_ADDRESS>')

@@ -121,6 +121,8 @@ const StepIndicator = ({ currentStep, totalSteps }: { currentStep: number, total
 
 export default function ServiceSnapshot() {
   const chain = useSelector(selectChain)
+  const links = chain?.links
+
   const { data: snapshotInfo, isLoading, error } = useSnapshotInfo(chain?.links.snapshot ?? '')
   const [currentStep, setCurrentStep] = useState(1)
   const toast = useToast()

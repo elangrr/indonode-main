@@ -14,6 +14,7 @@ export default function ServiceLayout({ children }: { children: ReactNode }) {
   const router = useRouter()
   const { network, chainName } = router.query
   const chain = useSelector(selectChain)
+  const links = chain?.links
   const { data, isFetched } = useChain(network as string, chainName as string)
 
   useEffect(() => {

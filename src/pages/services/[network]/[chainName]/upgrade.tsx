@@ -24,6 +24,8 @@ import { useState } from 'react'
 
 export default function ServiceUpgrade() {
   const chain = useSelector(selectChain)
+  const links = chain?.links
+
   const [copiedCommand, setCopiedCommand] = useState(false)
   
   // Colors

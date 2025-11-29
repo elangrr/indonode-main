@@ -60,6 +60,8 @@ import { useSnapshotInfo } from '@/hooks/use-query'
 
 export default function ServiceInstallation() {
   const chain = useSelector(selectChain)
+  const links = chain?.links
+
   const router = useRouter()
   const { network } = router.query
   const { data: snapshotInfo, isLoading: snapshotLoading } = useSnapshotInfo(chain?.links.snapshot ?? '')
