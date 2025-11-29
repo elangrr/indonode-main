@@ -31,7 +31,7 @@ import {
   FaTwitter,
   FaDiscord,
   FaGlobe,
-  FaGithub
+  FaGithub,
 } from 'react-icons/fa'
 import { IconType } from 'react-icons'
 import { SocialButton } from '@/components/Footer'
@@ -61,7 +61,7 @@ interface SidebarProps {
 export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
   const router = useRouter()
   const { network, chainName } = router.query
-  
+
   // Enhanced color scheme with proper dark mode support
   const cardBg = useColorModeValue('white', 'gray.800')
   const textColor = useColorModeValue('gray.800', 'white')
@@ -77,14 +77,14 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
   const isActiveRoute = useMemo(() => {
     return (menuLink: string) => {
       if (!router.asPath || !network || !chainName) return false
-      
+
       const basePath = `/services/${network}/${chainName}`
       const currentPath = router.asPath
-      
+
       if (menuLink === '') {
         return currentPath === basePath || currentPath === `${basePath}/`
       }
-      
+
       return currentPath.startsWith(`${basePath}${menuLink}`)
     }
   }, [router.asPath, network, chainName])
@@ -177,9 +177,9 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
                   </Heading>
                   <HStack mt={1} spacing={2} flexWrap="wrap">
                     {chain?.chainId && (
-                      <Badge 
-                        colorScheme="green" 
-                        fontSize="xs" 
+                      <Badge
+                        colorScheme="green"
+                        fontSize="xs"
                         borderRadius="md"
                         px={2}
                         py={1}
@@ -188,8 +188,8 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
                       </Badge>
                     )}
                     {chain?.version && (
-                      <Badge 
-                        colorScheme="blue" 
+                      <Badge
+                        colorScheme="blue"
                         fontSize="xs"
                         borderRadius="md"
                         px={2}
@@ -201,37 +201,42 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
                   </HStack>
                 </Box>
               </Flex>
-              
+
               <Divider />
             </Flex>
-            
+
             {/* Enhanced Menu Accordion */}
-            <MenuAccordion 
+            <MenuAccordion
               isActiveRoute={isActiveRoute}
               hoverBg={hoverBg}
               iconColor={iconColor}
               activeIconColor={activeIconColor}
               subTextColor={subTextColor}
             />
-            
+
             {/* Enhanced Social Links Section */}
-            {(chain?.links.website || chain?.links.github || chain?.links.twitter || chain?.links.discord) && (
+            {(
+              chain?.links?.website ||
+              chain?.links?.github ||
+              chain?.links?.twitter ||
+              chain?.links?.discord
+            ) && (
               <Box mt={6} pt={4} borderTopWidth="1px" borderColor={borderColor}>
-                <Text 
-                  fontWeight="semibold" 
-                  color={subTextColor} 
+                <Text
+                  fontWeight="semibold"
+                  color={subTextColor}
                   fontSize="sm"
                   mb={3}
                 >
                   Official Resources
                 </Text>
                 <Flex gap={3} flexWrap="wrap">
-                  {chain?.links.website && (
+                  {chain?.links?.website && (
                     <Tooltip label="Visit official website" hasArrow>
                       <Box>
-                        <SocialButton 
-                          label="Visit official website" 
-                          href={chain.links.website}
+                        <SocialButton
+                          label="Visit official website"
+                          href={chain.links.website || '#'}
                           aria-label="Visit official website"
                         >
                           <FaGlobe />
@@ -239,12 +244,12 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
                       </Box>
                     </Tooltip>
                   )}
-                  {chain?.links.github && (
+                  {chain?.links?.github && (
                     <Tooltip label="View source code" hasArrow>
                       <Box>
-                        <SocialButton 
-                          label="Visit GitHub" 
-                          href={chain.links.github}
+                        <SocialButton
+                          label="Visit GitHub"
+                          href={chain.links.github || '#'}
                           aria-label="Visit GitHub"
                         >
                           <FaGithub />
@@ -252,12 +257,12 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
                       </Box>
                     </Tooltip>
                   )}
-                  {chain?.links.twitter && (
+                  {chain?.links?.twitter && (
                     <Tooltip label="Follow on Twitter" hasArrow>
                       <Box>
-                        <SocialButton 
-                          label="Visit Twitter" 
-                          href={chain.links.twitter}
+                        <SocialButton
+                          label="Visit Twitter"
+                          href={chain.links.twitter || '#'}
                           aria-label="Visit Twitter"
                         >
                           <FaTwitter />
@@ -265,12 +270,12 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
                       </Box>
                     </Tooltip>
                   )}
-                  {chain?.links.discord && (
+                  {chain?.links?.discord && (
                     <Tooltip label="Join Discord community" hasArrow>
                       <Box>
-                        <SocialButton 
-                          label="Join Discord" 
-                          href={chain.links.discord}
+                        <SocialButton
+                          label="Join Discord"
+                          href={chain.links.discord || '#'}
                           aria-label="Join Discord"
                         >
                           <FaDiscord />
@@ -340,16 +345,16 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
                   aria-label={`Navigate to ${menu.name}`}
                   tabIndex={0}
                 >
-                  <Icon 
-                    as={menu.icon} 
-                    boxSize={5} 
+                  <Icon
+                    as={menu.icon}
+                    boxSize={5}
                     color={isActive ? activeIconColor : iconColor}
                     transition="color 0.2s ease"
                   />
-                  <Text 
-                    fontSize="xs" 
-                    textAlign="center" 
-                    fontWeight={isActive ? "semibold" : "medium"}
+                  <Text
+                    fontSize="xs"
+                    textAlign="center"
+                    fontWeight={isActive ? 'semibold' : 'medium'}
                     noOfLines={1}
                     color={isActive ? activeIconColor : textColor}
                   >
@@ -485,12 +490,12 @@ interface MenuAccordionProps {
   subTextColor: string
 }
 
-const MenuAccordion = ({ 
-  isActiveRoute, 
-  hoverBg, 
-  iconColor, 
-  activeIconColor, 
-  subTextColor 
+const MenuAccordion = ({
+  isActiveRoute,
+  hoverBg,
+  iconColor,
+  activeIconColor,
+  subTextColor,
 }: MenuAccordionProps) => {
   const router = useRouter()
   const { network, chainName } = router.query
@@ -504,7 +509,7 @@ const MenuAccordion = ({
       <Accordion allowMultiple width="100%" rounded="lg" variant="unstyled">
         {menuList.map((menu) => {
           const isMenuActive = isActiveRoute(menu.link)
-          
+
           return (
             <AccordionItem key={menu.name} border="none" mb={1}>
               <AccordionButton
@@ -518,15 +523,15 @@ const MenuAccordion = ({
                 transition="all 0.2s ease"
               >
                 <Flex alignItems="center" gap={3}>
-                  <Icon 
-                    as={menu.icon} 
-                    boxSize={5} 
+                  <Icon
+                    as={menu.icon}
+                    boxSize={5}
                     color={isMenuActive ? activeIconColor : iconColor}
                     transition="color 0.2s ease"
                   />
-                  <Text 
-                    fontSize="md" 
-                    fontWeight={isMenuActive ? "semibold" : "medium"}
+                  <Text
+                    fontSize="md"
+                    fontWeight={isMenuActive ? 'semibold' : 'medium'}
                     color={isMenuActive ? activeIconColor : undefined}
                   >
                     {menu.name}
@@ -537,9 +542,8 @@ const MenuAccordion = ({
               <AccordionPanel pb={2} pl={4}>
                 <VStack spacing={1} align="stretch">
                   {menu.submenus.map((submenu) => {
-                    const submenuPath = `${menu.link}${submenu.link}`
                     const isSubmenuActive = router.asPath.includes(submenu.link)
-                    
+
                     return (
                       <Link
                         key={menu.name + submenu.name}
@@ -559,14 +563,14 @@ const MenuAccordion = ({
                           role="button"
                           tabIndex={0}
                         >
-                          <ChevronRightIcon 
-                            fontSize="16px" 
+                          <ChevronRightIcon
+                            fontSize="16px"
                             color={isSubmenuActive ? activeIconColor : subTextColor}
                           />
-                          <Text 
+                          <Text
                             color={isSubmenuActive ? activeIconColor : submenuTextColor}
                             fontSize="sm"
-                            fontWeight={isSubmenuActive ? "medium" : "normal"}
+                            fontWeight={isSubmenuActive ? 'medium' : 'normal'}
                           >
                             {submenu.name}
                           </Text>
