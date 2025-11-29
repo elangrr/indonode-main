@@ -346,3 +346,4 @@ const FeaturePill = ({ icon, text }: { icon: React.ElementType; text: string }) 
     </HStack>
   )
 }
+

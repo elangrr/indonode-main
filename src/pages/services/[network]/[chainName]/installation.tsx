@@ -122,7 +122,7 @@ const fetchLivePeers = async () => {
   try {
     if (!links?.rpc) return;
     
-    const response = await fetch(`${chain.links.rpc}/net_info`)
+    const response = await fetch(`${links?.rpc}/net_info`)
     const data = await response.json()
     const peers = data.result.peers
       .map(

@@ -349,7 +349,7 @@ sed -i \\
               />
             </Box>
 
-            {chain?.links.wasm && chain.links.wasm !== '' && (
+            {chain?.links.wasm && links?.wasm !== '' && (
               <Box 
                 p={4} 
                 bg={useColorModeValue('white', 'gray.800')}
@@ -363,7 +363,7 @@ sed -i \\
                 </HStack>
                 <CodeSnippet
                   code={`# Download wasm files
-curl -L ${chain.links.wasm} | lz4 -dc - | tar -xf - -C $HOME/.${chain?.dir}`}
+curl -L ${links?.wasm} | lz4 -dc - | tar -xf - -C $HOME/.${chain?.dir}`}
                 />
               </Box>
             )}

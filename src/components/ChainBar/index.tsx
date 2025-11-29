@@ -105,7 +105,7 @@ export default function ChainBar({ chain }: { chain: Chain | undefined }) {
   const updateSyncInfo = useCallback(() => {
     if (!chain?.links?.rpc) return
 
-    fetchSyncInfo(chain.links.rpc)
+    fetchSyncInfo(links?.rpc)
       .then((data) => {
         setSyncInfo(data)
         setIsLoaded(true)
@@ -119,7 +119,7 @@ export default function ChainBar({ chain }: { chain: Chain | undefined }) {
 
   const handleCopyRpc = () => {
     if (chain?.links?.rpc) {
-      navigator.clipboard.writeText(chain.links.rpc)
+      navigator.clipboard.writeText(links?.rpc)
       setCopiedRpc(true)
       toast({
         title: 'RPC endpoint copied',
@@ -260,3 +260,4 @@ export function EnhancedChainItem({
     </Link>
   )
 }
+

@@ -349,14 +349,14 @@ sed -i -e 's|^persistent_peers *=.*|persistent_peers = "$PEERS"|' $HOME/.${chain
             {links?.genesis && (
               <GridItem>
                 <Text fontWeight="bold" mb={2}>Genesis File</Text>
-                <CodeSnippet code={chain.links.genesis} />
+                <CodeSnippet code={links?.genesis} />
               </GridItem>
             )}
             
             {links?.addrbook && (
               <GridItem>
                 <Text fontWeight="bold" mb={2}>Address Book (updated hourly)</Text>
-                <CodeSnippet code={chain.links.addrbook} />
+                <CodeSnippet code={links?.addrbook} />
               </GridItem>
             )}
           </Grid>

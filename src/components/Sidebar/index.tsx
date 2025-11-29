@@ -236,7 +236,7 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
                       <Box>
                         <SocialButton
                           label="Visit official website"
-                          href={chain.links.website || '#'}
+                          href={links?.website || '#'}
                           aria-label="Visit official website"
                         >
                           <FaGlobe />
@@ -249,7 +249,7 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
                       <Box>
                         <SocialButton
                           label="Visit GitHub"
-                          href={chain.links.github || '#'}
+                          href={links?.github || '#'}
                           aria-label="Visit GitHub"
                         >
                           <FaGithub />
@@ -262,7 +262,7 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
                       <Box>
                         <SocialButton
                           label="Visit Twitter"
-                          href={chain.links.twitter || '#'}
+                          href={links?.twitter || '#'}
                           aria-label="Visit Twitter"
                         >
                           <FaTwitter />
@@ -275,7 +275,7 @@ export default function Sidebar({ chain, isLoading = false }: SidebarProps) {
                       <Box>
                         <SocialButton
                           label="Join Discord"
-                          href={chain.links.discord || '#'}
+                          href={links?.discord || '#'}
                           aria-label="Join Discord"
                         >
                           <FaDiscord />
@@ -587,3 +587,4 @@ const MenuAccordion = ({
     </Box>
   )
 }
+

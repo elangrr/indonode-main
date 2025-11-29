@@ -316,3 +316,4 @@ const NAV_ITEMS: Array<NavItem> = [
     href: '/ibc',
   },
 ]
+

@@ -190,7 +190,7 @@ export default function IBCIndex() {
                   {chain?.links?.website && (
                     <Tooltip label="Website" hasArrow>
                       <a
-                        href={chain.links.website}
+                        href={links?.website}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
@@ -202,7 +202,7 @@ export default function IBCIndex() {
                   {chain?.links?.twitter && (
                     <Tooltip label="Twitter" hasArrow>
                       <a
-                        href={chain.links.twitter}
+                        href={links?.twitter}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
@@ -214,7 +214,7 @@ export default function IBCIndex() {
                   {chain?.links?.discord && (
                     <Tooltip label="Discord" hasArrow>
                       <a
-                        href={chain.links.discord}
+                        href={links?.discord}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
@@ -226,7 +226,7 @@ export default function IBCIndex() {
                   {chain?.links?.explorer && (
                     <Tooltip label="Explorer" hasArrow>
                       <a
-                        href={chain.links.explorer}
+                        href={links?.explorer}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
@@ -278,3 +278,4 @@ export default function IBCIndex() {
     </Box>
   )
 }
+
