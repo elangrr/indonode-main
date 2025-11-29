@@ -35,7 +35,7 @@ export type Chain = {
   upgradever?: string
   upgrade?: string
   gasPrice?: string
-  links?: Links                 // ✅ now optional
+  links: Links                 // ✅ now optional
   network?: string
 }
 

@@ -40,6 +40,7 @@ import NextLink from 'next/link'
 
 export default function Service() {
   const chain = useSelector(selectChain)
+  const links = chain?.links
   const [livePeersCount, setLivePeersCount] = useState(0)
   const [copiedText, setCopiedText] = useState('')
   const [isLoading, setIsLoading] = useState(true)
@@ -54,7 +55,7 @@ export default function Service() {
   const fetchLivePeersCount = async () => {
     setIsLoading(true)
     try {
-      if (!chain?.links.rpc) {
+      if (!links?.rpc) {
         setIsLoading(false)
         return
       }
@@ -71,14 +72,14 @@ export default function Service() {
   }
 
   useEffect(() => {
-    if (chain?.links.rpc) {
+    if (links?.rpc) {
       fetchLivePeersCount()
       const interval = setInterval(fetchLivePeersCount, 10 * 60 * 1000) // Fetch peers every 10 minutes
       return () => clearInterval(interval)
     }
-  }, [chain?.links.rpc])
+  }, [links?.rpc])
 
-  const peersCommand = `PEERS="$(curl -sS ${chain?.links.rpc}/net_info | jq -r '.result.peers[] | "\\(.node_info.id)@\\(.remote_ip):\\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | sed -z 's|\\n|,|g;s|.$||')"
+  const peersCommand = `PEERS="$(curl -sS ${links?.rpc}/net_info | jq -r '.result.peers[] | "\\(.node_info.id)@\\(.remote_ip):\\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | sed -z 's|\\n|,|g;s|.$||')"
 sed -i -e 's|^persistent_peers *=.*|persistent_peers = "$PEERS"|' $HOME/.${chain?.dir}/config/config.toml`
 
   // Handle copy function
@@ -276,10 +277,10 @@ sed -i -e 's|^persistent_peers *=.*|persistent_peers = "$PEERS"|' $HOME/.${chain
         <Section title="Network Endpoints" id="endpoints">
           <Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }} gap={6}>
             {[
-              { label: "RPC Endpoint", value: chain?.links.rpc },
-              { label: "API Endpoint", value: chain?.links.api },
-              { label: "gRPC Endpoint", value: chain?.links.grpc },
-              { label: "Seed Node", value: chain?.links.peer }
+              { label: "RPC Endpoint", value: links?.rpc },
+              { label: "API Endpoint", value: links?.api },
+              { label: "gRPC Endpoint", value: links?.grpc },
+              { label: "Seed Node", value: links?.peer }
             ].map((endpoint, index) => (
               endpoint.value && (
                 <GridItem key={index}>
@@ -343,14 +344,14 @@ sed -i -e 's|^persistent_peers *=.*|persistent_peers = "$PEERS"|' $HOME/.${chain
           <Divider my={6} />
           
           <Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }} gap={6}>
-            {chain?.links.genesis && (
+            {links?.genesis && (
               <GridItem>
                 <Text fontWeight="bold" mb={2}>Genesis File</Text>
                 <CodeSnippet code={chain.links.genesis} />
               </GridItem>
             )}
             
-            {chain?.links.addrbook && (
+            {links?.addrbook && (
               <GridItem>
                 <Text fontWeight="bold" mb={2}>Address Book (updated hourly)</Text>
                 <CodeSnippet code={chain.links.addrbook} />
@@ -378,7 +379,7 @@ sed -i -e 's|^persistent_peers *=.*|persistent_peers = "$PEERS"|' $HOME/.${chain
               },
               {
                 title: "Download Genesis",
-                code: `# Get genesis file\ncurl -Ls ${chain?.links.genesis} > $HOME/.${chain?.dir}/config/genesis.json`
+                code: `# Get genesis file\ncurl -Ls ${links?.genesis} > $HOME/.${chain?.dir}/config/genesis.json`
               },
               {
                 title: "Start Node Service",

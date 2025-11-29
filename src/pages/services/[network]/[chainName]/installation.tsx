@@ -120,7 +120,7 @@ export default function ServiceInstallation() {
 
 const fetchLivePeers = async () => {
   try {
-    if (!chain?.links.rpc) return;
+    if (!links?.rpc) return;
     
     const response = await fetch(`${chain.links.rpc}/net_info`)
     const data = await response.json()
@@ -144,12 +144,12 @@ const fetchLivePeers = async () => {
 }
 
   useEffect(() => {
-    if (chain?.links.rpc) {
+    if (links?.rpc) {
       fetchLivePeers()
       const interval = setInterval(fetchLivePeers, 3 * 60 * 1000) // Fetch peers every 3 minutes
       return () => clearInterval(interval)
     }
-  }, [chain?.links.rpc])
+  }, [links?.rpc])
 
   const hasRepository = !!chain?.links.repository
   const hasBinary = !!chain?.links.binary
@@ -504,8 +504,8 @@ ${chain?.binary} init ${moniker || 'node'} --chain-id ${chain?.chainId}
                     
                     <CodeSnippet
                       code={`# Add Genesis File and Addrbook
-curl -Ls ${chain?.links.genesis} > $HOME/.${chain?.dir}/config/genesis.json
-curl -Ls ${chain?.links.addrbook} > $HOME/.${chain?.dir}/config/addrbook.json
+curl -Ls ${links?.genesis} > $HOME/.${chain?.dir}/config/genesis.json
+curl -Ls ${links?.addrbook} > $HOME/.${chain?.dir}/config/addrbook.json
 `}
                     />
                     

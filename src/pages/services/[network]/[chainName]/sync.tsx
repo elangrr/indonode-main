@@ -332,8 +332,8 @@ ${chain?.binary} tendermint unsafe-reset-all --keep-addr-book --home $HOME/.${ch
               </HStack>
               <CodeSnippet
                 code={`# Setup configuration variables
-STATE_SYNC_RPC=${chain?.links.rpc}:443
-STATE_SYNC_PEER=${chain?.links.peer}
+STATE_SYNC_RPC=${links?.rpc}:443
+STATE_SYNC_PEER=${links?.peer}
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .result.block.header.height)
 SYNC_BLOCK_HEIGHT=$(($LATEST_HEIGHT - 2000))
 SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .result.block_id.hash)
