@@ -558,7 +558,47 @@
         "explorer": "https://explorer.indonode.net/axone",
         "staking": "https://explorer.indonode.net/axone/staking/axonevaloper1th4hqeygmwdvqgv022agwudnhrvy9ex43xlzqw"
       }
-    }
+    },
+        {
+      "title": "Paxi",
+      "name": "paxi",
+      "dir": "paxid",
+      "go": "1.23.5",
+      "coinGeckoId": "",
+      "imageURL": "/networks/paxi.jpg",
+      "version": "v1.0.6",
+      "upgradever": "",
+      "upgrade": "",
+      "chainId": "paxi-mainnet",
+      "description": [
+        "PAXI is a layer 1, general-purpose blockchain — Powering DeFi, DAOs, cross-chain, and dApps with true validator freedom."
+      ],
+      "binary": "paxid",
+      "denom": "upaxi",
+      "gasPrice": "0.0025upaxi",
+      "links": {
+        "repository": "https://github.com/paxi-web3/paxi",
+        "binary": "",
+        "wasm": "",
+        "website": "https://paxinet.io",
+        "twitter": "https://x.com/paxiweb3",
+        "discord": "",
+        "peer": "2ec06a24a4a9c434ad9d45d34870c8f4cbedaf23@rpc.paxi.indonode.net:33656",
+        "rpc": "https://rpc.paxi.indonode.net",
+        "api": "https://api.paxi.indonode.net",
+        "grpc": "https://grpc.paxi.indonode.net:33090",
+        "addrbook": "https://snapshots.indonode.net/paxi/addrbook.json",
+        "genesis": "https://snapshots.indonode.net/paxi/genesis.json",
+        "snapshot": "https://snapshots.indonode.net/paxi/snapshot_info.json",
+        "explorer": "https://explorer.indonode.net/paxi",
+        "staking": "https://explorer.indonode.net/paxi/staking/paxivaloper1uxrl79xa5l9ntdx4kdcy6y6gnfjcg86jxujq77"
+      }
+    },
+      {
+    "name": "Noble",
+    "chain_id": "noble-1"
+  }
+  
   ],
   "testnet": [
     {

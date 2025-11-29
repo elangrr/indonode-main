@@ -11,6 +11,7 @@ interface CategoryNetworkProps {
   isSelected: boolean
   onClick: MouseEventHandler
 }
+
 function CategoryNetwork({
   category,
   isSelected,
@@ -57,6 +58,11 @@ function CategoryNetwork({
 export default function Networks() {
   const [categoryNetwork, setCategoryNetwork] = useState('Mainnet')
 
+  // ✅ HARD SAFETY: Always force array
+  const chains = Array.isArray(getChains(categoryNetwork.toLowerCase()))
+    ? getChains(categoryNetwork.toLowerCase())
+    : []
+
   return (
     <Box id='networks' p={6} mb={36}>
       <Heading
@@ -66,6 +72,7 @@ export default function Networks() {
       >
         Networks
       </Heading>
+
       <Stack
         direction={{ base: 'column' }}
         w={{ base: '100%', md: '100%', lg: '90%' }}
@@ -89,6 +96,7 @@ export default function Networks() {
             onClick={() => setCategoryNetwork('Testnet')}
           />
         </Flex>
+
         <Flex w={'full'}>
           <Flex
             gap={8}
@@ -96,15 +104,15 @@ export default function Networks() {
             justifyContent={{ base: 'center' }}
             w={'full'}
           >
-            {getChains(categoryNetwork.toLowerCase()).map((item) => (
+            {chains.map((item: any) => (
               <CardNetwork
-                key={item.title.concat(categoryNetwork)}
-                title={item.title}
-                name={item.name}
-                imageURL={item.imageURL}
+                key={`${item?.chainId || item?.name || Math.random()}-${categoryNetwork}`}
+                title={item?.title || item?.name || 'Unknown Chain'}
+                name={item?.name || 'unknown'}
+                imageURL={item?.imageURL || '/networks/default.png'}
                 network={categoryNetwork}
-                explorer={item.links.explorer}
-                staking={item.links.staking}
+                explorer={item?.links?.explorer || '#'}
+                staking={item?.links?.staking || '#'}
               />
             ))}
           </Flex>

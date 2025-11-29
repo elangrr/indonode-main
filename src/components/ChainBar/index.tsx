@@ -186,15 +186,23 @@ const updatePrice = useCallback(() => {
   `
 
   // Filter chains for search
-  const filteredMainnets = getChains('mainnet').filter(chain =>
-    chain.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    chain.name.toLowerCase().includes(searchTerm.toLowerCase())
-  )
-  
-  const filteredTestnets = getChains('testnet').filter(chain =>
-    chain.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    chain.name.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+    const filteredMainnets = getChains('mainnet').filter(chain => {
+      const title = (chain?.title || '').toLowerCase()
+      const name = (chain?.name || '').toLowerCase()
+      const search = searchTerm.toLowerCase()
+
+      return title.includes(search) || name.includes(search)
+    })
+
+      
+    const filteredTestnets = getChains('testnet').filter(chain => {
+      const title = (chain?.title || '').toLowerCase()
+      const name = (chain?.name || '').toLowerCase()
+      const search = searchTerm.toLowerCase()
+
+      return title.includes(search) || name.includes(search)
+})
+
 
   return (
     <>

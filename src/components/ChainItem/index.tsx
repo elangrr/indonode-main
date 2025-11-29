@@ -75,7 +75,7 @@ export const ChainItem = ({
         </Skeleton>
         <Skeleton isLoaded={!isLoading} width="100%">
           <Text color={useColorModeValue('gray.600', 'gray.400')} fontSize="sm">
-            {chain.description[0] || 'No description available'}
+            {chain?.description?.[0] || 'No description available'}
           </Text>
         </Skeleton>
       </Flex>
