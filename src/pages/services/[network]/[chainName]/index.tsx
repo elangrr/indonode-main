@@ -55,12 +55,13 @@ export default function Service() {
   const fetchLivePeersCount = async () => {
     setIsLoading(true)
     try {
-      if (!links?.rpc) {
+      const rpc = links?.rpc
+      if (!rpc) {
         setIsLoading(false)
         return
       }
-      
-      const response = await fetch(`${chain.links.rpc}/net_info`)
+
+      const response = await fetch(`${rpc}/net_info`)
       const data = await response.json()
       const count = data.result.peers.length
       setLivePeersCount(count)
@@ -69,7 +70,8 @@ export default function Service() {
       console.error('Error fetching live peers count:', error)
       setIsLoading(false)
     }
-  }
+}
+
 
   useEffect(() => {
     if (links?.rpc) {
